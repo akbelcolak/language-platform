@@ -5,7 +5,8 @@ import React from 'react';
 function App() {
   return (
     <div>
-      Hello World
+      <h2>Hello World</h2>
+     
     </div>
   );
 }
