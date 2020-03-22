@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/akbelcolak/language-platform/issues"
   },
-  "homepage": "https://github.com/akbelcolak/language-platform#readme",
+  "homepage": "https://akbelcolak.github.io/language-platform/",
   "dependencies": {
     "concurrently": "^5.1.0",
     "cors": "^2.8.5",

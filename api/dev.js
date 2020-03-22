@@ -1,3 +1,4 @@
+// this file allows you to develop/test your api without the frontend
 const express = require('express');
 const devServer = express();
 const api = require('./index.js');
