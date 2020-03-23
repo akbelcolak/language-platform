@@ -1,31 +1,23 @@
 {
-  "name": "language-platform",
+  "name": "cooool",
   "version": "1.0.0",
-  "description": "We aim to meet language learners with volunteer companies",
-  "main": "server.js",
   "scripts": {
     "dev-api": "nodemon api/dev.js",
     "dev-client": "cd client && npm run start",
     "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "server": "nodemon index.js",
+    "dev": "concurrently \"npm run server\" \"npm run dev-client\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/akbelcolak/language-platform.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/akbelcolak/language-platform/issues"
-  },
-  "homepage": "https://akbelcolak.github.io/language-platform/",
+  "license": "MIT",
   "dependencies": {
-    "concurrently": "^5.1.0",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.9.5"
   },
   "devDependencies": {
+    "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"
   }
 }
