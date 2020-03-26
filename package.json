@@ -1,11 +1,14 @@
 {
   "name": "language-platform",
   "version": "1.0.0",
-  "description": "We aim to meet language learners with volunteer companies",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js"
+    "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
+    "dev-api": "nodemon api/dev.js",
+    "dev-client": "cd client && npm run start",
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,10 +22,11 @@
   },
   "homepage": "https://github.com/akbelcolak/language-platform#readme",
   "dependencies": {
-    "concurrently": "^5.1.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"
   }
 }

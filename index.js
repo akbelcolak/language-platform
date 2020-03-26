@@ -1,8 +1,11 @@
+// this is the main entry point for our full app
+// it serves frontend & provides access to our API
+
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const api = require('./api');
+const api = require('./api/server');
 
 const app = express();
 app.use(cors());

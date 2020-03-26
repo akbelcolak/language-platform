@@ -1,6 +1,8 @@
+// this file allows us to develop/test our api without the frontend
+
 const express = require('express');
 const devServer = express();
-const api = require('./index.js');
+const api = require('./server.js');
 
 devServer.use((req, res, next) => {
   console.log(req.method + ': ' + req.path);
@@ -10,7 +12,7 @@ devServer.use((req, res, next) => {
 devServer.use('/api', api);
 
 devServer.get('/', (req, res) => {
-  res.send('react frontend');
+  res.send('frontend');
 });
 
 

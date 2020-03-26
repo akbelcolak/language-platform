@@ -1,11 +1,10 @@
 import React from 'react';
-
-
+import './App.css';
 
 function App() {
   return (
     <div>
-      <h2>Hello World</h2>
+      <h2>Client</h2>
      
     </div>
   );
