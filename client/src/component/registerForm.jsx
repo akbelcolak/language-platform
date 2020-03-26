@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { register } from "../services/userService";
-
+import Input from "./common/input";
 export default class RegisterationForm extends Component {
   state = {
     data: {
@@ -21,61 +21,43 @@ export default class RegisterationForm extends Component {
     this.setState({ data });
   };
   render() {
+    const { data } = this.state;
     const style = { width: "300px", backgroundColor: "black", color: "white" };
     return (
       <div style={{ margin: "100px", marginLeft: "500px" }}>
         <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">User Name</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.data.username}
-              name="username"
-              style={style}
-              type="text"
-              className="form-control"
-              id="username"
-              placeholder="User Name"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.data.password}
-              name="password"
-              style={style}
-              type="password"
-              className="form-control"
-              id="password"
-              placeholder="Password"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="E-mail">E-mail</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.data.email}
-              name="email"
-              style={style}
-              type="email"
-              className="form-control"
-              id="E-mail"
-              placeholder="E-mail"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="birthdate">Birthdate</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.data.date}
-              name="birthdate"
-              style={style}
-              type="date"
-              className="form-control"
-              id="birthdate"
-            />
-          </div>
+          <Input
+            type="text"
+            name="username"
+            value={data.username}
+            label="Username"
+            onChange={this.handleChange}
+            style={style}
+          />
+          <Input
+            type="text"
+            name="password"
+            value={data.password}
+            label="Password"
+            onChange={this.handleChange}
+            style={style}
+          />
+          <Input
+            type="email"
+            name="email"
+            value={data.email}
+            label="E-mail"
+            onChange={this.handleChange}
+            style={style}
+          />
+          <Input
+            type="date"
+            name="birthdate"
+            value={data.birthdate}
+            label="Birthdate"
+            onChange={this.handleChange}
+            style={style}
+          />
           <button
             style={{ marginLeft: "80px" }}
             onClick={this.handleSubmit}
