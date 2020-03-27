@@ -20,8 +20,8 @@ connection.once("open", () => {
   console.log("MongDB DataBase connection established successfully");
 });
 
-const usersRouter = require("./routes/user");
-app.use("/users", usersRouter);
+const usersRouter = require('./routes/user');
+app.use('/users', usersRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port...${port}`);
