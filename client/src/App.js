@@ -4,8 +4,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      <h2>Client</h2>
-     
+      <h2>Welcome to Language Platform!</h2>
     </div>
   );
 }
