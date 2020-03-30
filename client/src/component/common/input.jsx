@@ -1,21 +1,21 @@
 import React from "react";
-
 // we used func component because we work by controlled component so we don't need states
 
-const Input = ({name, label , value , onChange ,type,style}) => {
+const Input = ({ name, label, error, ...rest }) => {
   return (
     <div className="form-group">
-      <label htmlFor={name}>{label}</label>
+      <label style={{ marginTop: "20px" }} htmlFor={name}>
+        {label}
+      </label>
       <input
-        onChange={onChange}
-        value={value}
+        {...rest}
         name={name}
-        style={style}
-        type={type}
         className="form-control"
         id={name}
         placeholder={label}
+        style={{ width: "300px", padding: "10px", marginTop: "20px" }}
       />
+      {error && <div className="btn btn-danger">{error}</div>}
     </div>
   );
 };
