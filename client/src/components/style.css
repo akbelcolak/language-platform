@@ -18,17 +18,25 @@
     padding: 20px 0;
     border-bottom: rgb(10, 16, 100) 2px solid;
     }
+
+    details {
+        text-align: left;
+        width: 50px;
+     
+       
+    }
+    
     
     /* Table Styles */
     
     .table-all{
-    margin: 10px 220px 220px;
+    margin: 10px 310px 310px;
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
     }
     
     .table {
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: normal;
     border: none;
     border-collapse: collapse;
@@ -41,19 +49,21 @@
     .table td, .table th {
     text-align: center;
     padding: 10px;
+    font-size: 16px;
     }
     
     .table td {
     border-right: none;
     border-bottom: #382C42 2px solid;
     font-size: 12px;
-    font-weight: bold;
+    
+    text-align: left;
     }
     
     .table thead th {
     color: #ffffff;
     background: #382C42;
-    border-right: 3px solid rgb(133, 119, 145);
+    
     font-weight: bold;
     
     }
@@ -67,6 +77,12 @@
     .table tr:nth-child(even) {
     background: rgb(234, 229, 236);
     }
+
+    .companies{
+        font-size: 16px;
+        font-weight: bold;
+    }
+
     
     /* Responsive */
     
@@ -133,4 +149,3 @@
     text-align: center;
     }
     }
-    
