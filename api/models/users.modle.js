@@ -18,6 +18,7 @@ const userSchema = new Schema(
     },
     location: {
       type: String,
+      required: true,
     },
     nativeLanguage: {
       type: String,
@@ -33,11 +34,12 @@ const userSchema = new Schema(
       type: Number,
       required: true,
       minlength: 2,
-      maxlength: 10
+      maxlength: 10,
+   
     },
     Gender: {
       type: String,
-      
+      required: true,
     
     },
     email: {

@@ -35,7 +35,7 @@ router.route("/add").post((req, res) => {
   newUser
     .save()
     .then(() => res.json("User Created!"))
-    .catch(err => res.status(400).json("Error add:" + err));
+    .catch( err => res.status(400).json(`this E-mail has already registerd`));
 });
 
 router.route("/:id").get((req, res) => {
@@ -47,7 +47,7 @@ router.route("/:id").get((req, res) => {
 router.route("/:id").delete((req, res) => {
   User.findByIdAndDelete(req.params.id)
     .then(() => res.json("user Deleted"))
-    .catch(err => res.status(400).json("Error :" + err));
+    .catch(err => res.status(400).json("Delete/:id :" + err));
 });
 
 router.route("/update/:id").post((req, res) => {
@@ -67,9 +67,9 @@ router.route("/update/:id").post((req, res) => {
       user
         .save()
         .then(() => res.json("User Updated!"))
-        .catch(err => res.status(400).json("Error :" + err));
+        .catch(err => res.status(400).json("update/:id",err ));
     })
-    .catch(err => res.status(400).json("Error :" + err));
+    .catch(err => res.status(400).json(err="Error :" ));
 });
 
 module.exports = router;
