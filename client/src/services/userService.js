@@ -7,11 +7,11 @@ export function register(user) {
   return http.post(apiEndpoint, {
     firstName: user.firstName,
     lastName: user.lastName,
-    address: user.address,
+    location: user.location,
     nativeLanguage: user.nativeLanguage,
     languageToLearn: user.languageToLearn,
     phoneNumber: user.phoneNumber,
-    gender: user.gender,
+    Gender: user.Gender,
     skill: user.skill,
     email: user.email,
     password: user.password,

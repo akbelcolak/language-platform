@@ -9,6 +9,7 @@ import {
 } from "../services/services";
 import Form from "./common/form";
 import { register } from "../services/userService";
+import { toast } from "react-toastify";
 export default class RegisterationForm extends Form {
   state = {
     data: {
@@ -68,9 +69,22 @@ export default class RegisterationForm extends Form {
   };
 
   doSubmit = async () => {
-    console.log("submmited");
-
-    await register(this.state.data);
+try{
+  await register(this.state.data);
+  toast.success("Student Created !", {
+    position: toast.POSITION.TOP_CENTER
+  });
+}catch(ex){
+  if(ex.response && ex.response.status === 400){
+    const errors = {...this.state.errors}
+    errors.email  = ex.response.data;
+    this.setState({errors})
+  }
+  if(ex.response && ex.response.status === 200){
+    const errors = {...this.state.errors}
+   return(!errors?toast.info("Student Created!"):null);
+  }
+}
   };
 
   render() {
