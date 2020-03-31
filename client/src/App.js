@@ -5,6 +5,7 @@ import NavBar from "./component/navBar";
 import RegisterationForm from './component/registerForm';
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Form from './component/common/form';
 class App extends Component {
   render() {
     return (
@@ -12,6 +13,8 @@ class App extends Component {
         <ToastContainer />
         <Route path="/" component={NavBar} />
         <Route path="/users" component={RegisterationForm} />
+        <Route path="/users/:id" component={Form} />
+
       </Router>
     );
   }

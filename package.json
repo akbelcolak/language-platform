@@ -23,7 +23,8 @@
   "homepage": "https://github.com/akbelcolak/language-platform#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "joi-browser": "^13.4.0"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",

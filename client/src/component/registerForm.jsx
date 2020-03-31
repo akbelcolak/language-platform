@@ -1,47 +1,25 @@
 import React from "react";
-import Form from "./common/form";
 import Joi from "joi";
+import {
+  getGender,
+  getLocation,
+  getNativeLanguage,
+  getLanguageToLearn,
+  getSkill
+} from "../services/services";
+import Form from "./common/form";
 import { register } from "../services/userService";
-
 export default class RegisterationForm extends Form {
   state = {
     data: {
       firstName: "",
       lastName: "",
-      location: [
-        { id: "0", name: "Brussels" },
-        { id: "1", name: "Flamish Brabant" },
-        { id: "2", name: "Antwerp" },
-        { id: "3", name: "Limburg" },
-        { id: "4", name: "Luik (Liege)" },
-        { id: "5", name: "West Flanders" }
-      ],
-      nativeLanguage: [
-        { id: "0", name: "Dutch" },
-        { id: "1", name: "French" },
-        { id: "2", name: "German" },
-        { id: "3", name: "English" }
-      ],
-      languageToLearn: [
-        { id: "0", name: "Dutch" },
-        { id: "1", name: "French" },
-        { id: "2", name: "German" },
-        { id: "3", name: "English" }
-      ],
+      location: "",
+      nativeLanguage: "",
+      languageToLearn: "",
       phoneNumber: "",
-      Gender: [
-        { id: "xy", name: "male" },
-        { id: "xx", name: "female" }
-      ],
-      skill: [
-        { id: "0", name: "IT" },
-        { id: "1", name: "Health" },
-        { id: "2", name: "Law" },
-        { id: "3", name: "Sports" },
-        { id: "4", name: "Journalism" },
-        { id: "5", name: "Education" },
-        { id: "6", name: "Literature" }
-      ],
+      Gender: "",
+      skill: "",
       email: "",
       password: "",
       birthdate: ""
@@ -51,36 +29,34 @@ export default class RegisterationForm extends Form {
   schema = {
     firstName: Joi.string()
       .required()
-      .min(3)
       .max(25)
       .label("First Name"),
     lastName: Joi.string()
       .required()
-      .min(3)
       .max(25)
+
       .label("Last Name"),
     phoneNumber: Joi.number()
       .required()
-      .min(9)
+      
       .label("Phone Number"),
     email: Joi.string()
       .email({ minDomainAtoms: 2 })
       .label("E-mail"),
     password: Joi.string()
-      .min(8)
       .max(15)
+      .required()
       .label("Password"),
     birthdate: Joi.string()
       .required()
       .label("BirthDate"),
-    id: Joi.string(),
     Gender: Joi.string()
       .required()
       .label("Gender"),
-      languageToLearn: Joi.string()
+    languageToLearn: Joi.string()
       .required()
       .label("languageToLearn"),
-      location: Joi.string()
+    location: Joi.string()
       .required()
       .label("Location"),
     nativeLanguage: Joi.string()
@@ -98,20 +74,115 @@ export default class RegisterationForm extends Form {
   };
 
   render() {
+    const { data, errors } = this.state;
     return (
       <div className="form-group">
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("firstName", "First Name")}
           {this.renderInput("lastName", "Last Name")}
           {this.renderInput("password", "Password", "password")}
-          {this.renderSelect("Gender", "Gender",this.state.data.Gender)}
           {this.renderInput("birthdate", "Birthdate", "date")}
           {this.renderInput("phoneNumber", "Phone Number", "number")}
           {this.renderInput("email", "E-mail", "email")}
-          {/* {this.renderSelect("location", "Location")}
-          {this.renderSelect("nativeLanguage", "Native Language")}
-          {this.renderSelect("languageToLearn", "Language To Learn")}
-          {this.renderSelect("skill", "Skills")} */}
+          <div className="form-group">
+            <label htmlFor="location">Location</label>
+            <select
+              name="location"
+              id="location"
+              onChange={this.handleChange}
+              className="form-control"
+              value={data.location}
+            >
+              {getLocation().map(option => (
+                <option key={option.id} value={option.name}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+            {errors.location && (
+              <div className="alert alert-danger">{errors.location}</div>
+            )}
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="nativeLanguage">Native Language</label>
+            <select
+              name="nativeLanguage"
+              id="nativeLanguage"
+              onChange={this.handleChange}
+              className="form-control"
+              value={data.nativeLanguage}
+            >
+              {getNativeLanguage().map(option => (
+                <option key={option.id} value={option.name}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+            {errors.nativeLanguage && (
+              <div className="alert alert-danger">{errors.nativeLanguage}</div>
+            )}
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="languageToLearn">Language To Learn</label>
+            <select
+              name="languageToLearn"
+              id="languageToLearn"
+              onChange={this.handleChange}
+              className="form-control"
+              value={data.languageToLearn}
+            >
+              {getLanguageToLearn().map(option => (
+                <option key={option.id} value={option.name}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+            {errors.languageToLearn && (
+              <div className="alert alert-danger">{errors.languageToLearn}</div>
+            )}
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="skill">Skill</label>
+            <select
+              name="skill"
+              id="skill"
+              onChange={this.handleChange}
+              className="form-control"
+              value={data.skill}
+            >
+              {getSkill().map(option => (
+                <option key={option.id} value={option.name}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+            {errors.skill && (
+              <div className="alert alert-danger">{errors.skill}</div>
+            )}
+          </div>
+          <div className="form-group">
+            <label htmlFor="Gender">Gender</label>
+            <select
+              name="Gender"
+              id="Gender"
+              onChange={this.handleChange}
+              className="form-control"
+              value={data.Gender}
+            >
+              {getGender().map(option => (
+                <option key={option.id} value={option.name}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+            {errors.Gender && (
+              <div className="alert alert-danger">{errors.Gender}</div>
+            )}
+          </div>
+
           {this.renderButton("Create User")}
         </form>
       </div>
