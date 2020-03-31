@@ -16,23 +16,18 @@ const userSchema = new Schema(
       minlength: 2,
       maxlength: 50
     },
-    address: {
+    location: {
       type: String,
-      required: true,
-      minlength: 2,
-      maxlength: 50
     },
     nativeLanguage: {
       type: String,
       required: true,
-      minlength: 2,
-      maxlength: 50
+    
     },
     languageToLearn: {
       type: String,
       required: true,
-      minlength: 2,
-      maxlength: 50
+     
     },
     phoneNumber: {
       type: Number,
@@ -40,11 +35,10 @@ const userSchema = new Schema(
       minlength: 2,
       maxlength: 10
     },
-    gender: {
+    Gender: {
       type: String,
-      required: false,
-      minlength: 2,
-      maxlength: 50
+      
+    
     },
     email: {
       type: String,
@@ -68,8 +62,7 @@ const userSchema = new Schema(
     skill: {
       type: String,
       required: true,
-      minlength: 2,
-      maxlength: 50
+  
     }
   },
   { timestamps: true, }

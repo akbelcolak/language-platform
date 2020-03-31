@@ -9,9 +9,9 @@ router.route("/").get((req, res) => {
 router.route("/add").post((req, res) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
-  const address = req.body.address;
+  const location = req.body.location;
   const nativeLanguage = req.body.nativeLanguage;
-  const gender = req.body.gender;
+  const Gender = req.body.Gender;
   const languageToLearn = req.body.languageToLearn;
   const phoneNumber = req.body.phoneNumber;
   const skill = req.body.skill;
@@ -22,9 +22,9 @@ router.route("/add").post((req, res) => {
   const newUser = new User({
     firstName,
     lastName,
-    address,
+    location,
     nativeLanguage,
-    gender,
+    Gender,
     languageToLearn,
     phoneNumber,
     skill,
@@ -55,9 +55,9 @@ router.route("/update/:id").post((req, res) => {
     .then(user => {
       firstName = req.body.firstName;
       lastName = req.body.lastName;
-      address = req.body.address;
+      location = req.body.location;
       nativeLanguage = req.body.nativeLanguage;
-      gender = req.body.gender;
+      Gender = req.body.Gender;
       languageToLearn = req.body.languageToLearn;
       phoneNumber = req.body.phoneNumber;
       skill = req.body.skill;
