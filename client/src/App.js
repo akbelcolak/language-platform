@@ -1,13 +1,23 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import {ToastContainer} from 'react-toastify'
+import NavBar from "./component/navBar";
+import RegisterationForm from './component/registerForm';
+import "react-toastify/dist/ReactToastify.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Form from './component/common/form';
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <ToastContainer />
+        <Route path="/" component={NavBar} />
+        <Route path="/users" component={RegisterationForm} />
+        <Route path="/users/:id" component={Form} />
 
-function App() {
-  return (
-    <div>
-      <h2>Welcome to Language Platform!</h2>
-      <h3>hello world</h3>
-    </div>
-  );
+      </Router>
+    );
+  }
 }
 
 export default App;
