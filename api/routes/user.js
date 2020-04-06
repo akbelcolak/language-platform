@@ -1,11 +1,29 @@
 const router = require("express").Router();
 let User = require("../models/users.modle");
-
+const auth = require("../middleware/auth");
+const bcrypt = require("bcrypt");
+const _ = require("lodash");
 router.route("/").get((req, res) => {
   User.find()
     .then(users => res.json(users))
     .catch(err => res.status(400).send("Error : " + err));
 });
+
+router.route("/auth").post((req, res)=>{
+  const email = req.body.email;
+  const password = req.body.password;
+User.findOne({email:email, password:password},(err,user)=>{
+if(err){
+  console.log(err)
+  return res.status(500).send()
+}
+if(!user){
+  return res.status(404).send()
+}
+return res.status(200).send()
+})
+});
+
 router.route("/add").post((req, res) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
@@ -71,5 +89,7 @@ router.route("/update/:id").post((req, res) => {
     })
     .catch(err => res.status(400).json(err="Error :" ));
 });
+
+
 
 module.exports = router;
