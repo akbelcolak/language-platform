@@ -7,15 +7,8 @@
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
     "dev-api": "nodemon api/dev.js",
     "dev-client": "cd client && npm run start",
-<<<<<<< HEAD
-    "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build",
-    "test": "cd api && jest --collectCoverage=true --forceExit",
-    "test:watch": "cd api && jest --watch --collectCoverage=true --runInBand --detectOpenHandles"
-=======
     "start": "nodemon index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
->>>>>>> 8e49283bf25ce74c60de4eaea1a1cd0a02e7a2cc
   },
   "repository": {
     "type": "git",
@@ -29,22 +22,12 @@
   },
   "homepage": "https://github.com/akbelcolak/language-platform#readme",
   "dependencies": {
-<<<<<<< HEAD
-    "body-parser": "^1.19.0",
-=======
     "@material-ui/core": "^4.9.8",
->>>>>>> 8e49283bf25ce74c60de4eaea1a1cd0a02e7a2cc
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-<<<<<<< HEAD
-    "joi": "^14.3.1",
-    "joi-browser": "^13.4.0",
-    "mongoose": "^5.9.7"
-=======
     "joi-browser": "^13.4.0",
     "redux-thunk": "^2.3.0"
->>>>>>> 8e49283bf25ce74c60de4eaea1a1cd0a02e7a2cc
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
