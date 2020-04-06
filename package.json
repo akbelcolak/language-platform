@@ -7,7 +7,7 @@
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
     "dev-api": "nodemon api/dev.js",
     "dev-client": "cd client && npm run start",
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
@@ -22,9 +22,11 @@
   },
   "homepage": "https://github.com/akbelcolak/language-platform#readme",
   "dependencies": {
+    "@material-ui/core": "^4.9.8",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "joi-browser": "^13.4.0"
+    "joi-browser": "^13.4.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
