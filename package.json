@@ -10,7 +10,7 @@
 
     "start": "nodemon index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
-
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akbelcolak/language-platform.git"
