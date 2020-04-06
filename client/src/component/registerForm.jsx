@@ -1,5 +1,5 @@
 import React from "react";
-import Joi from "joi";
+// import Joi from "joi";
 import {
   getGender,
   getLocation,
@@ -10,6 +10,7 @@ import {
 import Form from "./common/form";
 import { register } from "../services/userService";
 import { toast } from "react-toastify";
+import NavBar from './navBar';
 export default class RegisterationForm extends Form {
   state = {
     data: {
@@ -24,49 +25,48 @@ export default class RegisterationForm extends Form {
       email: "",
       password: "",
       birthdate: ""
-    },
-    errors: {}
+    }
   };
-  schema = {
-    firstName: Joi.string()
-      .required()
-      .max(25)
-      .label("First Name"),
-    lastName: Joi.string()
-      .required()
-      .max(25)
+  // schema = {
+  //   firstName: Joi.string()
+  //     .required()
+  //     .max(25)
+  //     .label("First Name"),
+  //   lastName: Joi.string()
+  //     .required()
+  //     .max(25)
 
-      .label("Last Name"),
-    phoneNumber: Joi.number()
-      .required()
+  //     .label("Last Name"),
+  //   phoneNumber: Joi.number()
+  //     .required()
       
-      .label("Phone Number"),
-    email: Joi.string()
-      .email({ minDomainAtoms: 2 })
-      .label("E-mail"),
-    password: Joi.string()
-      .max(15)
-      .required()
-      .label("Password"),
-    birthdate: Joi.string()
-      .required()
-      .label("BirthDate"),
-    Gender: Joi.string()
-      .required()
-      .label("Gender"),
-    languageToLearn: Joi.string()
-      .required()
-      .label("languageToLearn"),
-    location: Joi.string()
-      .required()
-      .label("Location"),
-    nativeLanguage: Joi.string()
-      .required()
-      .label("nativeLanguage"),
-    skill: Joi.string()
-      .required()
-      .label("skill")
-  };
+  //     .label("Phone Number"),
+  //   email: Joi.string()
+  //     .email({ minDomainAtoms: 2 })
+  //     .label("E-mail"),
+  //   password: Joi.string()
+  //     .max(15)
+  //     .required()
+  //     .label("Password"),
+  //   birthdate: Joi.string()
+  //     .required()
+  //     .label("BirthDate"),
+  //   Gender: Joi.string()
+  //     .required()
+  //     .label("Gender"),
+  //   languageToLearn: Joi.string()
+  //     .required()
+  //     .label("languageToLearn"),
+  //   location: Joi.string()
+  //     .required()
+  //     .label("Location"),
+  //   nativeLanguage: Joi.string()
+  //     .required()
+  //     .label("nativeLanguage"),
+  //   skill: Joi.string()
+  //     .required()
+  //     .label("skill")
+  // };
 
   doSubmit = async () => {
 try{
@@ -76,9 +76,9 @@ try{
   });
 }catch(ex){
   if(ex.response && ex.response.status === 400){
-    const errors = {...this.state.errors}
-    errors.email  = ex.response.data;
-    this.setState({errors})
+  //   const errors = {...this.state.errors}
+  //   errors.email  = ex.response.data;
+  //   this.setState({errors})
   }
   if(ex.response && ex.response.status === 200){
     const errors = {...this.state.errors}
@@ -88,16 +88,20 @@ try{
   };
 
   render() {
-    const { data, errors } = this.state;
+    const { data } = this.state;
     return (
+      <React.Fragment>
+      <NavBar/>
       <div className="form-group">
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("firstName", "First Name")}
           {this.renderInput("lastName", "Last Name")}
           {this.renderInput("password", "Password", "password")}
-          {this.renderInput("birthdate", "Birthdate", "date")}
+          {/* {this.renderInput("birthdate", "Birthdate", "date")} */}
+       
           {this.renderInput("phoneNumber", "Phone Number", "number")}
           {this.renderInput("email", "E-mail", "email")}
+         
           <div className="form-group">
             <label htmlFor="location">Location</label>
             <select
@@ -113,9 +117,9 @@ try{
                 </option>
               ))}
             </select>
-            {errors.location && (
+            {/* {errors.location && (
               <div className="alert alert-danger">{errors.location}</div>
-            )}
+            )} */}
           </div>
 
           <div className="form-group">
@@ -133,9 +137,9 @@ try{
                 </option>
               ))}
             </select>
-            {errors.nativeLanguage && (
+            {/* {errors.nativeLanguage && (
               <div className="alert alert-danger">{errors.nativeLanguage}</div>
-            )}
+            )} */}
           </div>
 
           <div className="form-group">
@@ -153,9 +157,9 @@ try{
                 </option>
               ))}
             </select>
-            {errors.languageToLearn && (
+            {/* {errors.languageToLearn && (
               <div className="alert alert-danger">{errors.languageToLearn}</div>
-            )}
+            )} */}
           </div>
 
           <div className="form-group">
@@ -173,9 +177,9 @@ try{
                 </option>
               ))}
             </select>
-            {errors.skill && (
+            {/* {errors.skill && (
               <div className="alert alert-danger">{errors.skill}</div>
-            )}
+            )} */}
           </div>
           <div className="form-group">
             <label htmlFor="Gender">Gender</label>
@@ -192,14 +196,12 @@ try{
                 </option>
               ))}
             </select>
-            {errors.Gender && (
-              <div className="alert alert-danger">{errors.Gender}</div>
-            )}
+           
           </div>
 
           {this.renderButton("Create User")}
         </form>
-      </div>
+      </div></React.Fragment>
     );
   }
 }

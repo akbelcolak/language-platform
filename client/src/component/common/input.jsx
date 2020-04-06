@@ -15,9 +15,12 @@ const Input = ({ name, label, error, ...rest }) => {
         placeholder={label}
         style={{ width: "300px", padding: "10px", marginTop: "20px" }}
       />
-      {error && <div className="btn btn-danger">{error}</div>}
     </div>
   );
 };
 
 export default Input;
+
+
+
+
