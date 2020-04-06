@@ -1,0 +1,77 @@
+{
+  "name": "profile",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstName": {
+      "type": "String"
+    },
+    "lastName": {
+      "type": "String"
+    },
+    "location": {
+      "type": "String"
+    },
+    "nativeLanguage": {
+      "type": "String"
+    },
+    "languageToLearn": {
+      "type": "String"
+    },
+    "phoneNumber": {
+      "type": "Number"
+    },
+    "Gender": {
+      "type": "String"
+    },
+    "email": {
+      "type": "String"
+    },
+    "password": {
+      "type": "String"
+    },
+    "birthdate": {
+      "type": "Date"
+    },
+    "skill": {
+      "type": "String"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    },
+    "Post": {
+      "type": "hasMany",
+      "model": "Post",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
