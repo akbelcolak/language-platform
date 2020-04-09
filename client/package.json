@@ -11,6 +11,7 @@
     "bootstrap": "^4.4.1",
     "formik": "^2.1.4",
     "formik-material-fields": "0.0.6",
+    "gh-pages": "^2.2.0",
     "joi": "^14.3.1",
     "jquery": "^3.4.1",
     "react": "^16.13.1",
