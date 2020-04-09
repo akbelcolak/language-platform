@@ -8,7 +8,9 @@
     "dev-api": "nodemon language-partner/server/server",
     "dev-client": "cd client && npm run start",
 
+
     "start": "nodemon server.js",
+
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
