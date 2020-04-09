@@ -12,6 +12,7 @@
     "formik": "^2.1.4",
     "formik-material-fields": "0.0.6",
     "joi": "^14.3.1",
+    "jquery": "^3.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",

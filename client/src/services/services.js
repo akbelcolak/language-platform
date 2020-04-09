@@ -1,5 +1,5 @@
 export const Gender = [
-    { id: "xy" },
+    { id: "-" },
     { id: "xy", name: "male" },
     { id: "xx", name: "female" }
   ];
@@ -19,21 +19,16 @@ export const Gender = [
     { id: "5", name: "West-Flanders" }
   ];
 
-  export function getLocation() {
-    return location.filter(g => g);
-  };
+ 
 
   export const nativeLanguage = [
-    { id: "-" },
     { id: "0", name: "Dutch" },
     { id: "1", name: "French" },
     { id: "2", name: "German" },
     { id: "3", name: "English" }
   ];
 
-  export function getNativeLanguage() {
-    return nativeLanguage.filter(g => g);
-  };
+  
 
   export const languageToLearn = [
     { id: "-" },
@@ -48,7 +43,6 @@ export const Gender = [
   };
 
   export const skill = [
-    { id: "-" },
     { id: "0", name: "IT" },
     { id: "1", name: "Health" },
     { id: "2", name: "Law" },

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { ToastContainer } from "react-toastify";
 // import NavBar from "./component/navBar";
-import RegisterationForm from "./component/registerForm";
+import Singup from "./component/Signup";
 import LogInForm from "./component/common/logInForm";
 import Home from "./component/home";
 import AdminWrapper from "./component/admin/AdminWrappers";
@@ -40,7 +40,27 @@ class App extends Component {
             );
           }}
         />
-         <Route path='/admin/posts/:view/:id' exact={true} render={props=>{
+
+          <Route
+          exact={true}
+          path="/signup"
+          render={props =>{
+            if(this.props.auth.token){
+              return(
+                <Redirect to='/home' />
+              )
+            }else{
+              return(
+                <LoginWrapper>
+                    <Singup />
+                  </LoginWrapper>
+              )
+            }
+          }
+          }
+          />
+
+         <Route path='/admin/posts/:view/:id?' exact={true} render={props=>{
           return(
             <div>
             {this.props.auth.token ?  
@@ -94,14 +114,14 @@ class App extends Component {
           }}
         />
         
-        <Route path="/register" component={RegisterationForm} />
       </Router>
     );
   }
 }
 const mapStateToProps = state => {
   return {
-    auth: state.auth
+    auth: state.auth,
+    admin:state.admin
   };
 };
 const mapDispatchToProps = dispatch => {
