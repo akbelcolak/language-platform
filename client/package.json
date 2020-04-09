@@ -25,11 +25,12 @@
     "yup": "^0.28.3"
   },
   "scripts": {
-    "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
-    "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
-    "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test",
-    "test:watch": "SKIP_PREFLIGHT_CHECK=true react-scripts test --watch  --collectCoverage=true",
-    "eject": "SKIP_PREFLIGHT_CHECK=true react-scripts eject"
+    
+    "start": " react-scripts start",
+    "build": " react-scripts build && cp -r build/* ../language-partner/client",
+    "test": "react-scripts test",
+    "test:watch": "react-scripts test --watch  --collectCoverage=true",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

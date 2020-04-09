@@ -21,8 +21,9 @@ class App extends Component {
       <Router>
         <ToastContainer />
 
-        <Route path="/home" component={Home} />
+        <Route path="/home" component={Home}/>
         <Route
+        exact
           path="/admin/users"
           render={props => {
             return (
@@ -42,7 +43,7 @@ class App extends Component {
         />
 
           <Route
-          exact={true}
+          exact
           path="/signup"
           render={props =>{
             if(this.props.auth.token){
@@ -77,7 +78,7 @@ class App extends Component {
         }}/> 
         <Route
           path="/admin/posts"
-          exact={true}
+          exact
           render={props => {
             return (
               <div>
@@ -95,7 +96,7 @@ class App extends Component {
           }}
         />
         <Route
-          exact={true}
+          exact
           path="/admin"
           render={props => {
             return (
@@ -113,7 +114,7 @@ class App extends Component {
             );
           }}
         />
-        
+        <Redirect from="/" exact to="/home" />
       </Router>
     );
   }
