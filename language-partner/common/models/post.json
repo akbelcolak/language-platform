@@ -17,6 +17,9 @@
     },
     "created_at": {
       "type": "date"
+    },
+    "status":{
+      "type":"boolean"
     }
   },
   "validations": [],

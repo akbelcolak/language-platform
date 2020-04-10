@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import * as AdminActions from "../../store/actions/adminAction"
 const columns = [
   { label: "ID", name: "id" },
-  { label: "Email", name: "email" }
+  { label: "Email", name: "email" },
+   {label:'Name',name:'firstName'}
 
 ];
 class Users extends Component {
     componentDidMount(){
-        this.props.getUsers(this.props.auth.admin)
+        this.props.getUsers(this.props.auth.token)
     }
   render() {
       const users = this.props.admin.users;
@@ -17,7 +18,7 @@ class Users extends Component {
       <React.Fragment>
         <h1>Users</h1>
         <TableView
-        columns={columns.map(i=>i.label)}
+        columns={columns}
        rows={users}
        />
       </React.Fragment>
