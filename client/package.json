@@ -25,7 +25,6 @@
     "yup": "^0.28.3"
   },
   "scripts": {
-    
     "start": " react-scripts start",
     "build": " react-scripts build && cp -r build/* ../language-partner/client",
     "test": "react-scripts test",

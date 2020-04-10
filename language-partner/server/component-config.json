@@ -1,3 +1,2 @@
-{
-  "loopback-component-explorer": null
-}
+{ "loopback-component-explorer": {
+  "mountPath": "/__explorer"  }}

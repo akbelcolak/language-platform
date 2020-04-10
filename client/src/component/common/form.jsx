@@ -3,7 +3,7 @@ import Input from "./input";
 // import Joi from "joi";
 class Form extends Component {
   state = {
-    data: {}
+    data: {},
   };
 
   // validate = () => {
@@ -33,7 +33,7 @@ class Form extends Component {
 
     this.setState({ data });
   };
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     // const errors = this.validate();
@@ -43,11 +43,10 @@ class Form extends Component {
     this.doSubmit();
   };
 
- 
   //  renderTest = (name)=>{
   //    const {data} = this.state
   //    return(
-  
+
   //    )
   //  }
   renderInput = (name, label, type = "text") => {
@@ -62,8 +61,8 @@ class Form extends Component {
       />
     );
   };
-  
-  renderButton = label => {
+
+  renderButton = (label) => {
     return (
       <button
         // disabled={this.validate()}

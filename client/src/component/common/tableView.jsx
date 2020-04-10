@@ -30,24 +30,30 @@ class TableView extends Component {
             </TableRow>
           </TableHead>
           <TableBody>
-          {rows?rows.map((row, i)=>{
-            return(
-              <TableRow key={row.id}>
-                {
-                  columns.map((col,colIndex)=>{
-                    return(
-                      <TableCell key={i}>
-                        {col.name ==='id'?
-                        <Link to={`/admin/posts/edit/${row[col.name]}`} component={RouterLink}>{row[col.name]}</Link>
-                        :row[col.name]}
-                      </TableCell>
-                    )
-                  })
-                }
-              </TableRow>
-            )
-          }):null}
-          
+            {rows
+              ? rows.map((row, i) => {
+                  return (
+                    <TableRow key={row.id}>
+                      {columns.map((col, colIndex) => {
+                        return (
+                          <TableCell key={i}>
+                            {col.name === "id" ? (
+                              <Link
+                                to={`/admin/posts/edit/${row[col.name]}`}
+                                component={RouterLink}
+                              >
+                                {row[col.name]}
+                              </Link>
+                            ) : (
+                              row[col.name]
+                            )}
+                          </TableCell>
+                        );
+                      })}
+                    </TableRow>
+                  );
+                })
+              : null}
           </TableBody>
         </Table>
       </TableContainer>
