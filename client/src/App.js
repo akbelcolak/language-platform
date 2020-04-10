@@ -15,21 +15,23 @@ import Posts from "./component/admin/posts";
 import AddPost from "./component/admin/addPost";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Coding from './component/common/Coding';
 
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
-        <NavBar />
-        <main className="container">
+      <BrowserRouter>
+        
+       
           <ToastContainer />
           <Switch>
-            <Route path="/home" component={Home} />
+            <Route  exact={true} path="/" component={Home} />
             <Route
+              exact={true}
               path="/Signup"
               render={(props) => {
                 if (this.props.auth.token) {
-                  return <Redirect to="/home" />;
+                  return <Redirect to="/" />;
                 } else {
                   return (
                     <LoginWrapper>
@@ -44,7 +46,7 @@ class App extends Component {
               render={(props) => {
                 return (
                   <LoginWrapper>
-                    <LogInForm />
+                    <Coding />
                   </LoginWrapper>
                 );
               }}
@@ -124,10 +126,9 @@ class App extends Component {
                 );
               }}
             />
-            <Redirect from="/" to="/home" />
-          </Switch>
-        </main>
-      </React.Fragment>
+            <Redirect to='/' />
+            </Switch>
+        </BrowserRouter>
     );
   }
 }

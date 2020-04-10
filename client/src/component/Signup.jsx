@@ -68,6 +68,7 @@ class Signup extends Component {
     const { classes } = this.props;
     return (
       <React.Fragment>
+        <NavBar />
         <Form
           onSubmit={(e) => {
             e.preventDefault();

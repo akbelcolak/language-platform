@@ -8,13 +8,13 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use((req, res, next) => {
-  console.log(req.method + ': ' + req.path);
+  console.log('path',req.method + ': ' + req.path);
   next();
 });
-app.use('/', express.static(__dirname + '/language-partner/client/'))
+app.use('/', express.static(__dirname + '/language-partner/client'))
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + 'index.html');
+  res.send(__dirname + 'index.html');
 });
-app.use('/api', api);
+app.use('/', api);
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`listening at http://localhost:${port}`));

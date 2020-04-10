@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
     "dev-api": "nodemon language-partner/server/server",
-
+    "build": "cd ./client && cp -r build/* ../language-partner/client",
     "start": "nodemon index.js",
-    "heroku-postbuild":" cp /client &&  react-scripts build "
+    "heroku-postbuild":" cd language-partner/client &&  react-scripts build "
   },
   "repository": {
     "type": "git",
