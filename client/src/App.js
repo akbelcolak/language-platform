@@ -115,6 +115,7 @@ class App extends Component {
             );
           }}
         />
+
       </Router>
     );
   }
@@ -130,3 +131,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+// <Redirect from="/" exact to="/home" /> line 117

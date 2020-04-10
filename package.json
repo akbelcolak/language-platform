@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
     "dev-api": "nodemon language-partner/server/server",
+
     "start": "nodemon server.js",
     "heroku-postbuild": "./language-partner/client"
   },
