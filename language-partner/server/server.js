@@ -3,23 +3,39 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-"use strict";
-
 const loopback = require("loopback");
 const boot = require("loopback-boot");
 
-const app = (module.exports = loopback());
+var https = require('https');
+var sslConfig = require('./ssl-config');
+//...
+var options = {
+  key: sslConfig.privateKey,
+  cert: sslConfig.certificate
+};
+//...
 
+
+
+
+const app = (module.exports = loopback());
 app.start = function() {
   // start the web server
-  return app.listen(function() {
-    app.emit("started");
+  return app.listen(app.get('port'), function() {
     const baseUrl = app.get("url").replace(/\/$/, "");
-    console.log("Web server listening at: %s", baseUrl);
-    if (app.get("loopback-component-explorer")) {
-      const explorerPath = app.get("loopback-component-explorer").mountPath;
-      console.log("Browse your REST API at %s%s", baseUrl, explorerPath);
-    }
+    app.emit('started', baseUrl);
+    console.log('LoopBack server listening @ %s%s', baseUrl, '/');
+
+  // return app.listen(function() {
+  
+  // });
+    // app.emit("started");
+    // const baseUrl = app.get("url").replace(/\/$/, "");
+    // console.log("Web server listening at: %s", baseUrl);
+    // if (app.get("loopback-component-explorer")) {
+    //   const explorerPath = app.get("loopback-component-explorer").mountPath;
+    //   console.log("Browse your REST API at %s%s", baseUrl, explorerPath);
+    // }
   });
 };
 
@@ -29,21 +45,11 @@ boot(app, __dirname, function(err) {
   if (err) throw err;
 
   // start the server if `$ node server.js`
-  if (require.main === module) app.start();
+  if (require.main === module)
+    app.start();
 });
-
 console.log("keys", Object.keys(app.models));
-// app.models.user.find((err, result) => {
-//   if (result.length === 0) {
-//     const user = {
-//       email: "hamdan@domain.com",
-//       password: "20094205"
-//     };
-//     app.models.user.create(user, (err, result) => {
-//       console.log("err", err, "result", result);
-//     });
-//   }
-// });
+
 app.models.user.afterRemote("create", (ctx, user, next) => {
   console.log("get new User :", user);
   app.models.Profile.create(

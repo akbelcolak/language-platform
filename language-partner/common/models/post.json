@@ -18,8 +18,8 @@
     "created_at": {
       "type": "date"
     },
-    "status":{
-      "type":"boolean"
+    "status": {
+      "type": "boolean"
     }
   },
   "validations": [],

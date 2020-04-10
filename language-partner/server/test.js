@@ -49,6 +49,30 @@ const filter = {
 models.user.findById("5e84fd9f078acd08203a02d7",filter,(err, user)=>{
     console.log("error:",err,"User",user)
 })
+// app.start = function() {
+//   // start the web server
+//   return app.listen(function() {
+//     app.emit("started");
+//     const baseUrl = app.get("url").replace(/\/$/, "");
+//     console.log("Web server listening at: %s", baseUrl);
+//     if (app.get("loopback-component-explorer")) {
+//       const explorerPath = app.get("loopback-component-explorer").mountPath;
+//       console.log("Browse your REST API at %s%s", baseUrl, explorerPath);
+//     }
+//   });
+// };
+
+// app.models.user.find((err, result) => {
+//   if (result.length === 0) {
+//     const user = {
+//       email: "hamdan@domain.com",
+//       password: "20094205"
+//     };
+//     app.models.user.create(user, (err, result) => {
+//       console.log("err", err, "result", result);
+//     });
+//   }
+// });
 
 //This method to find exist user by filter Object
 
@@ -80,3 +104,14 @@ models.user.findById("5e84fd9f078acd08203a02d7",filter,(err, user)=>{
 //    console.log("error:",err,"User",user)
 //     user.Posts.destroyAll(date:{gte: new Date('2019-02-04')})
 //})
+
+
+
+// ,
+//   "myFile": {
+//     "name": "myFile",
+//     "connector": "loopback-component-storage",
+//     "provider": "filesystem",
+//     "root": "./server/storage",
+//     "nameConflict": "makeUnique"
+//   }

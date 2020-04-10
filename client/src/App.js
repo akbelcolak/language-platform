@@ -23,7 +23,8 @@ class App extends Component {
 
         <Route path="/home" component={Home}/>
         <Route
-        exact
+                
+
           path="/admin/users"
           render={props => {
             return (
@@ -78,7 +79,7 @@ class App extends Component {
         }}/> 
         <Route
           path="/admin/posts"
-          exact
+          exact={true}
           render={props => {
             return (
               <div>
@@ -114,7 +115,6 @@ class App extends Component {
             );
           }}
         />
-        <Redirect from="/" exact to="/home" />
       </Router>
     );
   }
