@@ -14,46 +14,46 @@
     ]
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "language-platform",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "language-platform",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "language-platform",
     "public": false
   },
   "profile": {
-    "dataSource": "db",
+    "dataSource": "language-platform",
     "public": true
   },
   "user": {
-    "dataSource": "db",
+    "dataSource": "language-platform",
     "public": true
   },
   "CustomAccessToken": {
-    "dataSource": "db",
+    "dataSource": "language-platform",
     "public": true
   },
   "Post": {
-    "dataSource": "db",
+    "dataSource": "language-platform",
     "public": true
   },
   "Category": {
-    "dataSource": "db",
+    "dataSource": "language-platform",
     "public": true
   },
   "PostImage": {
-    "dataSource": "db",
+    "dataSource": "language-platform",
     "public": true
   },
   "ImageFile": {
-    "dataSource": "myFile",
+    "dataSource": "language-platform",
     "public": true
   }
 }

@@ -1,24 +1,24 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default class NavBar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <Link style={{ color: "red" }} className="navbar-brand" to="/home">
+        <NavLink style={{ color: "red" }} className="navbar-brand" to="/home">
           Home
-        </Link>
+        </NavLink>
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <Link className="nav-link" to="/Signup">
-                Singup <span className="sr-only">(current)</span>
-              </Link>
+              <NavLink className="nav-link" to="/Signup">
+                Signup <span className="sr-only">(current)</span>
+              </NavLink>
             </li>
             <li className="nav-item active">
-              <Link className="nav-link" to="/login">
+              <NavLink className="nav-link" to="/login">
                 Login 
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

@@ -1,18 +1,15 @@
 {
-  "db": {
-    "host": "localhost",
+  "language-platform": {
+    "host": "cluster0-shard-00-01-gendn.gcp.mongodb.net",
     "port": 27017,
-    "database": "language-partner",
-    "password": "",
-    "name": "db",
-    "connector": "mongodb",
-    "user": ""
-  },
-  "myFile": {
-    "name": "myFile",
-    "connector": "loopback-component-storage",
-    "provider": "filesystem",
-    "root": "./server/storage",
-    "nameConflict": "makeUnique"
+    "url": "mongodb+srv://admin:20094205@cluster0-gendn.gcp.mongodb.net/test?retryWrites=true&w=majority",
+    "database": "language-platform",
+    "password": "20094205",
+    "name": "language-platform",
+    "user": "admin",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
   }
+  
 }
+
