@@ -12,7 +12,7 @@ export default class NavBar extends Component {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <NavLink className="nav-link" to="/Signup">
-                Singup <span className="sr-only">(current)</span>
+                Signup <span className="sr-only">(current)</span>
               </NavLink>
             </li>
             <li className="nav-item active">

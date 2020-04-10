@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import NavBar from "./component/navBar";
-import Singup from "./component/Signup";
+import Signup from "./component/Signup";
 import LogInForm from "./component/common/logInForm";
 import Home from "./component/home";
 import AdminWrapper from "./component/admin/AdminWrappers";
@@ -33,7 +33,7 @@ class App extends Component {
                 } else {
                   return (
                     <LoginWrapper>
-                      <Singup />
+                      <Signup />
                     </LoginWrapper>
                   );
                 }
@@ -124,9 +124,7 @@ class App extends Component {
                 );
               }}
             />
-            <Route path="/not-found" component={NotFound} />
             <Redirect from="/" to="/home" />
-            <Redirect to="/not-found" />
           </Switch>
         </main>
       </React.Fragment>

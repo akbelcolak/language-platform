@@ -36,7 +36,7 @@ const styles = (theme) => ({
     padding: theme.spacing(3),
   },
 });
-class Singup extends Component {
+class Signup extends Component {
   // componentDidUpdate(props,state){
   //   if (props.isValid === false) {
   //     // when redux state changes post in admin reducer
@@ -317,5 +317,5 @@ export default connect(
 
       props.register(values, props.auth.token);
     },
-  })(withStyles(styles)(Singup))
+  })(withStyles(styles)(Signup))
 );
