@@ -39,16 +39,9 @@
     }
   },
   "files": {
-    "loopback#static": [
-      {
-        "paths": ["/"],
-        "params": "$!../client"
-      },
-      {
-        "paths": ["*"],
+    "loopback#static":{
         "params": "$!../client"
       }
-    ]
   },
   "final": {
     "loopback#urlNotFound": {}

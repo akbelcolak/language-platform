@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
     "dev-api": "nodemon language-partner/server/server",
-    "build": "cd ./client && cp -r build/* ../language-partner/client",
     "start": "nodemon index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
@@ -14,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/akbelcolak/language-platform.git"
   },
-  "keywords": [],
+  "keywords": ["heroku"],
   "author": "",
   "license": "ISC",
   "bugs": {
