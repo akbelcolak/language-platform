@@ -2,13 +2,13 @@
   "name": "language-platform",
   "version": "1.0.0",
   "description": "",
-  "main": "language-partner/server/server.js",
+  "main": " language-partner/server/server.js",
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
     "dev-api": "nodemon language-partner/server/server",
 
-    "start": "nodemon server.js",
-    "heroku-postbuild": "./language-partner/client"
+    "start": "nodemon index.js",
+    "heroku-postbuild":" cp /client &&  react-scripts build "
   },
   "repository": {
     "type": "git",

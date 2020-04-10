@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 });
 app.use('/', express.static(__dirname + '/language-partner/client/'))
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/language-partner/client/index.html');
+  res.sendFile(__dirname + 'index.html');
 });
 app.use('/api', api);
 const port = process.env.PORT || 8080;
