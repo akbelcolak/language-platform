@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { toast } from "react-toastify";
 import NavBar from "./navBar";
-import * as AuthAction from '../store/actions/authActions'
+import * as AuthAction from "../store/actions/authActions";
 import { withRouter } from "react-router-dom";
 import { withFormik, Form } from "formik";
 import { FormikTextField, FormikSelectField } from "formik-material-fields";
@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import * as Yup from "yup";
 import { withStyles, Paper } from "@material-ui/core";
-import Input from './common/input';
+import Input from "./common/input";
 const styles = (theme) => ({
   container: {
     margin: theme.spacing(5),
@@ -18,8 +18,7 @@ const styles = (theme) => ({
     width: "900px",
   },
   Save: {
-   
-    padding: theme.spacing(5)
+    padding: theme.spacing(5),
   },
   formControl: {
     margin: theme.spacing(2),
@@ -37,7 +36,7 @@ const styles = (theme) => ({
     padding: theme.spacing(3),
   },
 });
-class Singup extends Component {  
+class Singup extends Component {
   // componentDidUpdate(props,state){
   //   if (props.isValid === false) {
   //     // when redux state changes post in admin reducer
@@ -45,44 +44,44 @@ class Singup extends Component {
   //     props.setValues(props.values);
   //   }
   // }
-  
-//   handleSubmit = (e) => {
-//     e.preventDefault()
-    
-// console.log('sub')
-//     // try {
-//     //   // await register(this.state.data);
-//     //   toast.success("Student Created !", {
-//     //     position: toast.POSITION.TOP_CENTER,
-//     //   });
-//     // } catch (ex) {
-//     //   // if(ex.response && ex.response.status === 400){
-//     //   // }
-//     //   if (ex.response && ex.response.status === 200) {
-//     //     const errors = { ...this.state.errors };
-//     //     return !errors ? toast.info("Student Created!") : null;
-//     //   }
-//     // }
-//   };
+
+  //   handleSubmit = (e) => {
+  //     e.preventDefault()
+
+  // console.log('sub')
+  //     // try {
+  //     //   // await register(this.state.data);
+  //     //   toast.success("Student Created !", {
+  //     //     position: toast.POSITION.TOP_CENTER,
+  //     //   });
+  //     // } catch (ex) {
+  //     //   // if(ex.response && ex.response.status === 400){
+  //     //   // }
+  //     //   if (ex.response && ex.response.status === 200) {
+  //     //     const errors = { ...this.state.errors };
+  //     //     return !errors ? toast.info("Student Created!") : null;
+  //     //   }
+  //     // }
+  //   };
 
   render() {
     const { classes } = this.props;
     return (
       <React.Fragment>
-        <NavBar />
-        
-        <Form onSubmit={(e)=>{
-          e.preventDefault()
-         }} className={classes.container} >
-         
-            <Paper className={classes.leftSide}>
+        <Form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+          className={classes.container}
+        >
+          <Paper className={classes.leftSide}>
             <h3>Sign up</h3>
             <FormikTextField
               name="firstName"
               label="First Name"
               margin="normal"
-              htmlFor='firstName'
-              id='firstName'
+              htmlFor="firstName"
+              id="firstName"
               onChange={this.props.handleChange}
               value={this.props.values.firstName}
               errors={this.props.errors.firstName}
@@ -92,16 +91,16 @@ class Singup extends Component {
               name="lastName"
               label="Last Name"
               margin="normal"
-              htmlFor='lastName'
-              id='lastName'
+              htmlFor="lastName"
+              id="lastName"
               onChange={this.props.handleChange}
               value={this.props.values.lastName}
               fullWidth
             />
             <FormikTextField
               name="birthday"
-              htmlFor='birthday'
-              id='birthday'
+              htmlFor="birthday"
+              id="birthday"
               label="Birthday"
               margin="normal"
               type="date"
@@ -111,8 +110,8 @@ class Singup extends Component {
             />
             <FormikTextField
               name="phoneNumber"
-              htmlFor='phoneNumber'
-              id='phoneNumber'
+              htmlFor="phoneNumber"
+              id="phoneNumber"
               type="number"
               label="Phone Number"
               margin="normal"
@@ -122,33 +121,32 @@ class Singup extends Component {
             />
             <FormikTextField
               name="email"
-              htmlFor='email'
-              id='email'
+              htmlFor="email"
+              id="email"
               label="E-mail"
               margin="normal"
               onChange={this.props.handleChange}
               value={this.props.values.email}
               fullWidth
             />
-             <Input
-          key={2}
-          type="password"
-          name="password"
-          htmlFor='password'
-              id='password'
-          label="Password"
-          onChange={this.props.handleChange}
-          onBlur={this.props.handleBlur}
-          touched={this.props.touched.password}
-          errors={this.props.errors.password}
-        />
-            
+            <Input
+              key={2}
+              type="password"
+              name="password"
+              htmlFor="password"
+              id="password"
+              label="Password"
+              onChange={this.props.handleChange}
+              onBlur={this.props.handleBlur}
+              touched={this.props.touched.password}
+              errors={this.props.errors.password}
+            />
           </Paper>
           <Paper className={classes.rightSide}>
             <FormikSelectField
               name="Gender"
-              htmlFor='Gender'
-              id='Gender'
+              htmlFor="Gender"
+              id="Gender"
               label="Gender"
               margin="normal"
               onChange={this.props.handleChange}
@@ -161,8 +159,8 @@ class Singup extends Component {
             />
             <FormikSelectField
               name="location"
-              htmlFor='location'
-              id='location'
+              htmlFor="location"
+              id="location"
               label="Location"
               margin="normal"
               onChange={this.props.handleChange}
@@ -179,8 +177,8 @@ class Singup extends Component {
             />
             <FormikSelectField
               name="nativeLanguage"
-              htmlFor='nativeLanguage'
-              id='nativeLanguage'
+              htmlFor="nativeLanguage"
+              id="nativeLanguage"
               label="Native Language"
               margin="normal"
               onChange={this.props.handleChange}
@@ -195,8 +193,8 @@ class Singup extends Component {
             />
             <FormikSelectField
               name="languageToLearn"
-              htmlFor='languageToLearn'
-              id='languageToLearn'
+              htmlFor="languageToLearn"
+              id="languageToLearn"
               label="Language To Learn"
               margin="normal"
               onChange={this.props.handleChange}
@@ -211,8 +209,8 @@ class Singup extends Component {
             />
             <FormikSelectField
               name="skill"
-              htmlFor='skill'
-              id='skill'
+              htmlFor="skill"
+              id="skill"
               label="Skill"
               margin="normal"
               onChange={this.props.handleChange}
@@ -228,15 +226,15 @@ class Singup extends Component {
               ]}
               fullWidth
             />
-             <div className={classes.Save}>
+            <div className={classes.Save}>
               <Button
                 type="submit"
                 disabled={this.props.pristine || this.props.submitting}
                 variant="contained"
                 color="secondary"
-                onClick={(e) => this.props.handleSubmit() }
+                onClick={(e) => this.props.handleSubmit()}
               >
-                 Sign up
+                Sign up
               </Button>
             </div>
           </Paper>
@@ -267,7 +265,7 @@ const mapDispatchToProps = (dispatch) => {
     ) => {
       dispatch(
         AuthAction.register(
-          firstName,
+          firstName
           // lastName,
           // location,
           // nativeLanguage,
@@ -284,41 +282,40 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(
-    withFormik({
-      mapPropsToValues: (props) => ({
-        firstName:'',
-        // lastName: "",
-        // location: "",
-        // nativeLanguage: "",
-        // languageToLearn: "",
-        // phoneNumber: "",
-        // Gender: "",
-        // skill: "",
-        // email: "",
-        // password:"",
-        // birthday: '',
-      }),
-      // validationSchema: Yup.object().shape({
-      //   firstName: Yup.string().required(),
-      //   lastName: Yup.string().required(),
-      //   location: Yup.string().required(),
-      //   nativeLanguage: Yup.string().required(),
-      //   languageToLearn: Yup.string().required(),
-      //   phoneNumber: Yup.string().required(),
-      //   Gender: Yup.string().required(),
-      //   skill: Yup.string().required(),
-      //   email: Yup.string().email("E-mail is invalid").required(),
-      //   password: Yup.string().min(8, "Password at least 8 chars").required(),
-      //   birthday: Yup.date().required(),
-      // }),
-      handleSubmit: (values, { setSubmitting, props }) => {
-        console.log('values',values,'props',props)
-          
-          props.register( values, props.auth.token);
-        
-      
-      },
-})(withStyles(styles)(Singup)));
+  mapStateToProps,
+  mapDispatchToProps
+)(
+  withFormik({
+    mapPropsToValues: (props) => ({
+      firstName: "",
+      // lastName: "",
+      // location: "",
+      // nativeLanguage: "",
+      // languageToLearn: "",
+      // phoneNumber: "",
+      // Gender: "",
+      // skill: "",
+      // email: "",
+      // password:"",
+      // birthday: '',
+    }),
+    // validationSchema: Yup.object().shape({
+    //   firstName: Yup.string().required(),
+    //   lastName: Yup.string().required(),
+    //   location: Yup.string().required(),
+    //   nativeLanguage: Yup.string().required(),
+    //   languageToLearn: Yup.string().required(),
+    //   phoneNumber: Yup.string().required(),
+    //   Gender: Yup.string().required(),
+    //   skill: Yup.string().required(),
+    //   email: Yup.string().email("E-mail is invalid").required(),
+    //   password: Yup.string().min(8, "Password at least 8 chars").required(),
+    //   birthday: Yup.date().required(),
+    // }),
+    handleSubmit: (values, { setSubmitting, props }) => {
+      console.log("values", values, "props", props);
+
+      props.register(values, props.auth.token);
+    },
+  })(withStyles(styles)(Singup))
+);
