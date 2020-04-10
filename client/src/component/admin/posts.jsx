@@ -31,7 +31,7 @@ class Posts extends Component {
     return (
       <div>
         <h1>Posts</h1>
-        <TableView columns={columns.map(i=>i.label)} rows={posts} />
+        <TableView columns={columns} rows={posts} />
         <Fab component={RouterLink} to='/admin/posts/add' color='secondary' aria-label="Add" className={classes.fab}>
             <EditIcon/>
         </Fab>
