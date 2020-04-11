@@ -26,7 +26,8 @@
   },
   "scripts": {
     "start": " react-scripts start",
-    "build": " react-scripts build && cp -r build/* ../language-partner/client",
+    "build": "cd client && npm install && npm run build",
+    
     "test": "react-scripts test",
     "test:watch": "react-scripts test --watch  --collectCoverage=true",
     "eject": "react-scripts eject"
