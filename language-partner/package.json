@@ -7,11 +7,15 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "prestart": "npm run --prefix client build",
     "start": "node .",
-    "posttest": "npm run lint"
+    "start-dev": "concurrently \"nodemon .\" \"npm start --prefix client\"",
+    "postinstall": "npm install --prefix client",
+    "posttest": "npm run lint && nsp check"
   },
   "dependencies": {
     "compression": "^1.0.3",
+    "concurrently": "^5.1.0",
     "cors": "^2.5.2",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
@@ -38,5 +42,7 @@
     "url": ""
   },
   "license": "UNLICENSED",
-  "description": "language-partner"
+  "description": "language-partner",
+  "keywords": [],
+  "author": ""
 }
