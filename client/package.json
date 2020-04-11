@@ -26,13 +26,10 @@
   },
   "scripts": {
     "start": " react-scripts start",
-    "build": " npm install && npm run build",
-    
+    "build": " react-scripts build",
     "test": "react-scripts test",
     "test:watch": "react-scripts test --watch  --collectCoverage=true",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "cd client && npm install && npm run build"
-
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

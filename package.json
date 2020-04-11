@@ -2,10 +2,10 @@
   "name": "language-platform",
   "version": "1.0.0",
   "description": "",
-  "main": " language-partner/server/server.js",
+  "main": " index.js",
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
-    "dev-api": "nodemon language-partner/server/server",
+    "dev-api": "nodemon index.js",
     "start": "nodemon index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
