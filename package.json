@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
     "dev-api": "nodemon index.js",
-    "start": "nodemon index.js",
-    "heroku-postbuild": "webpack"
+    "start": "nodemon index.js"
+    
   },
   "repository": {
     "type": "git",
