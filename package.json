@@ -7,7 +7,7 @@
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
     "dev-api": "nodemon index.js",
     "start": "nodemon index.js",
-    "heroku-postbuild": "echo Skip builds on Heroku"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
