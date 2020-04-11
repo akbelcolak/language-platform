@@ -14,46 +14,46 @@
     ]
   },
   "ACL": {
-    "dataSource": "language-platform",
+    "dataSource": "heroku_gvdn5tg3",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "language-platform",
+    "dataSource": "heroku_gvdn5tg3",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "language-platform",
+    "dataSource": "heroku_gvdn5tg3",
     "public": false
   },
   "profile": {
-    "dataSource": "language-platform",
+    "dataSource": "heroku_gvdn5tg3",
     "public": true
   },
   "user": {
-    "dataSource": "language-platform",
+    "dataSource": "heroku_gvdn5tg3",
     "public": true
   },
   "CustomAccessToken": {
-    "dataSource": "language-platform",
+    "dataSource": "heroku_gvdn5tg3",
     "public": true
   },
   "Post": {
-    "dataSource": "language-platform",
+    "dataSource": "heroku_gvdn5tg3",
     "public": true
   },
   "Category": {
-    "dataSource": "language-platform",
+    "dataSource": "heroku_gvdn5tg3",
     "public": true
   },
   "PostImage": {
-    "dataSource": "language-platform",
+    "dataSource": "heroku_gvdn5tg3",
     "public": true
   },
   "ImageFile": {
-    "dataSource": "language-platform",
+    "dataSource": "heroku_gvdn5tg3",
     "public": true
   }
 }
