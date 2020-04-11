@@ -8,7 +8,7 @@
     "dev-api": "nodemon api/dev.js",
     "dev-client": "cd client && npm run start",
     "start": "nodemon index.js",
-    "build": "cd client  && npm run build"
+    "build": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
