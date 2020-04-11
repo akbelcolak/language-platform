@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": " react-scripts start",
-    "build": "react-scripts build ",
+    "build": "react-scripts build && cp -r build/* ../language-partner/client",
     "test": "react-scripts test",
     "test:watch": "react-scripts test --watch  --collectCoverage=true"
   },
