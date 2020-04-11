@@ -15,9 +15,9 @@ module.exports = function(server) {
   router.get('/status', server.loopback.status());
 
   // 3. Configure '/' to serve the static content
-  // router.get('/', function(req, res) {
-  //   var indexFile = path.resolve(__dirname, '../..', server.get('indexFile'));
-  //   res.sendFile(indexFile);
-  // });
-  // server.use(router);
+  router.get('/', function(req, res) {
+    var indexFile = path.resolve(__dirname, '../..', server.get('indexFile'));
+    res.sendFile(indexFile);
+  });
+  server.use(router);
 };
