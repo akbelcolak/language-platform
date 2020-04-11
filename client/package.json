@@ -29,8 +29,7 @@
     "start": " react-scripts start",
     "build": " react-scripts build && cp -r build/* ../language-partner/client",
     "test": "react-scripts test",
-    "test:watch": "react-scripts test --watch  --collectCoverage=true",
-    "eject": "react-scripts eject"
+    "test:watch": "react-scripts test --watch  --collectCoverage=true"
   },
   "eslintConfig": {
     "extends": "react-app"
