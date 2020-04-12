@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/", api);
+
 app.use(favicon(__dirname + '/language-partner/client/favicon.ico'));
 // the __dirname is the current directory from where the script is running
 app.use(express.static(__dirname));
