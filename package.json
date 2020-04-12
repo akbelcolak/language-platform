@@ -14,7 +14,8 @@
     "type": "git",
     "url": "git+https://github.com/akbelcolak/language-platform.git"
   },
-  "keywords": [ "loopback",
+  "keywords": [
+    "loopback",
     "LoopBack",
     "example",
     "tutorial",
@@ -22,7 +23,8 @@
     "CRUD",
     "models",
     "todo",
-    "HasMany"],
+    "HasMany"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
