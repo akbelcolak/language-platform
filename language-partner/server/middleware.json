@@ -4,6 +4,7 @@
   },
   "initial": {
     "compression": {},
+    "./middleware/tracker": {},
     "helmet#xssFilter": {},
     "helmet#frameguard": {
       "params": {
@@ -42,11 +43,13 @@
   },
   "files": {
     "loopback#static":{
+     
     "params": "$!../client"
   }
 },
   "final": {
-    "loopback#urlNotFound": {}
+    "loopback#urlNotFound": {},
+    "./middleware/log-error": {}
   },
   "final:after": {
     "strong-error-handler": {}

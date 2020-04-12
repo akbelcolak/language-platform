@@ -1,5 +1,6 @@
 import axios from "axios";
-const host = `https://language-partner.herokuapp.com`;
+const port = process.env.PORT
+const host = `https://language-partner.herokuapp.com:${port}`;
 const API = {
   login: (email, password, success) => {
     axios

@@ -127,7 +127,7 @@ class AddPost extends Component {
                 <SaveIcon /> Save
               </Button>
             </div>
-            {this.props.admin.post.PostImage ?<img src={this.props.admin.post.PostImage[0].url} className='post-image'/>:null}
+            {/* {this.props.admin.post.PostImage ?<img src={this.props.admin.post.PostImage[0].url} className='post-image'/>:null} */}
             <div>
               <Button
                 variant="contained"

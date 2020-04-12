@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import NavBar from "./navBar";
 import * as AuthAction from "../store/actions/authActions";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 import { withFormik, Form } from "formik";
 import { FormikTextField, FormikSelectField } from "formik-material-fields";
 import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 import { withStyles, Paper } from "@material-ui/core";
 import Input from "./common/input";
 const styles = (theme) => ({

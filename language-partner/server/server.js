@@ -6,13 +6,16 @@
 const loopback = require("loopback");
 const boot = require("loopback-boot");
 var path = require('path');
-var https = require('https');
-var sslConfig = require('./ssl-config');
-//...
-var options = {
-  key: sslConfig.privateKey,
-  cert: sslConfig.certificate
-};
+
+
+
+// var https = require('https');
+// var sslConfig = require('./ssl-config');
+// //...
+// var options = {
+//   key: sslConfig.privateKey,
+//   cert: sslConfig.certificate
+// };
 //...
 
 
@@ -37,6 +40,7 @@ app.start = function() {
     }
   });
 };
+
 // app.start = function() {
 //   // start the web server
 //   return app.listen(app.get('port'), function() {
