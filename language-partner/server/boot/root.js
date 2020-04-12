@@ -7,7 +7,6 @@
 
 // 1. Import the 'path' package
 var path = require('path');
-
 module.exports = function(server) {
   // 2. Move server status to '/status'
   // Install a `/status` route that returns server status

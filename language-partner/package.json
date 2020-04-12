@@ -7,8 +7,9 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "node .",
-    "posttest": "npm run lint"
+    "start": "nodemon .",
+    "posttest": "npm run lint",
+    "do": "rm -rf node_modules package-lock.json && npm install && npm start"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -18,7 +19,7 @@
     "fs": "0.0.1-security",
     "helmet": "^3.10.0",
     "https": "^1.0.0",
-    "loopback": "^3.22.0",
+    "loopback": "^3.27.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.2.0",
     "loopback-component-storage": "^3.7.0",
