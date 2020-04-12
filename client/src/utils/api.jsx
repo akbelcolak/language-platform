@@ -1,9 +1,9 @@
 import axios from "axios";
-const host = `ds161224.mlab.com`;
+// const host ;
 const API = {
   login: (email, password, success) => {
     axios
-      .post(`${host}/api/users/login`, { email: email, password: password })
+      .post(`/api/users/login`, { email: email, password: password })
       .then((res) => {
         success(res); 
       });
@@ -23,7 +23,7 @@ const API = {
     success
   ) => {
     axios
-      .post(`${host}/api/users`, {
+      .post(`/api/users`, {
         firstName:firstName,
         // lastName: lastName,
         // location: location,
@@ -41,30 +41,30 @@ const API = {
       });
   },
   getUsers: (token, success) => {
-    axios.get(`${host}/api/users?access_token=${token}`).then((res) => {
+    axios.get(`/api/users?access_token=${token}`).then((res) => {
       success(res);
     });
   },
   getPosts: (token, success) => {
-    axios.get(`${host}/api/Posts?access_token=${token}`).then((res) => {
+    axios.get(`/api/Posts?access_token=${token}`).then((res) => {
       success(res);
     });
   },
   addPost: (post, token, success) => {
-    axios.post(`${host}/api/Posts?access_token=${token}`, post).then((res) => {
+    axios.post(`/api/Posts?access_token=${token}`, post).then((res) => {
       success(res);
     });
   },
   updatePost: (post, token, success) => {
     axios
-      .patch(`${host}/api/Posts/${post.id}?access_token=${token}`, post)
+      .patch(`/api/Posts/${post.id}?access_token=${token}`, post)
       .then((res) => {
         success(res);
       });
   },
   getSinglePost: (id, token, success) => {
     axios
-      .post(`${host}/api/Posts/${id}/accessTokens?access_token=${token}`)
+      .post(`/api/Posts/${id}/accessTokens?access_token=${token}`)
       .then((res) => {
         success(res);
       });
@@ -72,7 +72,7 @@ const API = {
   uploadImage: (data, token, postId, userId, success) => {
     axios
       .post(
-        `${host}/api/PostImages/upload?post_id=${postId}&access_token=${token}&user_id=${userId}`,
+        `/api/PostImages/upload?post_id=${postId}&access_token=${token}&user_id=${userId}`,
         data
       )
       .then((res) => {
