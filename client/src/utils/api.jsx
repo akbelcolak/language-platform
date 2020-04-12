@@ -1,5 +1,5 @@
 import axios from "axios";
-const host = `http://localhost:61224`;
+const host = `https://language-partner.herokuapp.com:61224`;
 const API = {
   login: (email, password, success) => {
     axios
