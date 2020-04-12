@@ -1,6 +1,5 @@
 import axios from "axios";
-const port = process.env.PORT
-const host = `ds161224.mlab.com:${port}`;
+const host = `ds161224.mlab.com`;
 const API = {
   login: (email, password, success) => {
     axios
