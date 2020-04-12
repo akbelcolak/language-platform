@@ -35,21 +35,16 @@
   "parse": {},
   "routes": {
     "loopback#rest": {
-      "paths": ["${restApiRoot}"]
+      "paths": [
+        "${restApiRoot}"
+      ]
     }
   },
   "files": {
-    "loopback#static": [
-      {
-        "paths": ["/"],
-        "params": "$!../client"
-      },
-      {
-        "paths": ["*"],
-        "params": "$!../client"
-      }
-    ]
-  },
+    "loopback#static":{
+    "params": "$!../client"
+  }
+},
   "final": {
     "loopback#urlNotFound": {}
   },

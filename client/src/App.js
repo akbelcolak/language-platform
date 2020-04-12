@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import { ToastContainer } from "react-toastify";
-import NavBar from "./component/navBar";
 import Signup from "./component/Signup";
 import LogInForm from "./component/common/logInForm";
 import Home from "./component/home";
@@ -21,8 +20,6 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        
-       
           <ToastContainer />
           <Switch>
             <Route  exact={true} path="/" component={Home} />

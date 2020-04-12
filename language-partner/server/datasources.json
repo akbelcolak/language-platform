@@ -1,15 +1,13 @@
 {
-  "language-platform": {
-    "host": "cluster0-shard-00-01-gendn.gcp.mongodb.net",
-    "port": 27017,
-    "url": "mongodb+srv://admin:20094205@cluster0-gendn.gcp.mongodb.net/test?retryWrites=true&w=majority",
-    "database": "language-platform",
-    "password": "20094205",
-    "name": "language-platform",
-    "user": "admin",
+  "heroku_gvdn5tg3": {
+    "host": "ds161224.mlab.com",
+    "port": 61224,
+    "url": "mongodb://heroku_gvdn5tg3:20094205Hh@ds161224.mlab.com:61224/heroku_gvdn5tg3",
+    "database": "heroku_gvdn5tg3",
+    "password": "20094205Hh",
+    "name": "heroku_gvdn5tg3",
+    "user": "heroku_gvdn5tg3",
     "useNewUrlParser": true,
     "connector": "mongodb"
   }
-  
 }
-

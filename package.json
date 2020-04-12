@@ -2,19 +2,27 @@
   "name": "language-platform",
   "version": "1.0.0",
   "description": "",
-  "main": " language-partner/server/server.js",
+  "main": " index.js",
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
-    "dev-api": "nodemon language-partner/server/server",
-    "build": "cd ./client && cp -r build/* ../language-partner/client",
+    "dev-api": "nodemon api/dev.js",
+    "dev-client": "cd client && npm run start",
     "start": "nodemon index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "build": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akbelcolak/language-platform.git"
   },
-  "keywords": [],
+  "keywords": [ "loopback",
+    "LoopBack",
+    "example",
+    "tutorial",
+    "relations",
+    "CRUD",
+    "models",
+    "todo",
+    "HasMany"],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -22,18 +30,27 @@
   },
   "homepage": "https://github.com/akbelcolak/language-platform#readme",
   "dependencies": {
-    "@material-ui/core": "^4.9.8",
-    "body-parser": "^1.19.0",
+    "compression": "^1.0.3",
+    "concurrently": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "joi-browser": "^13.4.0",
-    "redux-thunk": "^2.3.0"
+    "fs": "0.0.1-security",
+    "helmet": "^3.10.0",
+    "https": "^1.0.0",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback-component-storage": "^3.7.0",
+    "loopback-connector-mongodb": "^5.2.3",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.7",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.0.1",
+    "sharp": "^0.25.2",
+    "strong-error-handler": "^3.0.0"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0",
-    "jest": "^25.2.0",
-    "nodemon": "^2.0.2",
-    "supertest": "^4.0.2"
+    "eslint": "^6.8.0",
+    "eslint-config-loopback": "^8.0.0"
   }
 }

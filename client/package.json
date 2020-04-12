@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.9.10",
     "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -22,14 +23,14 @@
     "react-toastify": "^5.5.0",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
     "yup": "^0.28.3"
   },
   "scripts": {
     "start": " react-scripts start",
-    "build": " react-scripts build && cp -r build/* ../language-partner/client",
+    "build": "react-scripts build && cp -r build/* ../language-partner/client",
     "test": "react-scripts test",
-    "test:watch": "react-scripts test --watch  --collectCoverage=true",
-    "eject": "react-scripts eject"
+    "test:watch": "react-scripts test --watch  --collectCoverage=true"
   },
   "eslintConfig": {
     "extends": "react-app"
