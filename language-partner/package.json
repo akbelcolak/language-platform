@@ -13,13 +13,16 @@
   },
   "dependencies": {
     "compression": "^1.0.3",
+    "loopback-datasource-juggler": "^2.7.0",
     "concurrently": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
     "fs": "0.0.1-security",
     "helmet": "^3.10.0",
     "https": "^1.0.0",
-    "loopback": "^3.27.0",
+    "loopback": "^3.0.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.2.0",
     "loopback-component-storage": "^3.7.0",
@@ -29,7 +32,7 @@
     "path": "^0.12.7",
     "serve-favicon": "^2.0.1",
     "sharp": "^0.25.2",
-    "strong-error-handler": "^3.0.0"
+    "strong-error-handler": "^3.4.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
