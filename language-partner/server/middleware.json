@@ -4,11 +4,16 @@
   },
   "initial": {
     "compression": {},
+    "cors": {
+      "params": {
+        "origin": true,
+        "credentials": true,
+        "maxAge": 86400
+      }
+    },
     "helmet#xssFilter": {},
     "helmet#frameguard": {
-      "params": {
-        "action": "deny"
-      }
+      "params": ["deny"]
     },
     "helmet#hsts": {
       "params": {
@@ -21,13 +26,6 @@
     "helmet#noSniff": {},
     "helmet#noCache": {
       "enabled": false
-    },
-    "cors": {
-      "params": {
-        "origin": true,
-        "credentials": true,
-        "maxAge": 86400
-      }
     }
   },
   "session": {},
@@ -35,16 +33,14 @@
   "parse": {},
   "routes": {
     "loopback#rest": {
-      "paths": [
-        "${restApiRoot}"
-      ]
+      "paths": ["${restApiRoot}"]
     }
   },
   "files": {
-    "loopback#static":{
-    "params": "$!../client"
-  }
-},
+    "loopback#static": {
+      "params": "$! ../client"
+    }
+  },
   "final": {
     "loopback#urlNotFound": {}
   },

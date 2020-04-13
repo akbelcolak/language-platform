@@ -14,17 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/akbelcolak/language-platform.git"
   },
-  "keywords": [
-    "loopback",
-    "LoopBack",
-    "example",
-    "tutorial",
-    "relations",
-    "CRUD",
-    "models",
-    "todo",
-    "HasMany"
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -36,6 +26,8 @@
     "concurrently": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
     "fs": "0.0.1-security",
     "helmet": "^3.10.0",
     "https": "^1.0.0",

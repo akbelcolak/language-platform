@@ -13,6 +13,7 @@
     "formik": "^2.1.4",
     "formik-material-fields": "0.0.6",
     "gh-pages": "^2.2.0",
+    "http-proxy-middleware": "^1.0.3",
     "joi": "^14.3.1",
     "jquery": "^3.4.1",
     "react": "^16.13.1",
@@ -32,6 +33,7 @@
     "test": "react-scripts test",
     "test:watch": "react-scripts test --watch  --collectCoverage=true"
   },
+  "proxy": "http://localhost:61224",
   "eslintConfig": {
     "extends": "react-app"
   },

@@ -1,4 +1,16 @@
-const models = require("./server.js").models;
+// const models = require("./server.js").models;
+
+// app.models.user.find((err, result) => {
+//   if (result.length === 0) {
+//     const user = {
+//       email: "hamdan@domain.com",
+//       password: "20094205"
+//     };
+//     app.models.user.create(user, (err, result) => {
+//       console.log("err", err, "result", result);
+//     });
+//   }
+// });
 
 // This find method and inside it if not found create it (create method)
 
