@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "ACL": {
+    "dataSource": "heroku_gvdn5tg3",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "heroku_gvdn5tg3",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "heroku_gvdn5tg3",
+    "public": false
+  },
+  "profile": {
+    "dataSource": "heroku_gvdn5tg3",
+    "public": true
+  },
+  "user": {
+    "dataSource": "heroku_gvdn5tg3",
+    "public": true
+  },
+  "CustomAccessToken": {
+    "dataSource": "heroku_gvdn5tg3",
+    "public": true
+  },
+  "Post": {
+    "dataSource": "heroku_gvdn5tg3",
+    "public": true
+  },
+  "Category": {
+    "dataSource": "heroku_gvdn5tg3",
+    "public": true
+  },
+  "PostImage": {
+    "dataSource": "heroku_gvdn5tg3",
+    "public": true
+  },
+  "ImageFile": {
+    "dataSource": "heroku_gvdn5tg3",
+    "public": true
+  }
+}

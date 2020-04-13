@@ -1,0 +1,13 @@
+{
+  "heroku_gvdn5tg3": {
+    "host": "ds161224.mlab.com",
+    "port": 61224,
+    "url": "mongodb://hamdan:20094205H@ds161224.mlab.com:61224/heroku_gvdn5tg3",
+    "database": "heroku_gvdn5tg3",
+    "password": "20094205H",
+    "name": "heroku_gvdn5tg3",
+    "user": "hamdan",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}
