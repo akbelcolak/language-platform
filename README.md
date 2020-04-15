@@ -1,21 +1,31 @@
-# LINGUASPHERE
+# LINGUASPHERE [*](https://language-platform.herokuapp.com/)
+
+## Table of contents
+
+1. [Description](#Description)
+2. [Contribute](#contribute)
+3. [Installation](#Installation)
+4. [How to Use](#How-to-Use)
+5. [Technologies](#Technologies)
+6. [Support](#Support)
+7. [License](#License)
 
 ## Description
 
-For users:
+**For users**:
 You were a pharmacist in your country and you moved to Belgium. You have followed dutch courses and now you look for a job. But you want to develope your language skills in the field first. Well, Linguasphere helps you to find a Pharmacist that looks for a volunteer. In our app, you can login, select your skills and find your matches! You will see the contact info of the companies that in need of volunteers.
 
-For developers:
-This is the first fullstack web app that we created as HackYourFuture Students to develope soft skils like teamwork, communication, problem solving and technical skills such as contributing on GitHub, practicing programming languages that we learned, deployment.
+**For developers**:
+This is the first fullstack web app that we created as HackYourFuture Students to develope soft skils like teamwork, communication, problem solving and technical skills such as contributing on GitHub, practicing programming languages, deployment. You can find the details of the code on the [wiki](https://github.com/akbelcolak/language-platform/wiki).
 
-## Contributing
+## Contribute
 
-We have 6 contributers in this repository. Our rules are simple:
+We have 6 contributors in this repository. Our rules are simple:
 
-1. Open an issue to work on or assign yourself on an issue that already exist.
+1. Open an [issue](https://github.com/akbelcolak/language-platform/issues) to work on or assign yourself on an issue that already exists.
 2. Use labels on the issues to point what is that issue about and the urgency of the issue etc.
 3. Work on branches, not in master.
-4. When pull request, at least one of the contributers has to review the changes, and all the conflicts must be solved so that you can merge your branch to master.
+4. When pulling requests, at least one of the contributors has to review the changes, and all the conflicts must be solved so that you can merge your branch to master.
 
 ## Installation
 
@@ -75,3 +85,11 @@ $ git push origin <branch-name>
 * bootstrap 4
 * matrial-ui
 * ES6
+
+## Support
+
+If you are having issues, please let us know. You can find the Q&A page [here in the wiki](https://github.com/akbelcolak/language-platform/wiki/Q&A).
+
+## License
+
+ MIT
