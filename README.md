@@ -6,8 +6,7 @@ For users:
 You were a pharmacist in your country and you moved to Belgium. You have followed dutch courses and now you look for a job. But you want to develope your language skills in the field first. Well, Linguasphere helps you to find a Pharmacist that looks for a volunteer. In our app, you can login, select your skills and find your matches! You will see the contact info of the companies that in need of volunteers.
 
 For developers:
-This is a fullstack web app that we created as a team to develope skilss such as GitHub woteamwork We used latest technologies and aimed 
-root package.json serves for back-end and client file serves for front-end.
+This is the first fullstack web app that we created as HackYourFuture Students to develope soft skils like teamwork, communication, problem solving and technical skills such as contributing on GitHub, practicing programming languages that we learned, deployment.
 
 ## Contributing
 
@@ -25,7 +24,7 @@ To clone and run this application, you'll need Git and Node.js (which comes with
 - Clone this repository
 
 ```ruby
-$ git clone https://github.com/akbelcolak/language-platform
+$ git clone <https://github.com/akbelcolak/language-platform>
 ```
 
 - Go into the repository
