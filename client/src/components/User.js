@@ -71,15 +71,32 @@ class User extends Component {
     }
 }
 User.defaultProps = {
-    name : "Empty - Name",
-    salary : "Empty - Salary",
-    department : "Empty - Department"
+    offer : "Empty - offer",
+    company : "Empty - company",
+    details : "Empty - details",
+    location : "Empty - location",
+    time : "Empty - time",
+    capacity : "Empty - capacity",
+    language : "Empty - language",
+    sector : "Empty - sector",
+    phone : "Empty - phone",
+    extra : "Empty - extra",
+    extra2 : "Empty - extra2"
 }
 
 User.propTypes = {
-    name : PropTypes.string.isRequired,
-    salary : PropTypes.string.isRequired,
-    department : PropTypes.string.isRequired
+    offer : PropTypes.string.isRequired,
+    company : PropTypes.string.isRequired,
+    details : PropTypes.string.isRequired,
+    location : PropTypes.string.isRequired,
+    time : PropTypes.string.isRequired,
+    capacity : PropTypes.string.isRequired,
+    language : PropTypes.string.isRequired,
+    sector : PropTypes.string.isRequired,
+    phone : PropTypes.string.isRequired,
+    extra : PropTypes.string.isRequired,
+    extra2 : PropTypes.string.isRequired
+    
 }
 export default User;
 
