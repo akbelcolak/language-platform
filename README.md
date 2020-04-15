@@ -5,6 +5,10 @@
 For users:
 You were a pharmacist in your country and you moved to Belgium. You have followed dutch courses and now you look for a job. But you want to develope your language skills in the field first. Well, Linguasphere helps you to find a Pharmacist that looks for a volunteer. In our app, you can login, select your skills and find your matches! You will see the contact info of the companies that in need of volunteers.
 
+For developers:
+This is a fullstack web app that we created as a team to develope skilss such as GitHub woteamwork We used latest technologies and aimed 
+root package.json serves for back-end and client file serves for front-end.
+
 ## Contributing
 
 We have 6 contributers in this repository. Our rules are simple:
@@ -71,3 +75,4 @@ $ git push origin <branch-name>
 * Heroku
 * bootstrap 4
 * matrial-ui
+* ES6
