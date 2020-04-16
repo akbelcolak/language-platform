@@ -8,24 +8,11 @@ import { toast } from "react-toastify";
 import NavBar from "./../navBar";
 
 class LogInForm extends Component {
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Submmited");
-  };
-
   render() {
     return (
       <React.Fragment>
         <NavBar />
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            this.props.login(
-              this.props.values.email,
-              this.props.values.password
-            );
-          }}
-        >
+        <form>
           <Input
             key={1}
             type="email"
@@ -94,6 +81,5 @@ export default withFormik({
   handleSubmit: (values, { setSubmitting }) => {
     console.log("submmited", values);
     toast.info(`you are logging in `);
-    // alert(`you are logging in `,JSON.stringify(values));
   },
 })(connect(mapStateToProps, mapDispatchToProps)(LogInForm));
