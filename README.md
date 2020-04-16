@@ -32,45 +32,26 @@ We have 6 contributors in this repository. Our rules are simple:
 To clone and run this application, you'll need Git and Node.js (which comes with npm) installed on your computer. From your command line:
 
 - Clone this repository
-
-```ruby
-$ git clone <https://github.com/akbelcolak/language-platform>
-```
-
+  - `$ git clone <https://github.com/akbelcolak/language-platform>`
 - Go into the repository
-
-```ruby
-$ cd language-platform
-```
-
+  - `$ cd language-platform`
 - Install dependencies
-
-```ruby
-$ npm install
-```
-
+  - `$ npm install`
 - Run the app
-
-```ruby
-$ npm start
-```
-
+  - `$ npm start`
+  
 ## How to Use
 
 - After the installation open a new branch:
-
-```ruby
-$ git checkout -b <branch name>
-```
-
+  ```bash
+  $ git checkout -b <branch name>
+  ```
 - Work on that branch to add new features or fix an issue. Commit and push your changes
-
-```ruby
-$ git add .
-$ git commit -m "added new feature to .."
-$ git push origin <branch-name>
-```
-
+  ```bash
+  $ git add .
+  $ git commit -m "added new feature to .."
+  $ git push origin <branch-name>
+  ```
 - Send a pull request: Once your work on a branch is complete and is ready to be merged into the master branch, [create a pull request on GitHub](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
 ## Technologies
