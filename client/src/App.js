@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import './App.css';
-import Navbar from "./components/Navbar";
-import Navbar2 from "./components/Navbar2";
-import Users from "./components/Users";
-// import User from "./components/User";
+import Company1title from "./components/Company1title";
+import Company2title from "./components/Company2title";
+import Companies from "./components/Companies";
+
 
 
 class App extends Component {
 
   state = {
-    users: [
+    companies: [
       {
       id: 51,
       company: "GAMMA Company",
@@ -74,18 +74,18 @@ class App extends Component {
 
   return (
     <div className="container">
-      <Navbar 
+      <Company1title 
       title= "Linguasphere"
       />
 
       <hr/>
-      <Navbar2 
+      <Company2title 
       title2= "Companies"
       
 
       />
       <hr/>
-      <Users users = {this.state.users}/>
+      <Companies companies = {this.state.companies}/>
 
       
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
 
-class User extends Component {
+class Companylist extends Component {
 
     state = {
         isVisible : false
@@ -67,7 +67,7 @@ class User extends Component {
         )
     }
 }
-User.defaultProps = {
+Companylist.defaultProps = {
     company : "Empty - company",
     details : "Empty - details",
     location : "Empty - location",
@@ -76,7 +76,7 @@ User.defaultProps = {
     extra : "Empty - extra"
 }
 
-User.propTypes = {
+Companylist.propTypes = {
     company : PropTypes.string.isRequired,
     details : PropTypes.string.isRequired,
     location : PropTypes.string.isRequired,
@@ -84,5 +84,5 @@ User.propTypes = {
     language : PropTypes.string.isRequired,
     extra : PropTypes.string.isRequired
 }
-export default User;
+export default Companylist;
 
