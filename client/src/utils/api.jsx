@@ -26,11 +26,11 @@ const API = {
       .post(`/api/users/login`, { email: email, password: password })
       .then((res) => {
         success(res);
-        window.location = "/admin";
+        window.location = "/";
       });
   },
-  register: async(user) => {
-   await axios
+  register: async (user) => {
+    await axios
       .post(`/api/users`, {
         firstName: user.firstName,
         lastName: user.lastName,
@@ -51,7 +51,7 @@ const API = {
           });
           window.location = "/login";
         }
-      })
+      });
   },
   getUsers: (token, success) => {
     axios.get(`/api/users?access_token=${token}`).then((res) => {

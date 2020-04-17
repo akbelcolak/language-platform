@@ -2,17 +2,15 @@ import React, { Component } from "react";
 import { withFormik } from "formik";
 import * as Yup from "yup";
 import { connect } from "react-redux";
-import * as AuthActions from "../../store/actions/authActions";
+import * as AuthActions from "../store/actions/authActions";
 import { toast } from "react-toastify";
-import NavBar from "../navBar";
 import { Link } from "react-router-dom";
-import "./../assests/login.css";
+import "./assests/login.css";
 
 class Login extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar />
         <div className="container">
           <div className="d-flex justify-content-center h-100">
             <div style={{ marginTop: "100px" }} className="card">
@@ -74,18 +72,25 @@ class Login extends Component {
                     <input type="checkbox" />
                     <h5
                       style={{
-                        fontSize: "20px",
                         color: "gray",
-                        marginBottom: "2px",
+                        marginBottom: "21px",
                       }}
                     >
-                      Remember Me
+                      <span
+                        style={{
+                          fontSize: "15px",
+                          position: "absolute",
+                          top: "195px",
+                        }}
+                      >
+                        Remember Me
+                      </span>
                     </h5>
                   </div>
                   <div className="form-group">
                     <button
                       // className="btn float-right login_btn"
-                      style={{marginLeft:'270px',paddingLeft:'15px'}}
+                      style={{ marginLeft: "270px", paddingLeft: "15px" }}
                       className="btn btn-primary"
                     >
                       login

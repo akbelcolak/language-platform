@@ -10,30 +10,28 @@ import API from "./../utils/api";
 
 const styles = (theme) => ({
   container: {
-    margin: theme.spacing(4),
-    marginLeft:'100px',
+    position:'fixed',
+    top:'50px',
     display: "flex",
     flexDirection: "row wrap",
     width: "80%",
+    opacity:'80%'
     
   },
   Save: {
-    padding: theme.spacing(4),
+    position:'fixed',
+    bottom:'140px',
   },
-  formControl: {
-    margin: theme.spacing(1),
-  },
+  
   leftSide: {
-    flex:3,
+    flex:2,
     margin: theme.spacing(2),
     padding: theme.spacing(2),
-    opacity:'0.9'
   },
   rightSide: {
-    flex: 2,
+    flex: 1,
     margin: theme.spacing(2),
     padding: theme.spacing(2),
-    opacity:'0.9'
   },
 });
 
