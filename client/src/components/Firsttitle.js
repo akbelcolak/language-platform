@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-function Navbar(props) {
+function Firsttitle(props) {
 
         return (
             <div style= {{
@@ -13,11 +13,11 @@ function Navbar(props) {
             </div>
         )
     }
-    Navbar.propTypes = {
+    Firsttitle.propTypes = {
         title : PropTypes.string.isRequired
     }
-    Navbar.defaultProps = {
+    Firsttitle.defaultProps = {
         title : "Empty - Linguasphere"
     }
 
-export default Navbar;
+export default Firsttitle;
