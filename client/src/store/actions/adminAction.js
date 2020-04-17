@@ -3,12 +3,13 @@ import API from "../../utils/api";
 export const getUsers = (token) => {
   return (dispatch) => {
     API.getUsers(token, (res) => {
+      console.log("res", res);
       dispatch({
         type: "GOT_USERS",
         payload: res.data,
       });
     });
-    console.log("token", token);
+    
   };
 };
 
@@ -20,7 +21,6 @@ export const getPosts = (token) => {
         payload: res.data,
       });
     });
-    console.log("token2", token);
   };
 };
 
@@ -60,6 +60,16 @@ export const getSinglePost = (id, token) => {
       dispatch({
         type: "GOT_SINGLE_POST",
         payload: res.data,
+      });
+    });
+  };
+};
+export const getSingleUser = (id, token) => {
+  return (dispatch) => {
+    API.getSingleUser(id, token, (res) => {
+      dispatch({
+        type: "GOT_SINGLE_USER",
+        payload: res.data
       });
     });
   };

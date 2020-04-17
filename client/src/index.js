@@ -6,6 +6,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import configureStore from "./store/actions/configureStore";
 import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 
 const { store, persistor } = configureStore();

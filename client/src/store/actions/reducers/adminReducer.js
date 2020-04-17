@@ -4,6 +4,7 @@ const defaultState = {
   users: [],
   posts: [],
   post: {},
+  user:{}
 };
 
 const admin = (state = defaultState, action) => {
@@ -13,6 +14,12 @@ const admin = (state = defaultState, action) => {
         ...state,
         users: action.payload,
       };
+    case "GOT_SINGLE_USER": {
+      return {
+        ...state,
+        user: action.payload,
+      };
+    }
     case "GOT_POSTS":
       return {
         ...state,
@@ -48,14 +55,15 @@ const admin = (state = defaultState, action) => {
         post: action.payload,
       };
     }
-    case "UPLOADED_IMAGE":{
-      return{
+
+    case "UPLOADED_IMAGE": {
+      return {
         ...state,
-        post:{
-          ...state.post,  
-          PostImage:[action.payload]
-        }
-      }
+        post: {
+          ...state.post,
+          PostImage: [action.payload],
+        },
+      };
     }
     default: {
       return state;

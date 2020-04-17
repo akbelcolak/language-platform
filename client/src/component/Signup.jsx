@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import NavBar from "./navBar";
 import { withFormik } from "formik";
 import { FormikTextField, FormikSelectField } from "formik-material-fields";
 import { connect } from "react-redux";
@@ -40,7 +39,6 @@ class Signup extends Component {
     const { classes } = this.props;
     return (
       <React.Fragment>
-        <NavBar />
         <form
           onSubmit={async (e) => {
             e.preventDefault();

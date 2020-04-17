@@ -7,14 +7,20 @@ axios.interceptors.response.use(null, (error) => {
     error.response &&
     error.response.status >= 400 &&
     error.response.status !== 422 &&
+    error.response.status !== 401 &&
     error.response.status < 500;
 
   if (expectedError) {
     logger.log(error);
-    toast.error("An unexpected error occurrred ");
+    toast.error("An unexpected error occurrred,Please try again");
   }
   if (error.response && error.response.status === 422) {
     toast.error("E-mail is registered !", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  }
+  if (error.response && error.response.status === 401) {
+    toast.error(`Invalid Email or Password`, {
       position: toast.POSITION.TOP_CENTER,
     });
   }
@@ -57,6 +63,13 @@ const API = {
     axios.get(`/api/users?access_token=${token}`).then((res) => {
       success(res);
     });
+  },
+  getSingleUser: (id, token, success) => {
+    axios
+      .get(`/api/users/${id}?access_token=${token}`)
+      .then((res) => {
+        success(res);
+      });
   },
   getPosts: (token, success) => {
     axios.get(`/api/Posts?access_token=${token}`).then((res) => {

@@ -1,16 +1,48 @@
-import React from "react";
-
-const Profile = () => {
-  return (
-    <div>
-      <h1 style={{ color: "red", position: "absolute", top: "200px" }}>
-        Hopefully, By Saturday, This page will be ready Completely <br />
-        <span style={{ position: "absolute", left: "100px" }}>
-          ===== Profile Page ===== Loading... =====
-        </span>
-      </h1>
-    </div>
-  );
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as AdminActions from "../store/actions/adminAction";
+// import { Link } from "react-router-dom";
+// import './assests/profile.css'
+class Profile extends Component {
+  async componentDidMount() {
+    if (this.props.auth.token)
+      await this.props.getSingleUser(
+        this.props.auth.user.userId,
+        this.props.auth.token
+      );
+  }
+  render() {
+    const users = this.props.admin.user;
+    console.log("user/profile", users);
+    return (
+      <div>
+        <h1
+          style={{
+            color: "red",
+            position: "absolute",
+            top: "150px",
+            left:'400px'
+          }}
+        >
+         
+          Your Profile Will be here !<br/><hr/>
+          Loading...
+        </h1>
+      </div>
+    );
+  }
+}
+const mapStateToProps = (state) => {
+  return {
+    auth: state.auth,
+    admin: state.admin,
+  };
 };
-
-export default Profile;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getSingleUser: (id, token) => {
+      dispatch(AdminActions.getSingleUser(id, token));
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
