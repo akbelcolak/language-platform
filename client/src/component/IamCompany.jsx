@@ -1,4 +1,5 @@
 import React from "react";
+import { Linter } from "eslint";
 
 export default function IamCompany() {
   return (
