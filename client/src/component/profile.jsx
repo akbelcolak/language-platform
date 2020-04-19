@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import * as AdminActions from "../store/actions/adminAction";
+// import { connect } from "react-redux";
+// import * as AdminActions from "../store/actions/adminAction";
 // import { Link } from "react-router-dom";
 // import './assests/profile.css'
 class Profile extends Component {
-  async componentDidMount() {
-    if (this.props.auth.token)
-      await this.props.getSingleUser(
-        this.props.auth.user.userId,
-        this.props.auth.token
-      );
-  }
+  // async componentDidMount() {
+  //   if (this.props.auth.token)
+  //     await this.props.getSingleUser(
+  //       this.props.auth.user.userId,
+  //       this.props.auth.token
+  //     );
+  // }
   render() {
-    const users = this.props.admin.user;
-    console.log("user/profile", users);
+    // const users = this.props.admin.user;
+    // console.log("user/profile", users);
     return (
       <div>
         <h1
@@ -32,17 +32,19 @@ class Profile extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    auth: state.auth,
-    admin: state.admin,
-  };
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getSingleUser: (id, token) => {
-      dispatch(AdminActions.getSingleUser(id, token));
-    },
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default Profile;
+
+// const mapStateToProps = (state) => {
+//   return {
+//     auth: state.auth,
+//     admin: state.admin,
+//   };
+// };
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     getSingleUser: (id, token) => {
+//       dispatch(AdminActions.getSingleUser(id, token));
+//     },
+//   };
+// };
+// export default connect(mapStateToProps, mapDispatchToProps)(Profile);

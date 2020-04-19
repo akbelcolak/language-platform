@@ -11,13 +11,13 @@ const bodyParser = require("body-parser");
 const api = require("./language-partner/server/server");
 const app = express();
 app.use(cors());
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: true,
+//   })
+// );
 
 // Connecting mongoDB Database
 mongoose.Promise = global.Promise;
@@ -35,8 +35,8 @@ mongoose
     }
   );
 
-app.use((req, res, next) => {
-  console.log("path", req.method + ": " + req.path);
+app.use(async(req, res, next) => {
+ await console.log("path", req.method + ": " + req.path);
   next();
 });
 
@@ -45,9 +45,10 @@ app.use(favicon(__dirname + "/client/build/favicon.ico"));
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "/language-partner/client")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/language-partner/client/index.html"));
+app.get("/", async(req, res) => {
+ await res.sendFile(path.join(__dirname + "/language-partner/client/"+"index.html"));
 });
+
 app.use("/", api);
 
 app.listen(port, () =>

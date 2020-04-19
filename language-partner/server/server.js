@@ -8,6 +8,16 @@
 const loopback = require("loopback");
 const boot = require("loopback-boot");
 const app = (module.exports = loopback());
+const path =require('path')
+// Bootstrap the application, configure models, datasources and middleware.
+// Sub-apps like REST API are mounted via boot scripts.
+
+boot(app, __dirname, function(err) {
+  if (err) throw err;
+
+  // start the server if `$ node server.js`
+  if (require.main === module) app.start();
+});
 
 app.start = function() {
   // start the web server
@@ -21,15 +31,6 @@ app.start = function() {
     }
   });
 };
-
-// Bootstrap the application, configure models, datasources and middleware.
-// Sub-apps like REST API are mounted via boot scripts.
-boot(app, __dirname, function(err) {
-  if (err) throw err;
-
-  // start the server if `$ node server.js`
-  if (require.main === module) app.start();
-});
 
 console.log("keys", Object.keys(app.models));
 
@@ -90,4 +91,15 @@ app.models.Role.find({ where: { name: "editor" } }, (err, roles) => {
       );
     }
   }
+});
+
+// app.use(loopback.static(path.join(__dirname, "../client")));
+// app.use(loopback.static(path.resolve(__dirname, '../client/')));
+// app.use(favicon(__dirname + "../client/favicon.ico"));
+// the __dirname is the current directory from where the script is running
+app.use(loopback.static(__dirname));
+app.use(loopback.static(path.join(__dirname, "../client")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname + "../client/"+"index.html"));
 });

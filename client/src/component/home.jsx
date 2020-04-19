@@ -1,6 +1,14 @@
 import React, { Component } from "react";
-
+import { connect } from "react-redux";
+import * as AdminActions from "../store/actions/adminAction";
 class Home extends Component {
+  async componentDidMount() {
+    if (this.props.auth.token)
+      await this.props.getSingleUser(
+        this.props.auth.user.userId,
+        this.props.auth.token
+      );
+  }
   render() {
     return (
       <div>
@@ -25,5 +33,18 @@ class Home extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    auth: state.auth,
+    admin: state.admin,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getSingleUser: (id, token) => {
+      dispatch(AdminActions.getSingleUser(id, token));
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
-export default Home;

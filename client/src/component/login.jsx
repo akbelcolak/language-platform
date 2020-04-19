@@ -3,7 +3,6 @@ import { withFormik } from "formik";
 import * as Yup from "yup";
 import { connect } from "react-redux";
 import * as AuthActions from "../store/actions/authActions";
-import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import "./assests/login.css";
 
@@ -142,7 +141,7 @@ export default withFormik({
       .required("Password is required "),
   }),
   handleSubmit: (values, { setSubmitting }) => {
-    console.log("submmited", values);
-    toast.info(`you are logging in `);
+    // console.log("submmited", values);
+    // toast.info(`you are logging in `);
   },
 })(connect(mapStateToProps, mapDispatchToProps)(Login));

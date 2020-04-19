@@ -13,9 +13,9 @@ const Logout = () => {
         fontSize: "35px",
         position: "absolute",
         right: "75px",
+        top:'5px',
         color: "lightBlue",
-        display: "flex",
-      }}
+     }}
     >
       <button
         title="Log Out"

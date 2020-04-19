@@ -32,7 +32,7 @@ const API = {
       .post(`/api/users/login`, { email: email, password: password })
       .then((res) => {
         success(res);
-        window.location = "/";
+        window.location = "/home";
       });
   },
   register: async (user) => {
