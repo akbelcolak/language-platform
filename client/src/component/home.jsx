@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+
+import NavBar from "./navBar";
 import { connect } from "react-redux";
 import * as AdminActions from "../store/actions/adminAction";
+
 class Home extends Component {
   async componentDidMount() {
     if (this.props.auth.token)
@@ -12,6 +15,9 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <NavBar />
+        <h1>Welcome to our home page!</h1>
+        
         <h1
           style={{
             color: "red",
@@ -29,6 +35,7 @@ class Home extends Component {
           }}>Welcome Home</span> 
          This Page are going to be ready Soon ...!
         </h1>
+
       </div>
     );
   }
