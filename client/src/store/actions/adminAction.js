@@ -44,6 +44,16 @@ export const updatePost = (post, token) => {
     });
   };
 };
+export const updateUser = (userId, token) => {
+  return (dispatch) => {
+    API.upDateUser(userId, token, (res) => {
+      dispatch({
+        type: "UPDATED_USER",
+        payload: res.data,
+      });
+    });
+  };
+};
 export const uploadImage = (data, token , postId , userId)=>{
   return dispatch=>{
     API.uploadImage(data, token , postId, userId, res =>{

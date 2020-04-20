@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-
-import NavBar from "./navBar";
 import { connect } from "react-redux";
 import * as AdminActions from "../store/actions/adminAction";
 
@@ -15,9 +13,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <NavBar />
-        <h1>Welcome to our home page!</h1>
-        
         <h1
           style={{
             color: "red",
@@ -27,15 +22,18 @@ class Home extends Component {
             margin: "auto",
           }}
         >
-         <span style={{
-            color: "red",
-            position: "absolute",
-            left: "200px",
-            marginTop: "-50px",
-          }}>Welcome Home</span> 
-         This Page are going to be ready Soon ...!
+          <span
+            style={{
+              color: "red",
+              position: "absolute",
+              left: "120px",
+              marginTop: "-50px",
+            }}
+          >
+            <h1>Welcome to our home page!</h1>
+          </span>
+          This Page are going to be ready Soon ...!
         </h1>
-
       </div>
     );
   }
@@ -54,4 +52,3 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-
