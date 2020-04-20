@@ -143,6 +143,10 @@ class Signup extends Component {
                 { value: "Limburg", label: "Limburg" },
                 { value: "Luik(Liege)", label: "Luik(Liege)" },
                 { value: "West-Flanders", label: "West-Flanders" },
+                { value: "East-Flanders", label: "East-Flanders" },
+                { value: "Luxembourg", label: "Luxembourg" },
+                { value: "Namur", label: "Namur" },
+                { value: "Waloon-Brabant", label: "Waloon-Brabant" },
               ]}
               fullWidth
             />
@@ -159,6 +163,17 @@ class Signup extends Component {
                 { label: "French", value: "French" },
                 { label: "German", value: "German" },
                 { label: "English", value: "English" },
+                { label: "Turkish", value: "Turkish" },
+                { label: "Arabic", value: "Arabic" },
+                { label: "Spanish", value: "Spanish" },
+                { label: "Pashto", value: "Pashto" },
+                { label: "Polish", value: "Polish" },
+                { label: "Rushian", value: "Rushian" },
+                { label: "Swahili", value: "Swahili" },
+                { label: "Chinese", value: "Chinese" },
+                { label: "Hindi", value: "Hindi" },
+                { label: "Urdu", value: "Urdu" },
+                { label: "Indonesian", value: "Indonesian" },
               ]}
               fullWidth
             />
@@ -187,13 +202,17 @@ class Signup extends Component {
               onChange={this.props.handleChange}
               value={this.props.values.skill}
               options={[
-                { label: "IT", value: "IT" },
-                { label: "Health", value: "Health" },
-                { label: "Law", value: "Law" },
-                { label: "Sports", value: "Sports" },
-                { label: "Journalism", value: "Journalism" },
+                { label: "Administration", value: "Administration" },
                 { label: "Education", value: "Education" },
+                { label: "Engineering", value: "Engineering" },
+                { label: "Health Care", value: "Health Care" },
+                { label: "IT", value: "IT" },
+                { label: "Law", value: "Law" },
                 { label: "Literature", value: "Literature" },
+                { label: "Media", value: "Media" },
+                { label: "Sports", value: "Sports" },
+                { label: "Salesperson", value: "Salesperson" },
+                
               ]}
               fullWidth
             />
