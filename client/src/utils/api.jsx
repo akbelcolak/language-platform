@@ -59,6 +59,13 @@ const API = {
         }
       });
   },
+  upDateUser: (userId,user, token, success) => {
+    axios
+      .put(`/api/users/${userId}/accessTokens/access_token=${token}`, user)
+      .then((res) => {
+        success(res);
+      });
+  },
   getUsers: (token, success) => {
     axios.get(`/api/users?access_token=${token}`).then((res) => {
       success(res);
