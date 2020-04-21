@@ -19,9 +19,9 @@ boot(app, __dirname, function(err) {
   if (require.main === module) app.start();
 });
 
-app.start = function() {
+app.start =async function() {
   // start the web server
-  return app.listen(function() {
+  return await app.listen(function() {
     app.emit("started");
     const baseUrl = app.get("url").replace(/\/$/, "");
     console.log("Web server listening at: %s", baseUrl);
@@ -38,9 +38,16 @@ app.models.user.afterRemote("create", (ctx, user, next) => {
   console.log("get new User :", user);
   app.models.Profile.create(
     {
-      email: user.email,
-      password: user.password,
-      userId: user.id
+      firstName: user.firstName ,
+      lastName: user.lastName ,
+      location: user.location ,
+      nativeLanguage: user.nativeLanguage ,
+      languageToLearn: user.languageToLearn ,
+      phoneNumber: user.phoneNumber ,
+      Gender: user.Gender ,
+      skill: user.skill ,
+      userId: user.id,
+      birthdate: user.birthdate,
     },
     (err, result) => {
       if (!err && result) {

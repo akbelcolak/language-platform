@@ -59,9 +59,10 @@ const API = {
         }
       });
   },
-  upDateUser: (userId,user, token, success) => {
+  upDateUser: (user, token, success) => {
+    console.log('us/api',user)
     axios
-      .put(`/api/users/${userId}/accessTokens/access_token=${token}`, user)
+      .patch(`/api/users/${user.userId}?access_token=${token}`, user)
       .then((res) => {
         success(res);
       });
@@ -80,6 +81,11 @@ const API = {
   },
   getPosts: (token, success) => {
     axios.get(`/api/Posts?access_token=${token}`).then((res) => {
+      success(res);
+    });
+  },
+  getProfile: (id,token, success) => {
+    axios.get(`/api/Posts/${id}?access_token=${token}`).then((res) => {
       success(res);
     });
   },

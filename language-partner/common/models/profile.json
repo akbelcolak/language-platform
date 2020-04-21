@@ -27,12 +27,6 @@
     "Gender": {
       "type": "String"
     },
-    "email": {
-      "type": "String"
-    },
-    "password": {
-      "type": "String"
-    },
     "birthdate": {
       "type": "Date"
     },
@@ -73,5 +67,22 @@
       "permission": "ALLOW"
     }
   ],
-  "methods": {}
+  "methods": {
+    "prototype.getProfile": {
+      "accepts": [
+        {"arg": "firstName", "type": "String"},
+        {"arg": "lastName", "type": "String"},
+        {"arg": "location", "type": "String"},
+        {"arg": "nativeLanguage", "type": "String"},
+        {"arg": "languageToLearn", "type": "String"},
+        {"arg": "phoneNumber", "type": "String"},
+        {"arg": "Gender", "type": "String"},
+        {"arg": "skill", "type": "String"},
+        {"arg": "birthdate", "type": "Date"}
+      ],
+      "returns": { "arg": "data", "type": "hasOne", "root": true },
+      "http": { "verb": "get", "path": "/profile" },
+      "accessScopes": ["read", "read:users"]
+    }
+  }
 }

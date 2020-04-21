@@ -21,6 +21,7 @@ componentDidMount() {
   render() {
     const user = this.props.auth.token;
     const users = this.props.admin.user;
+    console.log('user/nav',users)
     return (
       <nav className="navbar navbar-expand-lg navbar-dark ">
         <div className="collapse navbar-collapse" id="navbarText">
@@ -142,7 +143,6 @@ componentDidMount() {
                       title="Profile"
                     />
                   </NavLink>
-
                 <Logout />
               </React.Fragment>
             )}

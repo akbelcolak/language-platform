@@ -4,7 +4,7 @@ const defaultState = {
   users: [],
   posts: [],
   post: {},
-  user: {},
+  user:{}
 };
 
 const admin = (state = defaultState, action) => {
@@ -25,6 +25,11 @@ const admin = (state = defaultState, action) => {
         ...state,
         posts: action.payload,
       };
+      case "GOT_PROFILE":
+        return {
+          ...state,
+          posts: action.payload,
+        };
     case "POST_ADDED":
       return {
         ...state,
@@ -53,6 +58,8 @@ const admin = (state = defaultState, action) => {
       return {
         ...state,
         user: action.payload,
+        
+     
       };
     }
     case "GOT_SINGLE_POST": {
