@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
-
+import "./component/assests/home.css";
 const { store, persistor } = configureStore();
 ReactDOM.render(
   <Provider store={store}>

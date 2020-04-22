@@ -1,8 +1,7 @@
 {
   "initial:before": {
   },
-  "initial": {"./middleware/tracker": {}
-  },
+  "initial": {},
   "session": {},
   "auth": {},
   "parse": {},
@@ -15,9 +14,7 @@
   },
   "files": {
     "loopback#static": {
-        "name": "client",
-        "paths": ["/client"],
-        "params": "$!../client"
+       "params": "$!../client"
     }
 },
   "final": {

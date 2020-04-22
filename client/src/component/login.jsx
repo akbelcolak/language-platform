@@ -78,7 +78,7 @@ class Login extends Component {
               <button className="btn btn-primary">login</button>
             </div>
             <div className='footer'>
-                <h5 className='q'><strong>Don't have an account ?</strong> <hr className='hr'/>
+                <h5 className='q'><span className='qq'>Don't have an account ?</span> <hr className='hr'/>
                 <div className='a'>
                   <Link className='b' to='/signup'><strong >Sign up</strong></Link>
                 </div>
