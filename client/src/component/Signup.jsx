@@ -232,7 +232,7 @@ class Signup extends Component {
             </div>
           </Paper>
         </form>
-
+</div>
       </React.Fragment>
     );
   }

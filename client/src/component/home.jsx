@@ -29,21 +29,21 @@ class Home extends Component {
                   <Link  to='/' className="list-group-item active sec">
                     <br />
                     <br />
-                    <span className="glyphicon glyphicon-home"></span> Home
+                    <span className="glyphicon glyphicon-home sec"></span> Home
                     <br />
                     <br />
                   </Link>
                   <Link to='/' className="list-group-item sec">
                     <br />
                     <br />
-                    <span className="glyphicon glyphicon-tasks"></span> Student
+                    <span className="glyphicon glyphicon-tasks sec"></span> Student
                     <br />
                     <br />
                   </Link>
                   <Link to='/' className="list-group-item sec">
                     <br />
                     <br />
-                    <span className="glyphicon glyphicon-transfer"></span>{" "}
+                    <span className="glyphicon glyphicon-transfer sec"></span>{" "}
                     Company
                     <br />
                     <br />
