@@ -8,16 +8,16 @@ let mongoose = require("mongoose");
 let dbConfig = require("./db");
 const port = process.env.PORT || 61224;
 const bodyParser = require("body-parser");
-const api = require("./language-partner/server/server");
+const api = require("./language-partner/server/server.js");
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
-// app.use(
-//   bodyParser.urlencoded({
-//     extended: true,
-//   })
-// );
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 
 // Connecting mongoDB Database
 mongoose.Promise = global.Promise;

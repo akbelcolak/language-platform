@@ -29,7 +29,7 @@ class App extends Component {
           <Switch>
         
             <Route
-              path="/home"
+              path="/"
               render={(props) => {
                 return (
                  
@@ -49,13 +49,13 @@ class App extends Component {
               render={(props) => {
                 return (
                   <div>
-                    {this.props.auth.token ? <Profile /> : <Redirect to="/home" />}
+                    {this.props.auth.token ? <Profile /> : <Redirect to="/" />}
                   </div>
                 );
               }}
             />
             <Route path="/not-found" component={NotFound} />
-            <Redirect from="/" exact to="/home" />
+            <Redirect from="/" exact to="/" />
             <Redirect to="/not-found" />
           </Switch>
         </main>
