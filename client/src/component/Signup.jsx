@@ -71,147 +71,168 @@ class Signup extends Component {
                 fullWidth
               />
 
-              <FormikTextField
-                name="phoneNumber"
-                htmlFor="phoneNumber"
-                id="phoneNumber"
-                type="number"
-                label="Phone Number"
-                margin="normal"
-                onChange={this.props.handleChange}
-                value={this.props.values.phoneNumber}
-                fullWidth
-              />
-              <FormikTextField
-                name="email"
-                htmlFor="email"
-                id="email"
-                label="E-mail"
-                margin="normal"
-                onChange={this.props.handleChange}
-                value={this.props.values.email}
-                fullWidth
-              />
-              <FormikTextField
-                type="password"
-                name="password"
-                htmlFor="password"
-                id="password"
-                label="Password"
-                margin="normal"
-                onChange={this.props.handleChange}
-                onBlur={this.props.handleBlur}
-                fullWidth
-              />
-              <FormikTextField
-                className={classes.birth}
-                type="date"
-                name="birthdate"
-                htmlFor="birthdate"
-                id="birthdate"
-                margin="normal"
-                onChange={this.props.handleChange}
-                value={this.props.values.birthdate}
-                fullWidth
-              />
-            </Paper>
-            <Paper className={classes.rightSide}>
-              <FormikSelectField
-                name="Gender"
-                htmlFor="Gender"
-                id="Gender"
-                label="Gender"
-                margin="normal"
-                onChange={this.props.handleChange}
-                value={this.props.values.Gender}
-                options={[
-                  { label: "male", value: "male" },
-                  { label: "female", value: "female" },
-                ]}
-                fullWidth
-              />
-              <FormikSelectField
-                name="location"
-                htmlFor="location"
-                id="location"
-                label="Location"
-                margin="normal"
-                onChange={this.props.handleChange}
-                value={this.props.values.location}
-                options={[
-                  { value: "Brussels", label: "Brussels" },
-                  { value: "Flamish-Brabant", label: "Flamish-Brabant" },
-                  { value: "Antwerp", label: "Antwerp" },
-                  { value: "Limburg", label: "Limburg" },
-                  { value: "Luik(Liege)", label: "Luik(Liege)" },
-                  { value: "West-Flanders", label: "West-Flanders" },
-                ]}
-                fullWidth
-              />
-              <FormikSelectField
-                name="nativeLanguage"
-                htmlFor="nativeLanguage"
-                id="nativeLanguage"
-                label="Native Language"
-                margin="normal"
-                onChange={this.props.handleChange}
-                value={this.props.values.nativeLanguage}
-                options={[
-                  { label: "Dutch", value: "Dutch" },
-                  { label: "French", value: "French" },
-                  { label: "German", value: "German" },
-                  { label: "English", value: "English" },
-                ]}
-                fullWidth
-              />
-              <FormikSelectField
-                name="languageToLearn"
-                htmlFor="languageToLearn"
-                id="languageToLearn"
-                label="Language To Learn"
-                margin="normal"
-                onChange={this.props.handleChange}
-                value={this.props.values.languageToLearn}
-                options={[
-                  { label: "Dutch", value: "Dutch" },
-                  { label: "French", value: "French" },
-                  { label: "German", value: "German" },
-                  { label: "English", value: "English" },
-                ]}
-                fullWidth
-              />
-              <FormikSelectField
-                name="skill"
-                htmlFor="skill"
-                id="skill"
-                label="Skill"
-                margin="normal"
-                onChange={this.props.handleChange}
-                value={this.props.values.skill}
-                options={[
-                  { label: "IT", value: "IT" },
-                  { label: "Health", value: "Health" },
-                  { label: "Law", value: "Law" },
-                  { label: "Sports", value: "Sports" },
-                  { label: "Journalism", value: "Journalism" },
-                  { label: "Education", value: "Education" },
-                  { label: "Literature", value: "Literature" },
-                ]}
-                fullWidth
-              />
-              <div className={classes.Save}>
-                <Button
-                  type="submit"
-                  disabled={this.props.pristine || this.props.submitting}
-                  variant="contained"
-                  color="secondary"
-                >
-                  Sign up
-                </Button>
-              </div>
-            </Paper>
-          </form>
-        </div>
+
+            <FormikTextField
+              name="phoneNumber"
+              htmlFor="phoneNumber"
+              id="phoneNumber"
+              type="number"
+              label="Phone Number"
+              margin="normal"
+              onChange={this.props.handleChange}
+              value={this.props.values.phoneNumber}
+              fullWidth
+            />
+            <FormikTextField
+              name="email"
+              htmlFor="email"
+              id="email"
+              label="E-mail"
+              margin="normal"
+              onChange={this.props.handleChange}
+              value={this.props.values.email}
+              fullWidth
+            />
+            <FormikTextField
+              type="password"
+              name="password"
+              htmlFor="password"
+              id="password"
+              label="Password"
+              margin="normal"
+              onChange={this.props.handleChange}
+              onBlur={this.props.handleBlur}
+              fullWidth
+            />
+            <FormikTextField
+              className={classes.birth}
+              type="date"
+              name="birthdate"
+              htmlFor="birthdate"
+              id="birthdate"
+              margin="normal"
+              onChange={this.props.handleChange}
+              value={this.props.values.birthdate}
+              fullWidth
+            />
+          </Paper>
+          <Paper className={classes.rightSide}>
+            <FormikSelectField
+              name="Gender"
+              htmlFor="Gender"
+              id="Gender"
+              label="Gender"
+              margin="normal"
+              onChange={this.props.handleChange}
+              value={this.props.values.Gender}
+              options={[
+                { label: "male", value: "male" },
+                { label: "female", value: "female" },
+              ]}
+              fullWidth
+            />
+            <FormikSelectField
+              name="location"
+              htmlFor="location"
+              id="location"
+              label="Location"
+              margin="normal"
+              onChange={this.props.handleChange}
+              value={this.props.values.location}
+              options={[
+                { value: "Brussels", label: "Brussels" },
+                { value: "Flamish-Brabant", label: "Flamish-Brabant" },
+                { value: "Antwerp", label: "Antwerp" },
+                { value: "Limburg", label: "Limburg" },
+                { value: "Luik(Liege)", label: "Luik(Liege)" },
+                { value: "West-Flanders", label: "West-Flanders" },
+                { value: "East-Flanders", label: "East-Flanders" },
+                { value: "Luxembourg", label: "Luxembourg" },
+                { value: "Namur", label: "Namur" },
+                { value: "Waloon-Brabant", label: "Waloon-Brabant" },
+              ]}
+              fullWidth
+            />
+            <FormikSelectField
+              name="nativeLanguage"
+              htmlFor="nativeLanguage"
+              id="nativeLanguage"
+              label="Native Language"
+              margin="normal"
+              onChange={this.props.handleChange}
+              value={this.props.values.nativeLanguage}
+              options={[
+                { label: "Dutch", value: "Dutch" },
+                { label: "French", value: "French" },
+                { label: "German", value: "German" },
+                { label: "English", value: "English" },
+                { label: "Turkish", value: "Turkish" },
+                { label: "Arabic", value: "Arabic" },
+                { label: "Spanish", value: "Spanish" },
+                { label: "Pashto", value: "Pashto" },
+                { label: "Polish", value: "Polish" },
+                { label: "Rushian", value: "Rushian" },
+                { label: "Swahili", value: "Swahili" },
+                { label: "Chinese", value: "Chinese" },
+                { label: "Hindi", value: "Hindi" },
+                { label: "Urdu", value: "Urdu" },
+                { label: "Indonesian", value: "Indonesian" },
+              ]}
+              fullWidth
+            />
+            <FormikSelectField
+              name="languageToLearn"
+              htmlFor="languageToLearn"
+              id="languageToLearn"
+              label="Language To Learn"
+              margin="normal"
+              onChange={this.props.handleChange}
+              value={this.props.values.languageToLearn}
+              options={[
+                { label: "Dutch", value: "Dutch" },
+                { label: "French", value: "French" },
+                { label: "German", value: "German" },
+                { label: "English", value: "English" },
+              ]}
+              fullWidth
+            />
+            <FormikSelectField
+              name="skill"
+              htmlFor="skill"
+              id="skill"
+              label="Skill"
+              margin="normal"
+              onChange={this.props.handleChange}
+              value={this.props.values.skill}
+              options={[
+                { label: "Administration", value: "Administration" },
+                { label: "Education", value: "Education" },
+                { label: "Engineering", value: "Engineering" },
+                { label: "Health Care", value: "Health Care" },
+                { label: "IT", value: "IT" },
+                { label: "Law", value: "Law" },
+                { label: "Literature", value: "Literature" },
+                { label: "Media", value: "Media" },
+                { label: "Sports", value: "Sports" },
+                { label: "Salesperson", value: "Salesperson" },
+                
+              ]}
+              fullWidth
+            />
+            <div className={classes.Save}>
+              <Button
+                type="submit"
+                disabled={this.props.pristine || this.props.submitting }
+                variant="contained"
+                color="secondary"
+                style={{marginLeft:'220px'}}
+              >
+                Sign up
+              </Button>
+            </div>
+          </Paper>
+        </form>
+
       </React.Fragment>
     );
   }
