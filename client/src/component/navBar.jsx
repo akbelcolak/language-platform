@@ -74,7 +74,7 @@ componentDidMount() {
                     display: "flex",
                   }}
                   className="nav-link"
-                  to="/home"
+                  to="/"
                 >
                   <i className="fa fa-home" aria-hidden="true" title="Home" />
                 </NavLink>
@@ -83,7 +83,7 @@ componentDidMount() {
             {user && (
               <React.Fragment>
                <NavLink
-                    to={`/home/${users.id}`}
+                    // to={`/home/${users.id}`}
                     className="nav-link"
                     style={{
                       fontWeight: "bold",
@@ -126,7 +126,7 @@ componentDidMount() {
                   </span>
                 </div>
                 <NavLink
-                    to={`/profile/${users.id}`}
+                    // to={`/profile/${users.id}`}
                     className="nav-link"
                     style={{
                       fontWeight: "bold",
