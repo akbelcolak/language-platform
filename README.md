@@ -12,6 +12,8 @@
 **For users**:
 You were a pharmacist in your country and you moved to Belgium. You have followed dutch courses and now you look for a job. But you want to develope your language skills in the field first. Well, Linguasphere helps you to find a Pharmacist that looks for a volunteer. In our app, you can make an account to select your skills and find your matches! You will see the contact info of the companies that in need of volunteers.
 
+Our target group is mostly immigrants and all language learners that (might have a work background in their homeland) searching for jobs here in Belgium. We aimed to meet the employers who in need of skillful people with the skillful language lerners that in need of employed.
+
 You can click LinguaSphere logo to see our web app.
 
 **For developers**:
