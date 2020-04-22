@@ -3,9 +3,9 @@
 ## Table of contents
 
 1. [Description](#Description)
-3. [Installation](#Installation)
-6. [Support](#Support)
-7. [License](#License)
+2. [Installation](#Installation)
+3. [Support](#Support)
+4. [License](#License)
 
 ## Description
 
