@@ -45,8 +45,8 @@ app.use(favicon(__dirname + "/client/build/favicon.ico"));
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "/language-partner/client")));
 
-app.get("/*", async(req, res) => {
- await res.sendFile(path.join(__dirname + "/language-partner/client/index.html"));
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/language-partner/client/index.html"));
 });
 
 app.use("/", api);
