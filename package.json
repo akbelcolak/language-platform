@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
     "dev-api": "nodemon api/dev.js",
+    "build": "cd client && npm install && npm run build",
     "dev-client": "cd client && npm run start",
     "start": "node index.js",
-    "build": "cd client && npm install && npm run build",
     "do": "cd language-partner && rm -r client/*"
   },
   "repository": {
