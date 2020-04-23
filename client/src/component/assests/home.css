@@ -1,4 +1,4 @@
-body{
+body {
   font-family: sans-serif;
 }
 .fullscreen_bg {
@@ -13,14 +13,14 @@ body{
   background-repeat: repeat;
 }
 /*  bhoechie tab */
-div.bhoechie-tab-container{
+div.bhoechie-tab-container {
   z-index: 10;
   position: absolute;
   background-color: #ffffff;
   padding: 0 !important;
   border-radius: 4px;
   -moz-border-radius: 4px;
-  border:1px solid #ddd;
+  border: 1px solid #ddd;
   margin-top: 80px;
   margin-left: 190px;
   width: 720px;
@@ -28,7 +28,7 @@ div.bhoechie-tab-container{
   opacity: 0.77;
   filter: alpha(opacity=77);
 }
-div.bhoechie-tab-container:hover{
+div.bhoechie-tab-container:hover {
   opacity: 0.97;
   filter: alpha(opacity=97);
 }
@@ -37,12 +37,10 @@ div.bhoechie-tab-menu {
   padding-right: 0;
   padding-left: 0;
   padding-bottom: 0;
-
 }
 
 div.bhoechie-tab-menu ul.list-group {
   margin-bottom: 0;
- 
 }
 
 div.bhoechie-tab-menu ul.list-group > a {
@@ -81,27 +79,38 @@ div.bhoechie-tab-menu ul.list-group > a.active:after {
   border-left: 10px solid #5a55a3;
 }
 
-div.bhoechie-tab-content{
+div.bhoechie-tab-content {
   position: absolute;
   top: -480px;
-  left:110px;
+  left: 110px;
   /* background-color: #ffffff;
   padding-left: 120px;
   padding-top: -300px; */
-  
 }
 
 div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
   display: none;
- 
 }
-.list-group-item.sec:hover  {
-
+.list-group-item.sec:hover {
   background-color: rgb(209, 209, 216);
   text-decoration-line: none;
 }
-.heads{
-  position: relative;
-  top:100px;
-  left:100px;
+.heads {
+  position: absolute;
+  top: 100px;
+  left: 90px;
+}
+.nav img{
+  position: absolute;
+  top:25px;
+  left: 10px;
+  border-radius:0px 50px 0px 50px;
+  border: 1px solid rgb(64, 90, 150);
+  opacity: 0.85;
+    filter: alpha(opacity=85);
+}
+.nav img:hover{
+  opacity: 0.97;
+  filter: alpha(opacity=97);
+  background-color: grey;
 }

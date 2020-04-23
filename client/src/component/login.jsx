@@ -11,8 +11,8 @@ class Login extends Component {
     return (
       <React.Fragment>
         <div className="card-body">
-          <div className='head'>
-           <h4>Welcome Student !</h4> 
+          <div className="head">
+            <h4>Welcome Student !</h4>
           </div>
           <form
             onSubmit={(e) => {
@@ -27,7 +27,6 @@ class Login extends Component {
               <div className="input-group-prepend">
                 <span className="input-group-text">
                   <i
-                    style={{ marginLeft: "5px" }}
                     className="fa fa-user-circle-o"
                     aria-hidden="true"
                   ></i>
@@ -63,30 +62,26 @@ class Login extends Component {
             </div>
             <div className="row align-items-center remember">
               <input type="checkbox" />
-              <h5
-                style={{
-                  color: "gray",
-                  marginBottom: "21px",
-                }}
-              >
+              <h5>
                 <span className="rem">Remember Me</span>
               </h5>
             </div>
-            
-            <div className="form-group">
-              
+
+            <div className="form-group sec">
               <button className="btn btn-primary">login</button>
             </div>
-            <div className='footer'>
-                <h5 className='q'><span className='qq'>Don't have an account ?</span> <hr className='hr'/>
-                <div className='a'>
-                  <Link className='b' to='/signup'><strong >Sign up</strong></Link>
+            <div className="footer">
+              <h5 className="q">
+                <span className="qq">Don't have an account ?</span>{" "}
+                <hr className="hr" />
+                <div className="a">
+                  <Link className="b" to="/signup">
+                    Sign up
+                  </Link>
                 </div>
-                
-                </h5>
+              </h5>
             </div>
           </form>
-          
         </div>
       </React.Fragment>
     );
