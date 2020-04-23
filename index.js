@@ -39,21 +39,15 @@ app.use(async(req, res, next) => {
  await console.log("path", req.method + ": " + req.path);
   next();
 });
-var router = express.Router();
-app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, "/language-partner/client")));
-router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "/language-partner/client/index.html"));
-});
 
-app.use("/*",router);
 app.use(favicon(__dirname + "/client/build/favicon.ico"));
 // the __dirname is the current directory from where the script is running
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, "/language-partner/client")));
 
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname + "/language-partner/client/index.html"));
-// });
+app.get("/*", async(req, res) => {
+ await res.sendFile(path.join(__dirname + "/language-partner/client/index.html"));
+});
 
 app.use("/", api);
 
