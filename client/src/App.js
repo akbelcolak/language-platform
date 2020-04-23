@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import NavBar from "./component/NavBar";
+import NavBar from "./component/navBar";
 import { ToastContainer } from "react-toastify";
 import Signup from "./component/Signup";
 import Home from "./component/home";
@@ -9,7 +9,6 @@ import Profile from "./component/profile";
 // import NotFound from "./component/notFound";
 import "react-toastify/dist/ReactToastify.css";
 import "font-awesome/css/font-awesome.css";
-import "./component/assests/home.css";
 class App extends Component {
   componentDidMount() {
     return window.localStorage.clear();

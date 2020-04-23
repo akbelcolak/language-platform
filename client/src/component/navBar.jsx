@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as AdminActions from "../store/actions/adminAction";
-import "./assests/nav.css";
 import Logout from "./logout";
+import "./assests/nav.css";
 
 /* global $ */
 class NavBar extends Component {
@@ -69,7 +69,7 @@ class NavBar extends Component {
           <div className="icons">
             <i className="fa fa-user" aria-hidden="true" title="Profile"></i>
             <i className="fa fa-home" aria-hidden="true" title="Home"></i>
-            <i className="fa fa-sign-out" aria-hidden="true"></i>
+            <i className="fa fa-sign-out" aria-hidden="true" title="signOut"></i>
           </div>
           <div className="section">
             <div className="cover1">
