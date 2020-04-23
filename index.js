@@ -35,21 +35,21 @@ mongoose
     }
   );
 
-app.use(async(req, res, next) => {
- await console.log("path", req.method + ": " + req.path);
-  next();
-});
+// app.use(async(req, res, next) => {
+//  await console.log("path", req.method + ": " + req.path);
+//   next();
+// });
 
 app.use(favicon(__dirname + "/client/build/favicon.ico"));
 // the __dirname is the current directory from where the script is running
 app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, "/language-partner/client")));
+app.use(express.static(path.join(__dirname, "/client/build")));
 
-app.get("/*", async(req, res) => {
- await res.sendFile(path.join(__dirname + "/language-partner/client/index.html"));
+app.get("*", async(req, res) => {
+ await res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
-app.use("/*", api);
+app.use("/", api);
 
 app.listen(port, () =>
   console.log(

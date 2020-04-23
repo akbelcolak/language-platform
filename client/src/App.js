@@ -20,6 +20,9 @@ import "react-toastify/dist/ReactToastify.css";
 import "font-awesome/css/font-awesome.css";
 import "./component/assests/home.css";
 class App extends Component {
+  componentDidMount(){
+     return window.localStorage.clear();
+  }
   render() {
     // console.log("props", this.props.auth.user);
     return (
@@ -29,17 +32,11 @@ class App extends Component {
         <ToastContainer />
         <div className="container">
         <Switch>
-        <Route exact={true} path='/signup' render={(props)=>{
-          if(!this.props.auth.token){
-            return <Signup/>
-          }else{
-            return <Login/>
-          }
-        }}/>
+        <Route path='/home' component={Home}/>
+        <Route path='/signup' component={Signup}/>
         <Route path='/login' component={Login}/>
         <Route path='/profile' component={Profile}/>
-        <Route path='/' component={Home}/>
-        <Redirect  to='/'/>
+        <Redirect from='/' to='/home'/>
         </Switch>
            </div>
            </div>
