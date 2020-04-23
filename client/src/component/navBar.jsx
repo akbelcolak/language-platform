@@ -74,7 +74,7 @@ componentDidMount() {
                     display: "flex",
                   }}
                   className="nav-link"
-                  to="/"
+                  to="/home"
                 >
                   <i className="fa fa-home" aria-hidden="true" title="Home" />
                 </NavLink>

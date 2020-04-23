@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Route, Redirect, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
+
 import { connect } from "react-redux";
 import NavBar from "./component/navBar";
 import { ToastContainer } from "react-toastify";
@@ -8,9 +9,9 @@ import Signup from "./component/Signup";
 import Home from "./component/home";
 // import AdminWrapper from "./component/admin/AdminWrappers";
 // import Dashboard from "./component/admin/Dashboard";
-// import Login from "./component/login";
+import Login from "./component/login";
 import Profile from "./component/profile";
-import NotFound from "./component/notFound";
+// import NotFound from "./component/notFound";
 // import LoginWrapper from "./component/common/loginWrapper";
 // import Users from "./component/admin/users";
 // import Posts from "./component/admin/posts";
@@ -22,44 +23,27 @@ class App extends Component {
   render() {
     // console.log("props", this.props.auth.user);
     return (
-      <React.Fragment>
+      
+      <div>
         <NavBar />
         <ToastContainer />
-        <main className="container">
-          <Switch>
-        
-            <Route
-              path="/"
-              render={(props) => {
-                return (
-                 
-                  <div>
-                    {this.props.auth.token ? (
-                      <Redirect to="/profile" />
-                    ) : (
-                      <Home />
-                    )}
-                  </div>
-                );
-              }}
-            />
-            <Route path="/Signup" component={Signup} />
-            <Route
-              path="/profile/:id"
-              render={(props) => {
-                return (
-                  <div>
-                    {this.props.auth.token ? <Profile /> : <Redirect to="/" />}
-                  </div>
-                );
-              }}
-            />
-            <Route path="/not-found" component={NotFound} />
-            <Redirect from="/" exact to="/" />
-            <Redirect to="/not-found" />
-          </Switch>
-        </main>
-      </React.Fragment>
+        <div className="container">
+        <Switch>
+        <Route exact={true} path='/signup' render={(props)=>{
+          if(!this.props.auth.token){
+            return <Signup/>
+          }else{
+            return <Login/>
+          }
+        }}/>
+        <Route path='/login' component={Login}/>
+        <Route path='/profile' component={Profile}/>
+        <Route path='/' component={Home}/>
+        <Redirect  to='/'/>
+        </Switch>
+           </div>
+           </div>
+     
     );
   }
 }
