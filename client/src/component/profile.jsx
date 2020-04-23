@@ -44,21 +44,17 @@ const styles = (theme) => ({
   },
 });
 class Profile extends Component {
-  // componentDidMount() {
-  //   try{
-  //     if (this.props.match.params.id)
-  //      this.props.updateUser(
-  //       this.props.values,this.props.auth.token
-  //     );
-  //   }catch(ex){
-  //   }
-
-  // }
+  componentDidMount() {
+    try {
+      if (this.props.match.params.id)
+        this.props.updateUser(this.props.values, this.props.auth.token);
+    } catch (ex) {}
+  }
 
   render() {
     const users = this.props.admin.user;
     const { classes } = this.props;
-    const birthDate = users.birthdate.slice(0, 10);
+    // const birthDate = users.birthdate.slice(0, 10);
     return (
       <div className="container">
         <div className="well span8 offset2">
@@ -76,8 +72,7 @@ class Profile extends Component {
                 <div className="panel-body">
                   <div className="row-fluid">
                     <div className="f1">
-                      <div className="span3">
-                      </div>
+                      <div className="span3"></div>
                       <div className="span6">
                         <br className="br" />
                         <table className="table table-condensed table-responsive table-user-information">
@@ -92,7 +87,7 @@ class Profile extends Component {
                             </tr>
                             <tr className="flash">
                               <td>Birthdate:</td>
-                              <td>{birthDate}</td>
+                              {/* <td>{birthDate}</td> */}
                             </tr>
                             <tr className="flash">
                               <td>Topics</td>
@@ -133,8 +128,12 @@ class Profile extends Component {
                       <Form
                         onSubmit={async (e) => {
                           e.preventDefault();
-                          // await AP.updateUser(this.props.admin.user.userId,this.props.values,this.props.auth.token)
-                          // console.log('props',this.props)
+                          await this.props.updateUser(
+                            this.props.admin.user.userId,
+                            this.props.values,
+                            this.props.auth.token
+                          );
+                          console.log("props", this.props);
                           console.log("set");
                         }}
                         className={classes.container}
@@ -300,7 +299,6 @@ class Profile extends Component {
             </div>
           </div>
         </div>
-      
       </div>
     );
   }
@@ -331,7 +329,7 @@ export default withRouter(
         phoneNumber: props.admin.user.phoneNumber || "",
         Gender: props.admin.user.Gender || "",
         skill: props.admin.user.skill || "",
-        birthdate: props.admin.user.birthdate.slice(0, 10),
+        // birthdate: props.admin.user.birthdate.slice(0, 10)||'',
       }),
       validationSchema: Yup.object().shape({
         firstName: Yup.string().required(),

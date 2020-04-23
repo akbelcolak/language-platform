@@ -10,7 +10,6 @@ import Profile from "./component/profile";
 import "react-toastify/dist/ReactToastify.css";
 import "font-awesome/css/font-awesome.css";
 import "./component/assests/home.css";
-import Logout from "./component/logout";
 class App extends Component {
   componentDidMount() {
     return window.localStorage.clear();
@@ -26,16 +25,8 @@ class App extends Component {
               <Route path="/profile" component={Profile} />
             )}
             <Route
-              path="/home"
-              render={(props) => {
-                if (this.props.auth.token) {
-                  return <Route path="/test" component={Profile} />;
-                } else {
-                  return <Route path="/home" component={Home} />;
-                }
-              }}
+              path="/home" component={Home}
             />
-            <Route path="/logout" component={Logout} />
             <Route path="/signup" component={Signup} />
             <Redirect from="/" to="/home" />
           </Switch>

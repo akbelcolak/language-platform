@@ -6,7 +6,6 @@ import "./assests/nav.css";
 import Logout from "./logout";
 
 /* global $ */
-
 class NavBar extends Component {
   componentDidMount() {
     $(".menu").click(function () {
@@ -25,10 +24,10 @@ class NavBar extends Component {
   render() {
     const user = this.props.auth.token;
     const users = this.props.admin.user;
-    const logout = ()=>{
-      window.localStorage.clear()
-      window.location = "/"
-    }
+    const logout = () => {
+      window.localStorage.clear();
+      window.location = "/";
+    };
     return (
       <React.Fragment>
         <div
@@ -69,7 +68,7 @@ class NavBar extends Component {
           </div>
           <div className="icons">
             <i className="fa fa-user" aria-hidden="true" title="Profile"></i>
-            <i className="fa fa-home" aria-hidden="true" title="Home" ></i>
+            <i className="fa fa-home" aria-hidden="true" title="Home"></i>
             <i className="fa fa-sign-out" aria-hidden="true"></i>
           </div>
           <div className="section">
@@ -80,7 +79,13 @@ class NavBar extends Component {
             </div>
           </div>
           <Link className="section-static top" to="/profile"></Link>
-          <Link className="section-static bottom" onClick={()=>logout()} to="/home"><Logout/></Link>
+          <Link
+            className="section-static bottom"
+            onClick={() => logout()}
+            to="/home"
+          >
+            <Logout />
+          </Link>
         </div>
       </React.Fragment>
     );
