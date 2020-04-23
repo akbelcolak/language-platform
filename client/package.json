@@ -25,6 +25,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-fontawesome": "^1.7.1",
+    "react-load-script": "0.0.6",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
@@ -36,10 +37,11 @@
   },
   "scripts": {
     "start": " react-scripts start",
-    "build": "react-scripts build && cp -r build/* ../language-partner/client",
+    "build": "react-scripts build ",
     "test": "react-scripts test",
     "test:watch": "react-scripts test --watch  --collectCoverage=true",
-    "do": "rm -rf node_modules package-lock.json && npm install && npm start"
+    "do": "rm -rf node_modules package-lock.json && npm install && npm start",
+    "api": "react-scripts build && cp -r build/* ../language-partner/client"
   },
   "proxy": "http://localhost:61224",
   "eslintConfig": {
@@ -56,5 +58,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "css-loader": "^3.5.2"
   }
 }

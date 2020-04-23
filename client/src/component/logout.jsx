@@ -8,14 +8,7 @@ const Logout = () => {
         window.location = "/";
         
       }}
-      style={{
-        fontWeight: "bold",
-        fontSize: "35px",
-        position: "absolute",
-        right: "75px",
-        top:'5px',
-        color: "lightBlue",
-     }}
+    
     >
       <button
         title="Log Out"

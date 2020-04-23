@@ -23,6 +23,16 @@ export const getPosts = (token) => {
     });
   };
 };
+export const getProfile = (token) => {
+  return (dispatch) => {
+    API.getProfile(token, (res) => {
+      dispatch({
+        type: "GOT_PROFILE",
+        payload: res.data,
+      });
+    });
+  };
+};
 
 export const addPost = (post, token) => {
   return (dispatch) => {

@@ -1,0 +1,25 @@
+.fullscreen_bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url("https://cdn.glitch.com/323a5f71-5800-4689-9792-0fed771775d5%2FTheatre%20Actor%20Portfolio%20Website.jpg?v=1587505643994");
+    background-repeat: repeat;
+  }
+
+  .nav img{
+    position: absolute;
+    margin-bottom:35px;
+    border-radius:0px 50px 0px 50px;
+    border: 1px solid rgb(64, 90, 150);
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+  }
+  .nav img:hover{
+    opacity: 0.97;
+    filter: alpha(opacity=97);
+    background-color: grey;
+  }

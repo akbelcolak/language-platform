@@ -77,11 +77,6 @@ class Profile extends Component {
                   <div className="row-fluid">
                     <div className="f1">
                       <div className="span3">
-                        <img
-                          className="img-circle"
-                          src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
-                          alt="User Pic"
-                        />
                       </div>
                       <div className="span6">
                         <br className="br" />

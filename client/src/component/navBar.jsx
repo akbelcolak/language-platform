@@ -1,158 +1,92 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as AdminActions from "../store/actions/adminAction";
-import { NavLink } from "react-router-dom";
+import "./assests/nav.css";
 import Logout from "./logout";
 
-class NavBar extends Component {
+/* global $ */
 
-componentDidMount() {
-    try{
+class NavBar extends Component {
+  componentDidMount() {
+    $(".menu").click(function () {
+      $(this).parent().toggleClass("close");
+    });
+    try {
       if (this.props.auth.token)
-       this.props.getSingleUser(
-        this.props.auth.user.userId,
-        this.props.auth.token
-      );
-    }catch(ex){
-      console.log('ex',ex)
+        this.props.getSingleUser(
+          this.props.auth.user.userId,
+          this.props.auth.token
+        );
+    } catch (ex) {
+      console.log("ex", ex);
     }
-   
   }
   render() {
     const user = this.props.auth.token;
     const users = this.props.admin.user;
+    const logout = ()=>{
+      window.localStorage.clear()
+      window.location = "/"
+    }
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark ">
-        <div className="collapse navbar-collapse" id="navbarText">
-          <div className="navbar-nav mr-auto">
-            {!user && (
-              <React.Fragment>
-                <NavLink
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "35px",
-                    position: "absolute",
-                    right: "90px",
-                    color: "lightGreen",
-                    display: "flex",
-                  }}
-                  className="nav-link"
-                  to="/login"
-                >
-                  <i
-                    className="fa fa-sign-in"
-                    aria-hidden="true"
-                    title="Login"
-                  />
-                </NavLink>
-                <NavLink
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "35px",
-                    position: "absolute",
-                    right: "40px",
-                    color: "lightGreen",
-                    display: "flex",
-                  }}
-                  className="nav-link"
-                  to="/Signup"
-                >
-                  <i
-                    className="fa fa-user-plus"
-                    aria-hidden="true"
-                    title="Signup"
-                  />
-                </NavLink>
-                <NavLink
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "35px",
-                    position: "absolute",
-                    right: "0px",
-                    color: "purple",
-                    display: "flex",
-                  }}
-                  className="nav-link"
-                  to="/home"
-                >
-                  <i className="fa fa-home" aria-hidden="true" title="Home" />
-                </NavLink>
-              </React.Fragment>
-            )}
-            {user && (
-              <React.Fragment>
-               <NavLink
-                    to={`/home/${users.id}`}
-                    className="nav-link"
-                    style={{
-                      fontWeight: "bold",
-                      fontSize: "35px",
-                      position: "absolute",
-                      right: "0px",
-                      color: "purple",
-                      display: "flex",
-                    }}
-                  >
-                    <i className="fa fa-home" aria-hidden="true" title="Home" />
-                  </NavLink>
-                <div
-                  style={{
-                    position: "absolute",
-                    left: "20px",
-                  }}
-                >
-                  <span
-                    style={{
-                      color: "red",
-                      fontSize: "20px",
-                      position: "absolute",
-                      left: "0px",
-                      top: "10px",
-                    }}
-                  >
-                    Welcome&nbsp;<span style={{ color: "yellow" }}>!</span>
-                  </span>
-                  <span
-                    style={{
-                      color: "gray",
-                      fontSize: "20px",
-                      position: "absolute",
-                      left: "100px",
-                      top: "10px",
-                    }}
-                  >
-                    <p key={user}>{this.props.admin.user.firstName}</p>
-                  </span>
-                </div>
-                <NavLink
-                    to={`/profile/${users.id}`}
-                    className="nav-link"
-                    style={{
-                      fontWeight: "bold",
-                      fontSize: "35px",
-                      position: "absolute",
-                      right: "40px",
-                      color: "lightBlue",
-                      display: "flex",
-                    }}
-                  >
-                    <i
-                      className="fa fa-user"
-                      aria-hidden="true"
-                      title="Profile"
-                    />
-                  </NavLink>
-
-                <Logout />
-              </React.Fragment>
-            )}
-          </div>
+      <React.Fragment>
+        <div
+          style={{
+            position: "absolute",
+            right: "300px",
+          }}
+        >
+          <span
+            style={{
+              color: "red",
+              fontSize: "20px",
+              position: "absolute",
+              right: "0px",
+              top: "10px",
+            }}
+          >
+            Welcome&nbsp;<span style={{ color: "yellow" }}>!</span>
+          </span>
+          <span
+            style={{
+              color: "gray",
+              fontSize: "20px",
+              position: "absolute",
+              left: "10px",
+              top: "10px",
+            }}
+          >
+            <p key={user}>{users.firstName}</p>
+          </span>
         </div>
-      </nav>
+
+        <div className="base">
+          <div className="menu">
+            <div className="icon">
+              <div className="bar"></div>
+            </div>
+          </div>
+          <div className="icons">
+            <i className="fa fa-user" aria-hidden="true" title="Profile"></i>
+            <i className="fa fa-home" aria-hidden="true" title="Home" ></i>
+            <i className="fa fa-sign-out" aria-hidden="true"></i>
+          </div>
+          <div className="section">
+            <div className="cover1">
+              <div className="cover2">
+                <Link className="content" to="/"></Link>
+              </div>
+            </div>
+          </div>
+          <Link className="section-static top" to="/profile"></Link>
+          <Link className="section-static bottom" onClick={()=>logout()} to="/home"><Logout/></Link>
+        </div>
+      </React.Fragment>
     );
   }
-  
 }
+
 const mapStateToProps = (state) => {
   return {
     auth: state.auth,
