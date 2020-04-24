@@ -5,7 +5,10 @@ import { connect } from "react-redux";
 import * as AdminActions from "../store/actions/adminAction";
 // import { NavLink } from "react-router-dom";
 // import Logout from "./logout";
+import IamCompany from "./IamCompany";
 import "./assests/home.css";
+
+
 /* global $ */
 
 class Home extends Component {
@@ -108,7 +111,7 @@ class Home extends Component {
 
                     <div className="bhoechie-tab-content">
                       <center>
-                        <h3 className="heads">Company content </h3>
+                        <h3><IamCompany /> </h3>
                       </center>
                     </div>
                     <div className="bhoechie-tab-content">
