@@ -10,103 +10,78 @@ class Login extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container">
-          <div className="d-flex justify-content-center h-100">
-            <div style={{ marginTop: "100px" }} className="card">
-              <div className="card-header">
-                <h3>Sign In</h3>
-              </div>
-              <div className="card-body">
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    this.props.login(
-                      this.props.values.email,
-                      this.props.values.password
-                    );
-                  }}
-                >
-                  <div className="input-group form-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">
-                        <i
-                          style={{ marginLeft: "5px" }}
-                          className="fa fa-user-circle-o"
-                          aria-hidden="true"
-                        ></i>
-                      </span>
-                    </div>
-                    <input
-                      className="form-control"
-                      key={1}
-                      type="email"
-                      name="email"
-                      placeholder="username"
-                      onChange={this.props.handleChange}
-                      onBlur={this.props.handleBlur}
-                      errors={this.props.errors.email}
-                    />
-                  </div>
-                  <div className="input-group form-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">
-                        <i
-                          style={{ marginLeft: "5px" }}
-                          className="fa fa-key"
-                        />
-                      </span>
-                    </div>
-                    <input
-                      key={2}
-                      className="form-control"
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                      onChange={this.props.handleChange}
-                      onBlur={this.props.handleBlur}
-                      errors={this.props.errors.password}
-                    />
-                  </div>
-                  <div className="row align-items-center remember">
-                    <input type="checkbox" />
-                    <h5
-                      style={{
-                        color: "gray",
-                        marginBottom: "21px",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: "15px",
-                          position: "absolute",
-                          top: "195px",
-                        }}
-                      >
-                        Remember Me
-                      </span>
-                    </h5>
-                  </div>
-                  <div className="form-group">
-                    <button
-                      // className="btn float-right login_btn"
-                      style={{ marginLeft: "270px", paddingLeft: "15px" }}
-                      className="btn btn-primary"
-                    >
-                      login
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <div className="card-footer">
-                <div className="d-flex justify-content-center links">
-                  Don't have an account?<Link to="/signup">Sign Up</Link>
-                </div>
-                <div className="d-flex justify-content-center">
-                  <Link to="#">Forgot your password?</Link>
-                </div>
-              </div>
-            </div>
+        <div className="card-body">
+          <div className="head">
+            <h4>Welcome Student !</h4>
           </div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              this.props.login(
+                this.props.values.email,
+                this.props.values.password
+              );
+            }}
+          >
+            <div className="input-group form-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text">
+                  <i
+                    className="fa fa-user-circle-o"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </div>
+              <input
+                className="form-control"
+                key={1}
+                type="email"
+                name="email"
+                placeholder="username"
+                onChange={this.props.handleChange}
+                onBlur={this.props.handleBlur}
+                errors={this.props.errors.email}
+              />
+            </div>
+            <div className="input-group form-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text">
+                  <i style={{ marginLeft: "5px" }} className="fa fa-key" />
+                </span>
+              </div>
+              <input
+                key={2}
+                className="form-control"
+                type="password"
+                name="password"
+                placeholder="Password"
+                onChange={this.props.handleChange}
+                onBlur={this.props.handleBlur}
+                errors={this.props.errors.password}
+              />
+            </div>
+            <div className="row align-items-center remember">
+              <input type="checkbox" />
+              <h5>
+                <span className="rem">Remember Me</span>
+              </h5>
+            </div>
+
+            <div className="form-group sec">
+              <button className="btn btn-primary">login</button>
+            </div>
+            <div className="footer">
+              <h5 className="q">
+                <span className="qq">Don't have an account ?</span>{" "}
+                <hr className="hr" />
+                <div className="a">
+                  <Link className="b" to="/signup">
+                    Sign up
+                  </Link>
+                </div>
+              </h5>
+            </div>
+          </form>
         </div>
       </React.Fragment>
     );

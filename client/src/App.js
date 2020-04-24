@@ -1,141 +1,46 @@
 import React, { Component } from "react";
-import { Route, Redirect, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import NavBar from "./component/navBar";
+import NavBar from "./component/NavBar";
 import { ToastContainer } from "react-toastify";
 import Signup from "./component/Signup";
-// import LogInForm from "./component/common/logInForm";
 import Home from "./component/home";
-import AdminWrapper from "./component/admin/AdminWrappers";
-import Dashboard from "./component/admin/Dashboard";
-import Login from "./component/login";
 import Profile from "./component/profile";
-import NotFound from "./component/notFound";
-import LoginWrapper from "./component/common/loginWrapper";
-import Users from "./component/admin/users";
-import Posts from "./component/admin/posts";
-import AddPost from "./component/admin/addPost";
+// import NotFound from "./component/notFound";
 import "react-toastify/dist/ReactToastify.css";
 import "font-awesome/css/font-awesome.css";
-
+import "./component/assests/home.css";
+import Logout from "./component/logout";
 class App extends Component {
+  componentDidMount() {
+    return window.localStorage.clear();
+  }
   render() {
-    // console.log("props", this.props.auth.user);
     return (
-      <React.Fragment>
-        <NavBar />
+      <div>
+        {this.props.auth.token && <NavBar />}
         <ToastContainer />
-        <main className="container">
+        <div className="container">
           <Switch>
-            <Route path="/Signup" component={Signup} />
+            {this.props.auth.token && (
+              <Route path="/profile" component={Profile} />
+            )}
             <Route
-              path="/login"
+              path="/home"
               render={(props) => {
-                return (
-                  <div>
-                    {this.props.auth.token ? (
-                      <Redirect to="/" />
-                    ) : (
-                      <LoginWrapper>
-                        <Login />
-                      </LoginWrapper>
-                    )}
-                  </div>
-                );
+                if (this.props.auth.token) {
+                  return <Route path="/test" component={Profile} />;
+                } else {
+                  return <Route path="/home" component={Home} />;
+                }
               }}
             />
-            <Route path="/home/:id?" component={Home} />
-            <Route
-              path="/profile/:id?"
-              render={(props) => {
-                return (
-                  <div>
-                    {this.props.auth.token ? <Profile /> : <Redirect to="/" />}
-                  </div>
-                );
-              }}
-            />
-
-           
-            <Route
-              path="/admin"
-              render={(props) => {
-                return (
-                  <div>
-                    {this.props.auth.token ? (
-                      <AdminWrapper>
-                        <Dashboard />
-                      </AdminWrapper>
-                    ) : (
-                      <LoginWrapper>
-                        <Login />
-                      </LoginWrapper>
-                    )}
-                  </div>
-                );
-              }}
-            />
-            <Route
-              exact={true}
-              path="/admin/posts"
-              render={(props) => {
-                return (
-                  <div>
-                    {this.props.auth.token ? (
-                      <AdminWrapper>
-                        <Posts />
-                      </AdminWrapper>
-                    ) : (
-                      <LoginWrapper>
-                        <Login />
-                      </LoginWrapper>
-                    )}
-                  </div>
-                );
-              }}
-            />
-            <Route
-              path="/admin/users"
-              render={(props) => {
-                return (
-                  <div>
-                    {this.props.auth.token ? (
-                      <AdminWrapper>
-                        <Users />
-                      </AdminWrapper>
-                    ) : (
-                      <LoginWrapper>
-                        <Login />
-                      </LoginWrapper>
-                    )}
-                  </div>
-                );
-              }}
-            />
-            <Route
-              path="/admin/posts/:view/:id?"
-              render={(props) => {
-                return (
-                  <div>
-                    {this.props.auth.token ? (
-                      <AdminWrapper>
-                        <AddPost />
-                      </AdminWrapper>
-                    ) : (
-                      <LoginWrapper>
-                        <Login />
-                      </LoginWrapper>
-                    )}
-                  </div>
-                );
-              }}
-            />
-            <Route path="/not-found" component={NotFound} />
-            <Redirect from="/" exact to="/home" />
-            <Redirect to="/not-found" />
+            <Route path="/logout" component={Logout} />
+            <Route path="/signup" component={Signup} />
+            <Redirect from="/" to="/home" />
           </Switch>
-        </main>
-      </React.Fragment>
+        </div>
+      </div>
     );
   }
 }

@@ -97,5 +97,24 @@
       "permission": "ALLOW"
     }
   ],
-  "methods": {}
+  "methods": {
+    "prototype.getProfile": {
+      "accepts": [
+        {"arg": "firstName", "type": "String"},
+        {"arg": "lastName", "type": "String"},
+        {"arg": "location", "type": "String"},
+        {"arg": "nativeLanguage", "type": "String"},
+        {"arg": "languageToLearn", "type": "String"},
+        {"arg": "phoneNumber", "type": "String"},
+        {"arg": "Gender", "type": "String"},
+        {"arg": "skill", "type": "String"},
+        {"arg": "email", "type": "String"},
+        {"arg": "password", "type": "String"},
+        {"arg": "birthdate", "type": "Date"}
+      ],
+      "returns": { "arg": "data", "type": "User", "root": true },
+      "http": { "verb": "get", "path": "/users" },
+      "accessScopes": ["read", "read:users"]
+    }
+  }
 }

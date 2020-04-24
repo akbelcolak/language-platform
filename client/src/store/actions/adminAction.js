@@ -23,6 +23,16 @@ export const getPosts = (token) => {
     });
   };
 };
+export const getProfile = (token) => {
+  return (dispatch) => {
+    API.getProfile(token, (res) => {
+      dispatch({
+        type: "GOT_PROFILE",
+        payload: res.data,
+      });
+    });
+  };
+};
 
 export const addPost = (post, token) => {
   return (dispatch) => {
@@ -39,6 +49,16 @@ export const updatePost = (post, token) => {
     API.updatePost(post, token, (res) => {
       dispatch({
         type: "UPDATED_POST",
+        payload: res.data,
+      });
+    });
+  };
+};
+export const updateUser = (userId, token) => {
+  return (dispatch) => {
+    API.upDateUser(userId, token, (res) => {
+      dispatch({
+        type: "UPDATED_USER",
         payload: res.data,
       });
     });

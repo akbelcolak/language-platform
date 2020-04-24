@@ -25,6 +25,11 @@ const admin = (state = defaultState, action) => {
         ...state,
         posts: action.payload,
       };
+      case "GOT_PROFILE":
+        return {
+          ...state,
+          posts: action.payload,
+        };
     case "POST_ADDED":
       return {
         ...state,
@@ -47,6 +52,14 @@ const admin = (state = defaultState, action) => {
             return p;
           }
         }),
+      };
+    }
+    case "UPDATED_USER": {
+      return {
+        ...state,
+        user: action.payload,
+        
+     
       };
     }
     case "GOT_SINGLE_POST": {
