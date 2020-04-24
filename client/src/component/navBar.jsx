@@ -43,7 +43,7 @@ class NavBar extends Component {
             fontSize: "35px",
           }}
         >
-          <Link style={{ color: "#dd1350"}} to="/home">
+          <Link style={{ color: "#dd1350" }} to="/home">
             <i className="fa fa-home" aria-hidden="true" title="Home"></i>
           </Link>
         </div>

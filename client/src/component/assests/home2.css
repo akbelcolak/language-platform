@@ -1,16 +1,16 @@
 .main{
     position: relative;
     top:200px;
-    left:200px;
     color: wheat;
 }
-.main h2{
-    position: relative;
-    left:60px;
-    color: wheat;
+h1{
+    text-align: center
+}
+h2{
+    text-align: center
 }
 .btn.btn-dark.sec{
     position: relative;
     top:20px;
-    left: 250px;
+    left: 500px;
 }

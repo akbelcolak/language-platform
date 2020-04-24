@@ -12,7 +12,7 @@ class Login extends Component {
       <React.Fragment>
         <div className="card-body">
           <div className="head">
-            <h4 className="heads">Welcome Student !</h4>
+            <h3 style={{color:'blue'}}>Welcome Student !</h3>
           </div>
           <form
             onSubmit={(e) => {
@@ -70,16 +70,16 @@ class Login extends Component {
             <div className="form-group sec">
               <button className="btn btn-primary">login</button>
             </div>
-            <div className="footer">
-              <h5 className="q">
-                <span className="qq">Don't have an account ?</span>{" "}
+            <div className="footer-login">
+              <div className="dont-div">
+                <h5>Don't have an account ?</h5>
                 <hr className="hr" />
-                <div className="a">
-                  <Link className="b" to="/signup">
+                <div className="div-signup">
+                  <Link style={{textDecorationLine: 'none'}} className="link-signup" to="/signup">
                     Sign up
                   </Link>
                 </div>
-              </h5>
+              </div>
             </div>
           </form>
         </div>

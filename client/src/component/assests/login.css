@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Numans");
+/* @import url("https://fonts.googleapis.com/css?family=Numans"); */
 
 html,
 body {
@@ -71,61 +71,39 @@ input:focus {
   font-size: 15px;
   color: rgb(10, 36, 236);
 }
-.q {
-  font-family: "Aclonica";
-  color: #070707;
+
+.head h3 {
+  position: relative;
+  bottom: 210px;
+  right: 280px;
+
 }
-.qq {
+
+.footer-login {
   position: absolute;
   top: 300px;
-  left: 60px;
-  border-radius: 25px;
-  background-color: rgb(163, 162, 162);
-  height: 40px;
-  width: 230px;
-  line-height: 1.9;
+  left: 70px;
+  height: 100px;
 }
 
-.b:hover {
-  text-decoration-line: none;
-  color: white;
-  background-color: rgb(5, 8, 148);
-}
-.b {
-  position: relative;
-  top: 7px;
-  color: rgb(250, 251, 252);
-}
-.a:hover {
-  position: relative;
-  border-radius: 5px;
-  background-color: rgb(5, 8, 148);
-
-  width: 100px;
-  height: 40px;
-  color: rgb(3, 6, 212);
-}
-
-.head:hover {
-  color: rgb(244, 244, 247);
-}
-.a {
-  position: relative;
-  top: 125px;
-  font-family: "Aclonica";
-  background-color: rgb(21, 1, 110);
-  width: 100px;
-  height: 40px;
-  border-radius: 5px;
-}
 .hr {
   position: relative;
-  top: 133px;
+  top: 7px;
   color: rgb(0, 0, 0);
   background-color: rgb(0, 0, 0);
 }
-.head h4 {
-  position: absolute;
-  top: -220px;
-  left: -180px;
+.div-signup {
+  position: relative;
+  width: 120px;
+  border-radius: 10px;
+  background-color: rgb(169, 230, 230);
 }
+.link-signup {
+  position: relative;
+  bottom: 5px;
+  font-size: 20px;
+}
+.div-signup:hove{
+ background-color:rgb(211, 231, 231);
+}
+
