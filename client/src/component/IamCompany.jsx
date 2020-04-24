@@ -59,7 +59,7 @@ export default function IamCompany() {
                     <img
                       src="http://www.radfaces.com/images/avatars/daria-morgendorffer.jpg"
                       className="author-image"
-                      alt="Placeholder image"
+                      alt="Placeholder"
                     />
                   </div>
                   <div className="media-content has-text-centered">
