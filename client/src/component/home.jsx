@@ -1,25 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Login from "./login";
-import { connect } from "react-redux";
-import * as AdminActions from "../store/actions/adminAction";
-// import { NavLink } from "react-router-dom";
-// import Logout from "./logout";
 import "./assests/home.css";
 /* global $ */
 
 class Home extends Component {
   componentDidMount() {
-    try {
-      if (this.props.auth.token)
-        this.props.getSingleUser(
-          this.props.auth.user.userId,
-          this.props.auth.token
-        );
-    } catch (ex) {
-      console.log("ex", ex);
-    }
-
     $("div.bhoechie-tab-menu>ul.list-group>a").click(function (e) {
       e.preventDefault();
       $(this).siblings("a.active").removeClass("active");
@@ -30,11 +16,9 @@ class Home extends Component {
         .eq(index)
         .addClass("active");
     });
-
-   
   }
   render() {
-    const user = this.props.auth.token;
+    const user = this.props.user;
     // const users = this.props.admin.user;
     return (
       <React.Fragment>
@@ -128,17 +112,4 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    auth: state.auth,
-    admin: state.admin,
-  };
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getSingleUser: (id, token) => {
-      dispatch(AdminActions.getSingleUser(id, token));
-    },
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;

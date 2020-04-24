@@ -1,0 +1,30 @@
+.GridContainer__container:not(.GridContainer__wide) {
+	width: 1040px;
+}
+.GridContainer__container:not(.GridContainer__wide) {
+	width: 860px;
+}
+.GridContainer__container:not(.GridContainer__wide) {
+	width: 700px;
+}
+.GridContainer__container {
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-right: auto;
+	margin-left: auto;
+}
+* {
+	box-sizing: border-box;
+}
+user agent stylesheet
+div {
+	display: block;
+}
+body {
+	font-family: Roboto,Helvetica,Arial,sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 1.5;
+	letter-spacing: .5px;
+	color: #333;
+}

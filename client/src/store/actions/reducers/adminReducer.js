@@ -4,7 +4,8 @@ const defaultState = {
   users: [],
   posts: [],
   post: {},
-  user:{}
+  user:{},
+  profiles:[]
 };
 
 const admin = (state = defaultState, action) => {
@@ -28,7 +29,7 @@ const admin = (state = defaultState, action) => {
       case "GOT_PROFILE":
         return {
           ...state,
-          posts: action.payload,
+          profiles: action.payload,
         };
     case "POST_ADDED":
       return {

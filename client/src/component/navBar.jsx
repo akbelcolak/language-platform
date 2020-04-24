@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as AdminActions from "../store/actions/adminAction";
 import Logout from "./logout";
+
 import "./assests/nav.css";
 
 /* global $ */
@@ -11,19 +12,24 @@ class NavBar extends Component {
     $(".menu").click(function () {
       $(this).parent().toggleClass("close");
     });
-    try {
-      if (this.props.auth.token)
-        this.props.getSingleUser(
-          this.props.auth.user.userId,
-          this.props.auth.token
-        );
-    } catch (ex) {
-      console.log("ex", ex);
+    // try {
+    //   if (this.props.auth.token)
+    //     this.props.getSingleUser(
+    //       this.props.auth.user.userId,
+    //       this.props.auth.token
+    //     );
+    // } catch (ex) {
+    // }
+    if (this.props.auth.token) {
+      const pro = this.props.getProfiles(this.props.auth.token);
+      console.log("pro", pro);
     }
   }
   render() {
-    const user = this.props.auth.token;
-    const users = this.props.admin.user;
+    // const user = this.props.auth.token;
+    // const users = this.props.admin.user;
+
+    console.log("users", this.props.admin);
     const logout = () => {
       window.localStorage.clear();
       window.location = "/";
@@ -33,33 +39,14 @@ class NavBar extends Component {
         <div
           style={{
             position: "absolute",
-            right: "300px",
+            right: "10px",
+            fontSize: "35px",
           }}
         >
-          <span
-            style={{
-              color: "red",
-              fontSize: "20px",
-              position: "absolute",
-              right: "0px",
-              top: "10px",
-            }}
-          >
-            Welcome&nbsp;<span style={{ color: "yellow" }}>!</span>
-          </span>
-          <span
-            style={{
-              color: "gray",
-              fontSize: "20px",
-              position: "absolute",
-              left: "10px",
-              top: "10px",
-            }}
-          >
-            <p key={user}>{users.firstName}</p>
-          </span>
+          <Link style={{ color: "#dd1350"}} to="/home">
+            <i className="fa fa-home" aria-hidden="true" title="Home"></i>
+          </Link>
         </div>
-
         <div className="base">
           <div className="menu">
             <div className="icon">
@@ -68,13 +55,21 @@ class NavBar extends Component {
           </div>
           <div className="icons">
             <i className="fa fa-user" aria-hidden="true" title="Profile"></i>
-            <i className="fa fa-home" aria-hidden="true" title="Home"></i>
-            <i className="fa fa-sign-out" aria-hidden="true" title="signOut"></i>
+            <i
+              class="fa fa-american-sign-language-interpreting"
+              aria-hidden="true"
+            ></i>
+
+            <i
+              className="fa fa-sign-out"
+              aria-hidden="true"
+              title="signOut"
+            ></i>
           </div>
           <div className="section">
             <div className="cover1">
               <div className="cover2">
-                <Link className="content" to="/"></Link>
+                <Link className="content" to="/match"></Link>
               </div>
             </div>
           </div>
@@ -95,13 +90,13 @@ class NavBar extends Component {
 const mapStateToProps = (state) => {
   return {
     auth: state.auth,
-    admin: state.admin,
+    profiles: state.profiles,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    getSingleUser: (id, token) => {
-      dispatch(AdminActions.getSingleUser(id, token));
+    getProfiles: (token) => {
+      dispatch(AdminActions.getProfiles(token));
     },
   };
 };

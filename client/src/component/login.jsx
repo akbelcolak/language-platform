@@ -12,7 +12,7 @@ class Login extends Component {
       <React.Fragment>
         <div className="card-body">
           <div className="head">
-            <h4>Welcome Student !</h4>
+            <h4 className="heads">Welcome Student !</h4>
           </div>
           <form
             onSubmit={(e) => {
