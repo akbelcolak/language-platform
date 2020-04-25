@@ -1,8 +1,8 @@
 {
   "name": "language-platform",
   "version": "1.0.0",
-  "description": "",
-  "main": " /index.js",
+  "description":"language-partner",
+  "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
     "dev-api": "nodemon api/dev.js",
