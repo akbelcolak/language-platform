@@ -16,7 +16,7 @@ input.form-control {
 .card-body {
   position: relative;
   top: 70px;
-  left: 70px;
+  left: 140px;
   flex-direction: column;
   width: 350px;
   background-color: none;
@@ -72,17 +72,18 @@ input:focus {
   color: rgb(10, 36, 236);
 }
 
-.head h3 {
+.we {
   position: relative;
   font-size: 25px;
-  bottom: 210px;
-  right: 260px;
-
+  bottom: 60px;
+  right: 50px;
+  width: 220px;
+  color: blue;
 }
 
 .footer-login {
   position: absolute;
-  top: 300px;
+  top: 260px;
   left: 70px;
   height: 100px;
 }
@@ -97,9 +98,11 @@ input:focus {
   position: relative;
   width: 120px;
   border-radius: 10px;
-  background-color: rgb(169, 230, 230);
+  
+  background-color: rgb(177, 158, 245);
 }
 .link-signup {
+  color:white;
   position: relative;
   bottom: 5px;
   font-size: 20px;

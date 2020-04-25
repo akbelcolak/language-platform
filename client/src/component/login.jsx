@@ -11,9 +11,8 @@ class Login extends Component {
     return (
       <React.Fragment>
         <div className="card-body">
-          <div className="head">
-            <h3 style={{color:'blue'}}>Welcome Student !</h3>
-          </div>
+         
+            <h3 className='we'>Welcome Student !</h3>
           <form
             onSubmit={(e) => {
               e.preventDefault();

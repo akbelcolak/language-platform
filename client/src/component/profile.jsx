@@ -43,16 +43,16 @@ const styles = (theme) => ({
   },
 });
 class Profile extends Component {
-  componentDidMount() {
-    try {
-      if (this.props.auth.token){
-    this.props.getUsers(this.props.auth.token)
-    }} catch (ex) {}
-  }
+  // componentDidMount() {
+  //   try {
+  //     if (this.props.auth.token){
+  //   this.props.getUsers(this.props.auth.token)
+  //   }} catch (ex) {}
+  // }
 
   render() {
     const users = this.props.auth.user;
-    console.log('users',users)
+    // console.log('users',users)
     const { classes } = this.props;
     // const birthDate = users.birthdate.slice(0, 10);
     return (

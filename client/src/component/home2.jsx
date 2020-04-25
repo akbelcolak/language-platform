@@ -6,7 +6,7 @@ const Home2 = () => {
     <div className='main'>
       <h1>Linguasphere LANGUAGE EXCHANGE</h1>
       <h2>Practice languages with native speakers</h2>
-      <button type="button" onClick={()=>window.location="/match"} className="btn btn-dark sec">Go To Match</button>
+      <button type="button" onClick={()=>window.location="/match"} className="btn btn-dark sec"><strong>Go To Match</strong></button>
 
     </div>
   );

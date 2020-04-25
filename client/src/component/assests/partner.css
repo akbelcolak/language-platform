@@ -71,13 +71,15 @@
     color: whitesmoke;
   }
   .footer {
-    position: absolute;
+    position: fixed;
     left: 0px;
-    bottom: -950px;
+    bottom: 0px;
     width: 100%;
     background-color: rgb(58, 8, 8);
     color: white;
     text-align: center;
+    opacity: 0.77;
+    filter: alpha(opacity=77);
  }
  .footer p{
     position: relative;

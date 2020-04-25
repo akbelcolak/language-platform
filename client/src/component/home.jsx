@@ -41,7 +41,7 @@ class Home extends Component {
                       <Link to="/" className="list-group-item active sec">
                         <br />
                         <br />
-                        <span className="glyphicon glyphicon-home sec"></span>{" "}
+                        <span className="glyphicon glyphicon-home sec"></span>
                         Home
                         <br />
                         <br />
@@ -49,7 +49,7 @@ class Home extends Component {
                       <Link to="/" className="list-group-item sec">
                         <br />
                         <br />
-                        <span className="glyphicon glyphicon-tasks sec"></span>{" "}
+                        <span className="glyphicon glyphicon-tasks sec"></span>
                         Student
                         <br />
                         <br />
@@ -57,7 +57,7 @@ class Home extends Component {
                       <Link to="/" className="list-group-item sec">
                         <br />
                         <br />
-                        <span className="glyphicon glyphicon-transfer sec"></span>{" "}
+                        <span className="glyphicon glyphicon-transfer sec"></span>
                         Company
                         <br />
                         <br />
@@ -65,7 +65,7 @@ class Home extends Component {
                       <Link to="/" className="list-group-item sec">
                         <br />
                         <br />
-                        <span className="glyphicon glyphicon-wrench"></span>{" "}
+                        <span className="glyphicon glyphicon-wrench"></span>
                         Offers <br />
                         <br />
                       </Link>
@@ -76,7 +76,16 @@ class Home extends Component {
                     <div className="bhoechie-tab-content active">
                       <center>
                         <div className="glyphicon glyphicon-user">
-                          <h2 className="heads">Welcome</h2>
+                          <p className="p-home">
+                            <h3 className='welcome'>Welcome</h3>
+                          <h5 className='add'><strong style={{color:'red'}}>Linguasphere</strong> is the fastest way to fluency</h5>
+                             Our app helps
+                            you find native speakers of almost any language who
+                            want to learn your language in exchange. Practice
+                            listening, improve your pronunciation, and learn to
+                            speak a foreign language like a local – no matter
+                            where you are.
+                          </p>
                         </div>
                       </center>
                     </div>
@@ -92,13 +101,11 @@ class Home extends Component {
 
                     <div className="bhoechie-tab-content">
                       <center>
-                        <h3 className="heads">Company content </h3>
                       </center>
                     </div>
                     <div className="bhoechie-tab-content">
                       <center>
                         <span className="glyphicon glyphicon-edit"></span>
-                        <h3 className="heads">Offers content</h3>
                       </center>
                     </div>
                   </div>

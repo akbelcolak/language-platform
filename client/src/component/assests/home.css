@@ -33,7 +33,13 @@ div.bhoechie-tab-container:hover {
   opacity: 0.97;
   filter: alpha(opacity=97);
 }
-
+.col-lg-5.col-md-12.col-sm-8.col-xs-9.bhoechie-tab-container{
+  position: fixed;
+  padding-left: 100px;
+  top: 10px;
+  right: 465px;
+  background-color: rgb(203, 235, 248);
+}
 div.bhoechie-tab-menu {
   padding-right: 0;
   padding-left: 0;
@@ -115,5 +121,31 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
   filter: alpha(opacity=97);
   background-color: grey;
 }
+.p-home{
+  position: relative;
+  text-align: left;
+  top: 110px;
+  left: 0px;
+  font-size: 20px;
+  color: #00001a;
 
-
+}
+.glyphicon.glyphicon-user{
+  position: relative;
+  width: 400px;
+  left: 120px;
+}
+.welcome{
+  position: relative;
+  bottom: 40px;
+  width: 400px;
+color: blue;
+}
+.add{
+  position: relative;
+  width: 400px;
+}
+center{
+  position: relative;
+  width: 0px;
+}

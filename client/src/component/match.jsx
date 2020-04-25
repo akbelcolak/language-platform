@@ -4,7 +4,7 @@ class Match extends Component {
     render() { 
         return ( 
             <div className='head'>
-          <h3>Explore the world’s largest language exchange community</h3>
+          <h3 className='h3'>Explore the world’s largest language exchange community</h3>
           <select className="custom-select Language">
               <option selected>Language</option>
               <option value="1">Dutch</option>
@@ -40,7 +40,7 @@ class Match extends Component {
               <option value="14">Indonesian</option>
           </select>
 
-          <button type="button" onClick={()=>window.location="/partner"} className="btn btn-primary sec">Find a Partner</button>
+          <button type="button" onClick={()=>window.location="/partner"} className="btn btn-primary third">Find a Partner</button>
 
         </div>
          );
