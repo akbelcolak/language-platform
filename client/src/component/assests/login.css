@@ -74,8 +74,9 @@ input:focus {
 
 .head h3 {
   position: relative;
+  font-size: 25px;
   bottom: 210px;
-  right: 280px;
+  right: 260px;
 
 }
 
