@@ -1,4 +1,4 @@
-[![22](https://user-images.githubusercontent.com/54626312/79698441-36382100-8289-11ea-8713-fedf48331b58.png)](https://language-platform.herokuapp.com/)
+[![22](https://user-images.githubusercontent.com/54626312/79698441-36382100-8289-11ea-8713-fedf48331b58.png)](https://language-partner.herokuapp.com/home)
 
 ## Table of contents
 
