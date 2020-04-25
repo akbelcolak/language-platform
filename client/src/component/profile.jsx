@@ -79,7 +79,7 @@ class Profile extends Component {
                           <tbody>
                             <tr className="flash">
                               <td>User Name:</td>
-                              <td>{this.props.values.firstName}</td>
+                              <td>Hamdan</td>
                             </tr>
                             <tr className="flash2">
                               <td>E-mail:</td>
@@ -87,7 +87,7 @@ class Profile extends Component {
                             </tr>
                             <tr className="flash">
                               <td>Birthdate:</td>
-                              <td>{this.props.values.birthdate}</td>
+                              <td>1991-04-26</td>
                             </tr>
                             <tr className="flash">
                               <td>Topics</td>
@@ -146,7 +146,7 @@ class Profile extends Component {
                             htmlFor="firstName"
                             id="firstName"
                             onChange={this.props.handleChange}
-                            value={this.props.values.firstName}
+                            value='Hamdan'
                             fullWidth
                           />
                           <FormikTextField
@@ -156,7 +156,7 @@ class Profile extends Component {
                             htmlFor="lastName"
                             id="lastName"
                             onChange={this.props.handleChange}
-                            value={this.props.values.lastName}
+                            value='Ramadan'
                             fullWidth
                           />
 
@@ -168,7 +168,7 @@ class Profile extends Component {
                             label="Phone Number"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.phoneNumber}
+                            value='012345678'
                             fullWidth
                           />
                           <FormikTextField
@@ -180,7 +180,7 @@ class Profile extends Component {
                             id="birthdate"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.birthdate}
+                            value='1991-04-26'
                             fullWidth
                           />
                           <FormikSelectField
@@ -190,7 +190,7 @@ class Profile extends Component {
                             label="Gender"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.Gender}
+                            value="male"
                             options={[
                               { label: "male", value: "male" },
                               { label: "female", value: "female" },
@@ -206,7 +206,7 @@ class Profile extends Component {
                             label="Location"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.location}
+                            value="Brussels"
                             options={[
                               { value: "Brussels", label: "Brussels" },
                               {
@@ -230,7 +230,7 @@ class Profile extends Component {
                             label="Native Language"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.nativeLanguage}
+                            value="Arabic"
                             options={[
                               { label: "Dutch", value: "Dutch" },
                               { label: "Arabic", value: "Arabic" },
@@ -247,7 +247,7 @@ class Profile extends Component {
                             label="Language To Learn"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.languageToLearn}
+                            value="French"
                             options={[
                               { label: "Dutch", value: "Dutch" },
                               { label: "Arabic", value: "Arabic" },
@@ -264,7 +264,7 @@ class Profile extends Component {
                             label="Skill"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.skill}
+                            value="IT"
                             options={[
                               { label: "IT", value: "IT" },
                               { label: "Health", value: "Health" },
