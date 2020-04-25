@@ -323,14 +323,14 @@ export default withRouter(
   )(
     withFormik({
       mapPropsToValues: (props) => ({
-        firstName: props.auth.user.firstName || "Hamdan",
-        lastName: props.auth.user.lastName || "Ramadan",
-        location: props.auth.user.location || "Brussels",
-        nativeLanguage: props.auth.user.nativeLanguage || "Arabic",
-        languageToLearn: props.auth.user.languageToLearn || "French",
-        phoneNumber: props.auth.user.phoneNumber || "012345678",
-        Gender: props.auth.user.Gender || "male",
-        skill: props.auth.user.skill || "IT",
+        firstName:"Hamdan",
+        lastName:"Ramadan",
+        location:"Brussels",
+        nativeLanguage:"Arabic",
+        languageToLearn:"French",
+        phoneNumber:"012345678",
+        Gender:"male",
+        skill:"IT",
         birthdate:'1991-04-26',
       }),
       validationSchema: Yup.object().shape({

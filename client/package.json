@@ -1,6 +1,7 @@
 {
   "name": "language-partner",
   "version": "1.0.0",
+  "homepage": "https://language-partner.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
