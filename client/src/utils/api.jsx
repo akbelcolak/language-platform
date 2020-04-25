@@ -26,7 +26,6 @@ axios.interceptors.response.use(null, (error) => {
   }
   return Promise.reject(error);
 });
-const host = 'http://localhost:61224'
 const API = {
   login: (email, password, success) => {
     axios
@@ -69,24 +68,26 @@ const API = {
   //     });
   // },
   getUsers: (token, success) => {
-    axios.get(`${host}/api/users/access_token=${token}`).then((res) => {
+    axios.get(`/api/users/access_token=${token}`).then((res) => {
       success(res);
     });
   },
-  // getSingleUser: (id, token, success) => {
-  //   axios.get(`/api/users/${id}?access_token=${token}`).then((res) => {
-  //     success(res);
-  //   });
-  // },
+  getSingleUser: (id, token, success) => {
+    axios.get(`/api/users/${id}?access_token=${token}`).then((res) => {
+      success(res);
+    });
+  },
   getPosts: (token, success) => {
     axios.get(`/api/Posts?access_token=${token}`).then((res) => {
       success(res);
     });
   },
-  getProfiles: (token) => {
+  getProfiles: (token, success) => {
     axios.get(
-      `http://localhost:61224/api/profiles?access_token=${token}`
-    );
+      `/api/profiles?access_token=${token}`
+    ).then((res) => {
+      success(res);
+    });
   },
   addPost: (post, token, success) => {
     axios.post(`/api/Posts?access_token=${token}`, post).then((res) => {

@@ -1,3 +1,4 @@
+"use strict";
 // this is the main entry point for our full app
 // it serves frontend & provides access to our API
 const express = require("express");
@@ -8,16 +9,16 @@ let mongoose = require("mongoose");
 let dbConfig = require("./db");
 const port = process.env.PORT || 61224;
 const bodyParser = require("body-parser");
-const api = require("./language-partner/server/server.js");
+const api = require("./language-partner/server/server");
 const app = express();
 app.use(cors());
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: true,
+//   })
+// );
 
 // Connecting mongoDB Database
 mongoose.Promise = global.Promise;
@@ -40,13 +41,13 @@ mongoose
 //   next();
 // });
 
-app.use(favicon(__dirname + "/client/build/favicon.ico"));
+app.use(favicon(__dirname + "/language-partner/client/favicon.ico"));
 // the __dirname is the current directory from where the script is running
 app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(path.join(__dirname, "/language-partner/client")));
 
-app.get("*", async(req, res) => {
- await res.sendFile(path.join(__dirname + "/client/build/index.html"));
+app.get("/*", async(req, res) => {
+ await res.sendFile(path.join(__dirname + "/language-partner/client/index.html"));
 });
 
 app.use("/", api);

@@ -21,15 +21,13 @@ class NavBar extends Component {
     // } catch (ex) {
     // }
     if (this.props.auth.token) {
-      const pro = this.props.getProfiles(this.props.auth.token);
-      console.log("pro", pro);
+       this.props.getProfiles(this.props.auth.token);
     }
   }
   render() {
     // const user = this.props.auth.token;
     // const users = this.props.admin.user;
 
-    console.log("users", this.props.admin);
     const logout = () => {
       window.localStorage.clear();
       window.location = "/";
@@ -56,7 +54,7 @@ class NavBar extends Component {
           <div className="icons">
             <i className="fa fa-user" aria-hidden="true" title="Profile"></i>
             <i
-              class="fa fa-american-sign-language-interpreting"
+              className="fa fa-american-sign-language-interpreting"
               aria-hidden="true"
             ></i>
 

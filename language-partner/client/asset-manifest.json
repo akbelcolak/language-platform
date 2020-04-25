@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.0c32fc0f.chunk.css",
-    "main.js": "/static/js/main.a14cde83.chunk.js",
+    "main.css": "/static/css/main.084a237e.chunk.css",
+    "main.js": "/static/js/main.6053716d.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.9e175f92.js",
     "static/css/2.72c5ca56.chunk.css": "/static/css/2.72c5ca56.chunk.css",
-    "static/js/2.1b749344.chunk.js": "/static/js/2.1b749344.chunk.js",
+    "static/js/2.2038743a.chunk.js": "/static/js/2.2038743a.chunk.js",
     "index.html": "/index.html",
-    "precache-manifest.3612445aa31f956c35abe90dcc51e573.js": "/precache-manifest.3612445aa31f956c35abe90dcc51e573.js",
+    "precache-manifest.2cf5303fac418803389f865ed52bdf21.js": "/precache-manifest.2cf5303fac418803389f865ed52bdf21.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.1b749344.chunk.js.LICENSE.txt": "/static/js/2.1b749344.chunk.js.LICENSE.txt",
+    "static/js/2.2038743a.chunk.js.LICENSE.txt": "/static/js/2.2038743a.chunk.js.LICENSE.txt",
     "static/media/font-awesome.css": "/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.9e175f92.js",
     "static/css/2.72c5ca56.chunk.css",
-    "static/js/2.1b749344.chunk.js",
-    "static/css/main.0c32fc0f.chunk.css",
-    "static/js/main.a14cde83.chunk.js"
+    "static/js/2.2038743a.chunk.js",
+    "static/css/main.084a237e.chunk.css",
+    "static/js/main.6053716d.chunk.js"
   ]
 }

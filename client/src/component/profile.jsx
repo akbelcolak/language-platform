@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { withFormik, Form } from "formik";
 import { FormikTextField, FormikSelectField } from "formik-material-fields";
-import * as AdminActions from "../store/actions/adminAction";
+import * as AuthActions from "../store/actions/authActions";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import * as Yup from "yup";
 import { withStyles, Paper } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
-
 import "./assests/profile.css";
 
 const styles = (theme) => ({
@@ -46,13 +45,14 @@ const styles = (theme) => ({
 class Profile extends Component {
   componentDidMount() {
     try {
-      if (this.props.match.params.id)
-        this.props.updateUser(this.props.values, this.props.auth.token);
-    } catch (ex) {}
+      if (this.props.auth.token){
+    this.props.getUsers(this.props.auth.token)
+    }} catch (ex) {}
   }
 
   render() {
-    const users = this.props.admin.user;
+    const users = this.props.auth.user;
+    console.log('users',users)
     const { classes } = this.props;
     // const birthDate = users.birthdate.slice(0, 10);
     return (
@@ -79,7 +79,7 @@ class Profile extends Component {
                           <tbody>
                             <tr className="flash">
                               <td>User Name:</td>
-                              <td>{users.firstName}</td>
+                              <td>{this.props.values.firstName}</td>
                             </tr>
                             <tr className="flash2">
                               <td>E-mail:</td>
@@ -87,7 +87,7 @@ class Profile extends Component {
                             </tr>
                             <tr className="flash">
                               <td>Birthdate:</td>
-                              {/* <td>{birthDate}</td> */}
+                              <td>{this.props.values.birthdate}</td>
                             </tr>
                             <tr className="flash">
                               <td>Topics</td>
@@ -128,13 +128,13 @@ class Profile extends Component {
                       <Form
                         onSubmit={async (e) => {
                           e.preventDefault();
-                          await this.props.updateUser(
-                            this.props.admin.user.userId,
-                            this.props.values,
-                            this.props.auth.token
-                          );
-                          console.log("props", this.props);
-                          console.log("set");
+                          // await this.props.getSingleUser(
+                          //   this.props.auth.user.userId,
+                          //   this.props.values,
+                          //   this.props.auth.token
+                          // );
+                          // console.log("props", this.props);
+                          // console.log("set");
                         }}
                         className={classes.container}
                       >
@@ -233,6 +233,7 @@ class Profile extends Component {
                             value={this.props.values.nativeLanguage}
                             options={[
                               { label: "Dutch", value: "Dutch" },
+                              { label: "Arabic", value: "Arabic" },
                               { label: "French", value: "French" },
                               { label: "German", value: "German" },
                               { label: "English", value: "English" },
@@ -249,6 +250,7 @@ class Profile extends Component {
                             value={this.props.values.languageToLearn}
                             options={[
                               { label: "Dutch", value: "Dutch" },
+                              { label: "Arabic", value: "Arabic" },
                               { label: "French", value: "French" },
                               { label: "German", value: "German" },
                               { label: "English", value: "English" },
@@ -271,6 +273,7 @@ class Profile extends Component {
                               { label: "Journalism", value: "Journalism" },
                               { label: "Education", value: "Education" },
                               { label: "Literature", value: "Literature" },
+                              { label: "Administration", value: "Administration" },
                             ]}
                             fullWidth
                           />
@@ -306,13 +309,12 @@ class Profile extends Component {
 const mapStateToProps = (state) => {
   return {
     auth: state.auth,
-    admin: state.admin,
   };
 };
 const mapDispatchToProps = (dispatch) => ({
-  updateUser: (user, token) => {
-    dispatch(AdminActions.updateUser(user, token));
-  },
+  getUsers: (token) => {
+    dispatch(AuthActions.getUsers(token));
+  }
 });
 export default withRouter(
   connect(
@@ -321,15 +323,15 @@ export default withRouter(
   )(
     withFormik({
       mapPropsToValues: (props) => ({
-        firstName: props.admin.user.firstName || "",
-        lastName: props.admin.user.lastName || "",
-        location: props.admin.user.location || "",
-        nativeLanguage: props.admin.user.nativeLanguage || "",
-        languageToLearn: props.admin.user.languageToLearn || "",
-        phoneNumber: props.admin.user.phoneNumber || "",
-        Gender: props.admin.user.Gender || "",
-        skill: props.admin.user.skill || "",
-        // birthdate: props.admin.user.birthdate.slice(0, 10)||'',
+        firstName: props.auth.user.firstName || "Hamdan",
+        lastName: props.auth.user.lastName || "Ramadan",
+        location: props.auth.user.location || "Brussels",
+        nativeLanguage: props.auth.user.nativeLanguage || "Arabic",
+        languageToLearn: props.auth.user.languageToLearn || "French",
+        phoneNumber: props.auth.user.phoneNumber || "012345678",
+        Gender: props.auth.user.Gender || "male",
+        skill: props.auth.user.skill || "IT",
+        birthdate:'1991-04-26',
       }),
       validationSchema: Yup.object().shape({
         firstName: Yup.string().required(),
