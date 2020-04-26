@@ -1,0 +1,20 @@
+.main{
+    position: relative;
+    top:200px;
+    color: wheat;
+}
+h1{
+    text-align: center
+}
+h2{
+    text-align: center
+}
+.btn.btn-dark.sec{
+    position: relative;
+    background-color: crimson;
+    top:20px;
+    left: 500px;
+    border-radius: 30px;
+    width: 150px;
+    color: white;
+}

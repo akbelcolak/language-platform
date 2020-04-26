@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { withFormik, Form } from "formik";
 import { FormikTextField, FormikSelectField } from "formik-material-fields";
-import * as AdminActions from "../store/actions/adminAction";
+import * as AuthActions from "../store/actions/authActions";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import * as Yup from "yup";
 import { withStyles, Paper } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
-
 import "./assests/profile.css";
 
 const styles = (theme) => ({
@@ -45,20 +44,17 @@ const styles = (theme) => ({
 });
 class Profile extends Component {
   // componentDidMount() {
-  //   try{
-  //     if (this.props.match.params.id)
-  //      this.props.updateUser(
-  //       this.props.values,this.props.auth.token
-  //     );
-  //   }catch(ex){
-  //   }
-
+  //   try {
+  //     if (this.props.auth.token){
+  //   this.props.getUsers(this.props.auth.token)
+  //   }} catch (ex) {}
   // }
 
   render() {
-    const users = this.props.admin.user;
+    const users = this.props.auth.user;
+    // console.log('users',users)
     const { classes } = this.props;
-    const birthDate = users.birthdate.slice(0, 10);
+    // const birthDate = users.birthdate.slice(0, 10);
     return (
       <div className="container">
         <div className="well span8 offset2">
@@ -76,15 +72,14 @@ class Profile extends Component {
                 <div className="panel-body">
                   <div className="row-fluid">
                     <div className="f1">
-                      <div className="span3">
-                      </div>
+                      <div className="span3"></div>
                       <div className="span6">
                         <br className="br" />
                         <table className="table table-condensed table-responsive table-user-information">
                           <tbody>
                             <tr className="flash">
                               <td>User Name:</td>
-                              <td>{users.firstName}</td>
+                              <td>Hamdan</td>
                             </tr>
                             <tr className="flash2">
                               <td>E-mail:</td>
@@ -92,7 +87,7 @@ class Profile extends Component {
                             </tr>
                             <tr className="flash">
                               <td>Birthdate:</td>
-                              <td>{birthDate}</td>
+                              <td>1991-04-26</td>
                             </tr>
                             <tr className="flash">
                               <td>Topics</td>
@@ -133,9 +128,13 @@ class Profile extends Component {
                       <Form
                         onSubmit={async (e) => {
                           e.preventDefault();
-                          // await AP.updateUser(this.props.admin.user.userId,this.props.values,this.props.auth.token)
-                          // console.log('props',this.props)
-                          console.log("set");
+                          // await this.props.getSingleUser(
+                          //   this.props.auth.user.userId,
+                          //   this.props.values,
+                          //   this.props.auth.token
+                          // );
+                          // console.log("props", this.props);
+                          // console.log("set");
                         }}
                         className={classes.container}
                       >
@@ -147,7 +146,7 @@ class Profile extends Component {
                             htmlFor="firstName"
                             id="firstName"
                             onChange={this.props.handleChange}
-                            value={this.props.values.firstName}
+                            value='Hamdan'
                             fullWidth
                           />
                           <FormikTextField
@@ -157,7 +156,7 @@ class Profile extends Component {
                             htmlFor="lastName"
                             id="lastName"
                             onChange={this.props.handleChange}
-                            value={this.props.values.lastName}
+                            value='Ramadan'
                             fullWidth
                           />
 
@@ -169,7 +168,7 @@ class Profile extends Component {
                             label="Phone Number"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.phoneNumber}
+                            value='012345678'
                             fullWidth
                           />
                           <FormikTextField
@@ -181,7 +180,7 @@ class Profile extends Component {
                             id="birthdate"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.birthdate}
+                            value='1991-04-26'
                             fullWidth
                           />
                           <FormikSelectField
@@ -191,7 +190,7 @@ class Profile extends Component {
                             label="Gender"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.Gender}
+                            value="male"
                             options={[
                               { label: "male", value: "male" },
                               { label: "female", value: "female" },
@@ -207,7 +206,7 @@ class Profile extends Component {
                             label="Location"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.location}
+                            value="Brussels"
                             options={[
                               { value: "Brussels", label: "Brussels" },
                               {
@@ -231,9 +230,10 @@ class Profile extends Component {
                             label="Native Language"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.nativeLanguage}
+                            value="Arabic"
                             options={[
                               { label: "Dutch", value: "Dutch" },
+                              { label: "Arabic", value: "Arabic" },
                               { label: "French", value: "French" },
                               { label: "German", value: "German" },
                               { label: "English", value: "English" },
@@ -247,9 +247,10 @@ class Profile extends Component {
                             label="Language To Learn"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.languageToLearn}
+                            value="French"
                             options={[
                               { label: "Dutch", value: "Dutch" },
+                              { label: "Arabic", value: "Arabic" },
                               { label: "French", value: "French" },
                               { label: "German", value: "German" },
                               { label: "English", value: "English" },
@@ -263,7 +264,7 @@ class Profile extends Component {
                             label="Skill"
                             margin="normal"
                             onChange={this.props.handleChange}
-                            value={this.props.values.skill}
+                            value="IT"
                             options={[
                               { label: "IT", value: "IT" },
                               { label: "Health", value: "Health" },
@@ -272,6 +273,7 @@ class Profile extends Component {
                               { label: "Journalism", value: "Journalism" },
                               { label: "Education", value: "Education" },
                               { label: "Literature", value: "Literature" },
+                              { label: "Administration", value: "Administration" },
                             ]}
                             fullWidth
                           />
@@ -300,7 +302,6 @@ class Profile extends Component {
             </div>
           </div>
         </div>
-      
       </div>
     );
   }
@@ -308,13 +309,12 @@ class Profile extends Component {
 const mapStateToProps = (state) => {
   return {
     auth: state.auth,
-    admin: state.admin,
   };
 };
 const mapDispatchToProps = (dispatch) => ({
-  updateUser: (user, token) => {
-    dispatch(AdminActions.updateUser(user, token));
-  },
+  getUsers: (token) => {
+    dispatch(AuthActions.getUsers(token));
+  }
 });
 export default withRouter(
   connect(
@@ -323,15 +323,15 @@ export default withRouter(
   )(
     withFormik({
       mapPropsToValues: (props) => ({
-        firstName: props.admin.user.firstName || "",
-        lastName: props.admin.user.lastName || "",
-        location: props.admin.user.location || "",
-        nativeLanguage: props.admin.user.nativeLanguage || "",
-        languageToLearn: props.admin.user.languageToLearn || "",
-        phoneNumber: props.admin.user.phoneNumber || "",
-        Gender: props.admin.user.Gender || "",
-        skill: props.admin.user.skill || "",
-        birthdate: props.admin.user.birthdate.slice(0, 10),
+        firstName:"Hamdan",
+        lastName:"Ramadan",
+        location:"Brussels",
+        nativeLanguage:"Arabic",
+        languageToLearn:"French",
+        phoneNumber:"012345678",
+        Gender:"male",
+        skill:"IT",
+        birthdate:'1991-04-26',
       }),
       validationSchema: Yup.object().shape({
         firstName: Yup.string().required(),

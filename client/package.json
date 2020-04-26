@@ -1,6 +1,7 @@
 {
   "name": "language-partner",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "homepage": "https://language-partner.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
@@ -37,11 +38,12 @@
   },
   "scripts": {
     "start": " react-scripts start",
-    "build": "react-scripts build ",
+    "build": "react-scripts build && cp -r build/* ../language-partner/client",
     "test": "react-scripts test",
     "test:watch": "react-scripts test --watch  --collectCoverage=true",
     "do": "rm -rf node_modules package-lock.json && npm install && npm start",
-    "api": "react-scripts build && cp -r build/* ../language-partner/client"
+    "api": "react-scripts build && cp -r build/* ../language-partner/client",
+    "rm": "rm -rf build"
   },
   "proxy": "http://localhost:61224",
   "eslintConfig": {

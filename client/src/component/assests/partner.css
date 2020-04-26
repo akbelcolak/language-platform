@@ -1,0 +1,90 @@
+
+.left {
+  position: absolute;
+  left: 200px;
+  top: 150px;
+  color: whitesmoke;
+
+}
+.box {
+  position: relative;
+  left: 200px;
+  border-radius: 20px;
+  border: 1px solid rgb(157, 169, 221);
+  width: 600px;
+  height: 300px;
+}
+.user {
+  position: absolute;
+  border-right: 1px solid rgb(157, 169, 221);
+  height: 300px;
+  width: 200px;
+  left: 0px;
+}
+.user img {
+  position: relative;
+  top: 10px;
+  left: 40px;
+}
+.user h5 {
+  position: relative;
+  top: 24px;
+  left: 20px;
+}
+.bothSides {
+  position: relative;
+  top: 20px;
+}
+.leftSide {
+  position: absolute;
+  left: 20px;
+}
+.rightSide {
+  position: absolute;
+  right: 50px;
+}
+.info{
+    position: absolute;
+    left:210px;
+    top: 20px;
+}
+.left-sec{
+    position: absolute;
+    left: 200px;
+    top: 500px;
+    float: bottom;
+    color: whitesmoke;
+  
+  }
+  .left-3{
+    position: absolute;
+    left: 200px;
+    top: 850px;
+    float: bottom;
+    color: whitesmoke;
+  }
+  .left-4{
+    position: absolute;
+    left: 200px;
+    top: 1200px;
+    float: bottom;
+    color: whitesmoke;
+  }
+  .footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(58, 8, 8);
+    color: white;
+    text-align: center;
+    opacity: 0.77;
+    filter: alpha(opacity=77);
+ }
+ .footer p{
+    position: relative;
+    top: 7px;
+ }
+ .footer p:hover{
+    color: thistle;
+ }

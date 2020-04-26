@@ -1,28 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Login from "./login";
-import { connect } from "react-redux";
-import * as AdminActions from "../store/actions/adminAction";
-// import { NavLink } from "react-router-dom";
-// import Logout from "./logout";
-import IamCompany from "./IamCompany";
 import "./assests/home.css";
 
 
 /* global $ */
-
 class Home extends Component {
   componentDidMount() {
-    try {
-      if (this.props.auth.token)
-        this.props.getSingleUser(
-          this.props.auth.user.userId,
-          this.props.auth.token
-        );
-    } catch (ex) {
-      console.log("ex", ex);
-    }
-
     $("div.bhoechie-tab-menu>ul.list-group>a").click(function (e) {
       e.preventDefault();
       $(this).siblings("a.active").removeClass("active");
@@ -33,11 +17,9 @@ class Home extends Component {
         .eq(index)
         .addClass("active");
     });
-
-   
   }
   render() {
-    const user = this.props.auth.token;
+    const user = this.props.user;
     // const users = this.props.admin.user;
     return (
       <React.Fragment>
@@ -60,7 +42,7 @@ class Home extends Component {
                       <Link to="/" className="list-group-item active sec">
                         <br />
                         <br />
-                        <span className="glyphicon glyphicon-home sec"></span>{" "}
+                        <span className="glyphicon glyphicon-home sec"></span>
                         Home
                         <br />
                         <br />
@@ -68,7 +50,7 @@ class Home extends Component {
                       <Link to="/" className="list-group-item sec">
                         <br />
                         <br />
-                        <span className="glyphicon glyphicon-tasks sec"></span>{" "}
+                        <span className="glyphicon glyphicon-tasks sec"></span>
                         Student
                         <br />
                         <br />
@@ -76,16 +58,16 @@ class Home extends Component {
                       <Link to="/" className="list-group-item sec">
                         <br />
                         <br />
-                        <span className="glyphicon glyphicon-transfer sec"></span>{" "}
-                        Company
+                        <span className="glyphicon glyphicon-transfer sec"></span>
+                        Offers
                         <br />
                         <br />
                       </Link>
                       <Link to="/" className="list-group-item sec">
                         <br />
                         <br />
-                        <span className="glyphicon glyphicon-wrench"></span>{" "}
-                        Offers <br />
+                        <span className="glyphicon glyphicon-wrench"></span>
+                        <br />
                         <br />
                       </Link>
                     </ul>
@@ -95,10 +77,17 @@ class Home extends Component {
                     <div className="bhoechie-tab-content active">
                       <center>
                         <div className="glyphicon glyphicon-user">
-                          <h2 className="heads">Welcome 
-                            <h4>Linguasphere provides you the opportunity to develope your language skills in a company in your field of expertise</h4>
-                          </h2>
-                          
+                          <p className="p-home">
+                            <h3 className="welcome">Welcome</h3>
+                            <h5 className="add">
+                              <strong style={{ color: "red" }}>
+                                Linguasphere
+                              </strong>{" "}
+                              to provides you the opportunity develope your
+                              language skills in a company in your field of
+                              expertise
+                            </h5>
+                          </p>
                         </div>
                       </center>
                     </div>
@@ -112,15 +101,29 @@ class Home extends Component {
                       </center>
                     </div>
 
-                    <div className="bhoechie-tab-content">
-                      <center>
-                        <h3><IamCompany /> </h3>
-                      </center>
+                    <div className="bhoechie-tab-contents">
+                      <center></center>
                     </div>
-                    <div className="bhoechie-tab-content">
-                      <center>
-                        <span className="glyphicon glyphicon-edit"></span>
-                        <h3 className="heads">Offers content</h3>
+                    <div className="bhoechie-tab-content offers">
+                      <center className="center-offers">
+                        <span className="glyphicon glyphicon-edit">
+                          <h4>
+                            volunteer jobs and language internships for the
+                            users.
+                          </h4>
+                        </span>
+                        <h5 className="vi">Please visit this link</h5>
+
+                        <button
+                          className="offers-btn"
+                          onClick={() => {
+                            window.open(
+                              "https://www.stepstone.be/en/?cid=SEAdvert_Google_SEARCH_EN_General_c_open-vacancies_%2Bvacancies_FP_-_-&gclid=CjwKCAjwv4_1BRAhEiwAtMDLsl_AQVR8rQphUVn1xjabsL_xVZduJc6mfaRbZnljstJBiBubFU3lMxoCd5MQAvD_BwE"
+                            );
+                          }}
+                        >
+                          <h5>Job Offers</h5>
+                        </button>
                       </center>
                     </div>
                   </div>
@@ -134,17 +137,4 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    auth: state.auth,
-    admin: state.admin,
-  };
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getSingleUser: (id, token) => {
-      dispatch(AdminActions.getSingleUser(id, token));
-    },
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;

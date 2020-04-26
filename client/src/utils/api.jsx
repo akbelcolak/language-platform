@@ -20,7 +20,7 @@ axios.interceptors.response.use(null, (error) => {
     });
   }
   if (error.response && error.response.status === 401) {
-    toast.error(`Invalid Email or Password`, {
+    toast.error(`Unauthorized Error!`, {
       position: toast.POSITION.TOP_CENTER,
     });
   }
@@ -55,37 +55,37 @@ const API = {
           toast.success("Student Created !", {
             position: toast.POSITION.TOP_CENTER,
           });
-          window.location = "/login";
+          window.location = "/home";
         }
       });
   },
-  upDateUser: (user, token, success) => {
-    console.log('us/api',user)
-    axios
-      .patch(`/api/users/${user.userId}?access_token=${token}`, user)
-      .then((res) => {
-        success(res);
-      });
-  },
+  // upDateUser: (user, token, success) => {
+  //   console.log("us/api", user);
+  //   axios
+  //     .patch(`/api/users/${user.userId}?access_token=${token}`, user)
+  //     .then((res) => {
+  //       success(res);
+  //     });
+  // },
   getUsers: (token, success) => {
-    axios.get(`/api/users?access_token=${token}`).then((res) => {
+    axios.get(`/api/users/access_token=${token}`).then((res) => {
       success(res);
     });
   },
   getSingleUser: (id, token, success) => {
-    axios
-      .get(`/api/users/${id}?access_token=${token}`)
-      .then((res) => {
-        success(res);
-      });
+    axios.get(`/api/users/${id}?access_token=${token}`).then((res) => {
+      success(res);
+    });
   },
   getPosts: (token, success) => {
     axios.get(`/api/Posts?access_token=${token}`).then((res) => {
       success(res);
     });
   },
-  getProfile: (id,token, success) => {
-    axios.get(`/api/Posts/${id}?access_token=${token}`).then((res) => {
+  getProfiles: (token, success) => {
+    axios.get(
+      `/api/profiles?access_token=${token}`
+    ).then((res) => {
       success(res);
     });
   },
