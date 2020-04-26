@@ -124,7 +124,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
 .p-home{
   position: relative;
   text-align: left;
-  top: 110px;
+  bottom: 30px;
   left: 0px;
   font-size: 20px;
   color: #00001a;
@@ -148,4 +148,41 @@ color: blue;
 center{
   position: relative;
   width: 0px;
+}
+.bhoechie-tab-contents.offers{
+  position: relative;
+  bottom:  200px;
+  right: 20px;
+  width: 0px;
+}
+.center-offers{
+  position: relative;
+  bottom:  50px;
+  left: 90px;
+  font-size: 10px;
+  width: 400px;
+  text-align: center;
+  
+}
+.vi{
+  position: relative;
+  top: 20px;
+
+}
+.offers-btn{
+  position: relative;
+  top: 40px;
+  color:white;
+  text-align: center;
+  width: 140px;
+  background: none;
+  border-radius: 30px;
+  background-color: blueviolet;
+}
+.offers-btn h5{
+  position: relative;
+  top: 2px;
+}
+.offers-btn:hover{
+  background-color: rgb(158, 95, 216);
 }

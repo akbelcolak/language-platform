@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Login from "./login";
 import "./assests/home.css";
 /* global $ */
-
 class Home extends Component {
   componentDidMount() {
     $("div.bhoechie-tab-menu>ul.list-group>a").click(function (e) {
@@ -58,7 +57,7 @@ class Home extends Component {
                         <br />
                         <br />
                         <span className="glyphicon glyphicon-transfer sec"></span>
-                        Company
+                        Offers
                         <br />
                         <br />
                       </Link>
@@ -66,7 +65,7 @@ class Home extends Component {
                         <br />
                         <br />
                         <span className="glyphicon glyphicon-wrench"></span>
-                        Offers <br />
+                        <br />
                         <br />
                       </Link>
                     </ul>
@@ -77,14 +76,15 @@ class Home extends Component {
                       <center>
                         <div className="glyphicon glyphicon-user">
                           <p className="p-home">
-                            <h3 className='welcome'>Welcome</h3>
-                          <h5 className='add'><strong style={{color:'red'}}>Linguasphere</strong> is the fastest way to fluency</h5>
-                             Our app helps
-                            you find native speakers of almost any language who
-                            want to learn your language in exchange. Practice
-                            listening, improve your pronunciation, and learn to
-                            speak a foreign language like a local – no matter
-                            where you are.
+                            <h3 className="welcome">Welcome</h3>
+                            <h5 className="add">
+                              <strong style={{ color: "red" }}>
+                                Linguasphere
+                              </strong>{" "}
+                              to provides you the opportunity develope your
+                              language skills in a company in your field of
+                              expertise
+                            </h5>
                           </p>
                         </div>
                       </center>
@@ -99,13 +99,29 @@ class Home extends Component {
                       </center>
                     </div>
 
-                    <div className="bhoechie-tab-content">
-                      <center>
-                      </center>
+                    <div className="bhoechie-tab-contents">
+                      <center></center>
                     </div>
-                    <div className="bhoechie-tab-content">
-                      <center>
-                        <span className="glyphicon glyphicon-edit"></span>
+                    <div className="bhoechie-tab-content offers">
+                      <center className="center-offers">
+                        <span className="glyphicon glyphicon-edit">
+                          <h4>
+                            volunteer jobs and language internships for the
+                            users.
+                          </h4>
+                        </span>
+                        <h5 className="vi">Please visit this link</h5>
+
+                        <button
+                          className="offers-btn"
+                          onClick={() => {
+                            window.open(
+                              "https://www.stepstone.be/en/?cid=SEAdvert_Google_SEARCH_EN_General_c_open-vacancies_%2Bvacancies_FP_-_-&gclid=CjwKCAjwv4_1BRAhEiwAtMDLsl_AQVR8rQphUVn1xjabsL_xVZduJc6mfaRbZnljstJBiBubFU3lMxoCd5MQAvD_BwE"
+                            );
+                          }}
+                        >
+                          <h5>Job Offers</h5>
+                        </button>
                       </center>
                     </div>
                   </div>
