@@ -64,7 +64,7 @@ export default function IamCompany() {
                   </div>
                   <div className="media-content has-text-centered">
                     <p className="subtitle is-6 article-subtitle">
-                      <link href="#">@Paula</link> on April 15, 2020
+                       on April 15, 2020
                     </p>
                   </div>
                 </div>
