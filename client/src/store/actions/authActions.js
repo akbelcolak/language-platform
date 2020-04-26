@@ -10,5 +10,16 @@ export const login = (email, password) => {
     });
   };
 };
-
+export const getUsers = (token) => {
+  return (dispatch) => {
+    API.getUsers(token, (res) => {
+      console.log("res", res);
+      dispatch({
+        type: "GOT_USERS",
+        payload: res.data,
+      });
+    });
+    
+  };
+};
 

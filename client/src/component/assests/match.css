@@ -1,0 +1,31 @@
+.head{
+    position: relative;
+    color:red;
+    left:220px;
+    top:150px;
+  }
+  .head h3{
+    position: relative;
+    top: 20px;
+    left: 40px;
+    width: 750px;
+    color:red;
+  }
+  .custom-select.Language{
+  position: relative;
+  top: 40px;
+  width: 350px;
+  left: 10px;
+  }
+  .custom-select.Region{
+    position: relative;
+    top: 40px;
+    width: 350px;;
+    left: 30px;
+    }
+    .btn.btn-primary.third{
+      position: absolute;
+      top:130px;
+      width: 170px;
+      left:280px;
+  }

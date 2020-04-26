@@ -1,4 +1,4 @@
-body {
+html,body {
   background-color: #21264b;
   overflow-x: hidden;
 }
@@ -93,7 +93,7 @@ body .base .icons .fa-user {
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
 }
-body .base .icons .fa.fa-home {
+body .base .icons .fa.fa-american-sign-language-interpreting {
   top: 0px;
   left: 0px;
   color: #fff;
@@ -250,7 +250,7 @@ body .base.close .icons .fa-user {
   top: 35px;
   left: 200px;
 }
-body .base.close .icons .fa.fa-home {
+body .base.close .icons .fa.fa-american-sign-language-interpreting {
   top: 141px;
   left: 141px;
   color: #fff;
