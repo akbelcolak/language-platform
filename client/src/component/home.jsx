@@ -95,7 +95,10 @@ class Home extends Component {
                     <div className="bhoechie-tab-content active">
                       <center>
                         <div className="glyphicon glyphicon-user">
-                          <h2 className="heads">Welcome</h2>
+                          <h2 className="heads">Welcome 
+                            <h4>Linguasphere provides you the opportunity to develope your language skills in a company in your field of expertise</h4>
+                          </h2>
+                          
                         </div>
                       </center>
                     </div>

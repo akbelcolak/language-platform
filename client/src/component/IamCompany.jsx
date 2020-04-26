@@ -8,14 +8,14 @@ export default function IamCompany() {
         <section className="articles">
           <div className="column is-8 is-offset-2">
             <section className="hero is-info is-medium is-bold">
-              <div className="hero-body">
+              {/* <div className="hero-body"> */}
                 <div className="container has-text-centered">
                   <h1 className="title">
                     SET AN OFFER <br />
                     Give a Chance, Find a Gem
                   </h1>
                 </div>
-              </div>
+              {/* </div> */}
             </section>
             <div className="card article">
               <div className="card-content">
@@ -26,7 +26,7 @@ export default function IamCompany() {
                       test.cloud123@domain.net <br />
                     </p>
                     <div className="tags has-addons level-item">
-                      <span className="tag is-rounded is-info">@akbel</span>
+                      <span className="tag is-rounded is-info">@akbel </span>
                       <span className="tag is-rounded">Apr 17, 2020</span>
                     </div>
                   </div>
@@ -35,7 +35,7 @@ export default function IamCompany() {
                   <h3 className="has-text-centered">
                     Please write your email in this format:
                   </h3>
-                  <ul>
+                  <ol>
                     <li>Subject: Offer Header</li>
                     <li>Company Name</li>
                     <li>Location of the Company</li>
@@ -43,7 +43,7 @@ export default function IamCompany() {
                     <li>Number of the volunteers you look for</li>
                     <li>The start and end date for the work</li>
                     <li>Any additional note</li>
-                  </ul>
+                  </ol>
                   <p>
                     By Setting an offer YOU are gaining an opportunity to have a
                     skillfull volunteer for your company.
@@ -64,7 +64,7 @@ export default function IamCompany() {
                   </div>
                   <div className="media-content has-text-centered">
                     <p className="subtitle is-6 article-subtitle">
-                       on April 15, 2020
+                       @paula on April 15, 2020
                     </p>
                   </div>
                 </div>
